@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "flecss",
+  "version": "0.1.0",
+  "author": "Thassilo Martin Schiepanski",
+  "description": "Flexible, flex-major CSS framework.",
+  "keywords": [ "css", "scss", "framework", "flex" ],
+  "scripts": {
+    "build": "node --no-deprecation ./build.js",
+    "build:watch": "npm run build -- --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.72.0"
+  }
+}

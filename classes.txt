@@ -1,0 +1,11 @@
+binary      b
+flex        f
+margin      m
+padding     p
+space       s
+text        t
+viewport    v
+
+flex
+section
+wrapper

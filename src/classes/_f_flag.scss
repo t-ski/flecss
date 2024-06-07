@@ -1,0 +1,17 @@
+@include class("flag", "f") {
+
+    @include class-member("disable") {
+        user-select: none !important;
+        pointer-events: none !important;
+        opacity: 0.25 !important;
+    }
+
+    @include class-member("hide") {
+        visibility: hidden;
+    }
+
+    @include class-member("collapse") {
+        visibility: collapse;
+    }
+
+}

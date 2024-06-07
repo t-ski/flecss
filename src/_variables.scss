@@ -1,0 +1,20 @@
+// Customization Interface
+$space-xs: 0.25rem;
+$space-s: 0.5rem;
+$space-m: 1rem;
+$space-l: 2rem;
+$space-xl: 4rem;
+
+$wrapper-width: 1360px;
+
+$breakpoint-s: $wrapper-width - 2 * 420;
+$breakpoint-m: $wrapper-width - 1 * 420;
+$breakpoint-l: $wrapper-width - 0 * 420;
+
+$font-size: 16px;
+$font-scale-factor: 1.125;
+
+
+:root {
+    --space: #{$space-m};
+}

@@ -1,0 +1,25 @@
+@mixin class($name, $shorthand: $name) {
+    .#{$name}, .#{$shorthand} {
+        @content;
+    }
+}
+
+@mixin class-core($name, $shorthand: $name) {
+    [class^="#{$name}--"], [class^="#{$shorthand}--"] {
+        @content;
+    }
+}
+
+@mixin class-member($name, $shorthand: $name) {
+    &--#{$name}, &--#{$shorthand} {
+        @content;
+    }
+}
+
+@mixin class-reuse($name, $member: "") {
+    @if variable-exists($member) {
+        @extend .#{$name}--#{$member};
+    }  @else {
+        @extend .#{$name};
+    }
+}

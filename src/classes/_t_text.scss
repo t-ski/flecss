@@ -1,0 +1,14 @@
+@include class("text", "t") {
+    @include class-member("left", "l") {
+        text-align: left;
+    }
+    @include class-member("center", "c") {
+        text-align: center;
+    }
+    @include class-member("right", "r") {
+        text-align: right;
+    }
+    @include class-member("justify", "j") {
+        text-align: justify;
+    }
+}

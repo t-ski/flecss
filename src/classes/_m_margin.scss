@@ -1,0 +1,16 @@
+@include class("margin", "m") {
+    margin: var(--space);
+    
+    @include class-member("top", "t") {
+        margin-top: var(--space);
+    }
+    @include class-member("bottom", "b") {
+        margin-bottom: var(--space);
+    }
+    @include class-member("left", "l") {
+        margin-left: var(--space);
+    }
+    @include class-member("right", "t") {
+        margin-right: var(--space);
+    }
+}

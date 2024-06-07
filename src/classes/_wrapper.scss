@@ -1,0 +1,5 @@
+@include class("wrapper") {
+    margin: auto;
+    width: 100%;
+    max-width: #{$wrapper-width};
+}

@@ -1,0 +1,41 @@
+@mixin flex_partition($n) {
+    @include class-member($n) {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        & > * {
+            margin-top: var(--space);
+            width: calc((100% / #{$n}) - (var(--space) * (#{$n} - 1) / #{$n}));
+
+            &:not(:nth-of-type(#{$n}n)) {
+                margin-right: var(--space);
+            }
+
+            @for $i from 1 through $n {
+                &:nth-of-type(#{$i}) {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+@include class-core("flex") {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+@include class("flex") {
+    @include class-member("1") {
+        flex-direction: column;      
+    }
+
+    @include flex_partition(2);
+    @include flex_partition(3);
+    @include flex_partition(4);
+    @include flex_partition(5);
+    @include flex_partition(6);
+    @include flex_partition(7);
+    @include flex_partition(8);
+    @include flex_partition(9);
+}

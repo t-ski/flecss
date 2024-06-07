@@ -1,0 +1,17 @@
+@include class("space", "s") {
+    @include class("extra-small", "xs") {
+        --space: #{$space-xs};
+    }
+    @include class("small", "s") {
+        --space: #{$space-s};
+    }
+    @include class("medium", "m") {
+        --space: #{$space-m};
+    }
+    @include class("large", "l") {
+        --space: #{$space-l};
+    }
+    @include class("extra-large", "xl") {
+        --space: #{$space-xl};
+    }
+}

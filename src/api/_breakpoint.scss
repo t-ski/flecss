@@ -1,0 +1,23 @@
+@mixin breakpoint_break($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+
+@mixin flecss_breakpoint--s {
+    @include breakpoint_break($breakpoint-s) {
+        @content;
+    }
+}
+
+@mixin flecss_breakpoint--m {
+    @include breakpoint_break($breakpoint-m) {
+        @content;
+    }
+}
+
+@mixin flecss_breakpoint--l {
+    @include breakpoint_break($breakpoint-l) {
+        @content;
+    }
+}

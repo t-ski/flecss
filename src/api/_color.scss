@@ -1,0 +1,5 @@
+@mixin flecss_color($name, $color) {
+    --color-#{$name}: $color;
+    --color-#{$name}--light: lighten($color, 10%);
+    --color-#{$name}--dark: darken($color, 10%);
+}

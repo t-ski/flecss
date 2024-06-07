@@ -1,0 +1,11 @@
+@mixin flecss_theme--light {
+    @media (prefers-color-scheme: light) {
+        @content;
+    }
+}
+
+@mixin flecss_theme--dark {
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
+}

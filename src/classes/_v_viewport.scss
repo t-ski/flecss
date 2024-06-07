@@ -1,0 +1,41 @@
+@mixin viewport_collapse {
+    visibility: collapse;
+}
+
+@include class("viewport", "v") {
+    @include class-member("small", "s") {
+        @media (min-width: $breakpoint-s) {
+            @include viewport_collapse;
+        }
+    }
+    @include class-member("medium", "m") {
+        @media (max-width: $breakpoint-s)
+           or (min-width: $breakpoint-m) {
+            @include viewport_collapse;
+        }
+    }
+    @include class-member("large", "l") {
+        @media (max-width: $breakpoint-m) {
+            @include viewport_collapse;
+        }
+    }
+    
+    @include class-member("not") {
+        @include class-member("small", "s") {
+            @media (max-width: $breakpoint-s) {
+                @include viewport_collapse;
+            } 
+        }
+        @include class-member("medium", "m") {
+            @media (min-width: $breakpoint-s)
+            or (max-width: $breakpoint-m) {
+                @include viewport_collapse;
+            } 
+        }
+        @include class-member("large", "l") {
+            @media (min-width: $breakpoint-m) {
+                @include viewport_collapse;
+            } 
+        }
+    }
+}

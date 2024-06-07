@@ -4,8 +4,17 @@
   "version": "0.1.0",
   "author": "Thassilo Martin Schiepanski",
   "description": "Flexible, flex-major CSS framework.",
+  "homepage": "https://github.com/t-ski/flecss#readme",
   "keywords": [ "css", "scss", "framework", "flex" ],
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/t-ski/flecss.git"
+  },
+  "bugs": {
+      "url": "https://github.com/t-ski/flecss/issues"
+  },
   "scripts": {
+    "example": "open ./example/index.html",
     "build": "node --no-deprecation ./build.js",
     "build:watch": "npm run build -- --watch"
   },

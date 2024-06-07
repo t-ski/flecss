@@ -1,3 +1,27 @@
 * {
     box-sizing: border-box;
 }
+
+html, body {
+    height: 100%;
+}
+html {
+    padding: 0;
+    font-family: sans-serif;
+}
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+input, textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+img {
+    object-fit: cover;
+}

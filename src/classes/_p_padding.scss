@@ -1,0 +1,16 @@
+@include class("padding", "p") {
+    padding: var(--space);
+    
+    @include class-member("top", "t") {
+        padding-top: var(--space);
+    }
+    @include class-member("bottom", "b") {
+        padding-bottom: var(--space);
+    }
+    @include class-member("left", "l") {
+        padding-left: var(--space);
+    }
+    @include class-member("right", "t") {
+        padding-right: var(--space);
+    }
+}

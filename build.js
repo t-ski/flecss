@@ -2,12 +2,11 @@ const fs = require("fs");
 const { resolve, join } = require("path");
 
 const sass = require("sass");
-
+const CleanCSS = require("clean-css");
 
 const APP_NAME = "flecss";
 const SOURCE_DIR_PATH = resolve("./src/");
 const TARGET_DIR_PATH = resolve("./dist/");
-const LIB_FILE_NAME = "lib";
 const WATCH_INTERVAL = 1000;
 const FLAG = {
     watch: process.argv.includes("--watch")
@@ -34,11 +33,9 @@ function buildCSS(path = SOURCE_DIR_PATH) {
         || ((i !== lastError.index)
             && (Date.now() - fs.statSync(join(dirent.path, dirent.name)).mtimeMs) > (i ? WATCH_INTERVAL : Infinity))) continue;
         
-        let transpilation;
+        let css;
         try{
-            transpilation = sass.compile(join(SOURCE_DIR_PATH, `${LIB_FILE_NAME}.scss`), {
-                style: FLAG.watch ? "expanded" : "compressed"
-            });
+            css = !FLAG.watch ? new CleanCSS({}).minify(transpile().css).styles : transpile().css;
         } catch(err) {
             !FLAG.watch && process.exit(1);
 
@@ -52,8 +49,8 @@ function buildCSS(path = SOURCE_DIR_PATH) {
         }
         
         const printNumber = (value) => value.toLocaleString();
-        const targetFilePath = join(TARGET_DIR_PATH, `${LIB_FILE_NAME}.css`);
-        fs.writeFile(targetFilePath, transpilation.css, null, () => {
+        const targetFilePath = join(TARGET_DIR_PATH, `${APP_NAME}.css`);
+        fs.writeFile(targetFilePath, css, null, () => {
             const date = new Date();
             console.log(`${
                 (i !== lastError.index) ? "\x1b[2K\r\x1b[1A\x1b[2K\r" : ""
@@ -87,11 +84,11 @@ function buildSCSS() {
         .trim();
         scss.length && scssModules.push(scss);
     });
-    fs.writeFileSync(join(TARGET_DIR_PATH, `${LIB_FILE_NAME}.scss`), scssModules.join("\n"));
+    fs.writeFileSync(join(TARGET_DIR_PATH, `${APP_NAME}.scss`), scssModules.join("\n"));
 }
 
 function transpile() {
-    return sass.compile(join(SOURCE_DIR_PATH, `${LIB_FILE_NAME}.scss`), {
+    return sass.compile(join(SOURCE_DIR_PATH, `${APP_NAME}.scss`), {
         style: FLAG.watch ? "expanded" : "compressed"
     });
 }

@@ -5,20 +5,28 @@
   "author": "Thassilo Martin Schiepanski",
   "description": "Flexible, flex-major CSS framework.",
   "homepage": "https://github.com/t-ski/flecss#readme",
-  "keywords": [ "css", "scss", "framework", "flex" ],
+  "keywords": [
+    "css",
+    "scss",
+    "framework",
+    "flex"
+  ],
   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/t-ski/flecss.git"
+    "type": "git",
+    "url": "git+https://github.com/t-ski/flecss.git"
   },
   "bugs": {
-      "url": "https://github.com/t-ski/flecss/issues"
+    "url": "https://github.com/t-ski/flecss/issues"
   },
   "scripts": {
+    "prepare": "npx husky install",
     "example": "open ./example/index.html",
     "build": "node --no-deprecation ./build.js",
     "build:watch": "npm run build -- --watch"
   },
   "devDependencies": {
+    "clean-css": "^5.3.3",
+    "husky": "^9.0.11",
     "sass": "^1.72.0"
   }
 }

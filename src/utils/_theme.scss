@@ -3,7 +3,6 @@
         @content;
     }
 }
-
 @mixin flecss_theme--dark {
     @media (prefers-color-scheme: dark) {
         @content;

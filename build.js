@@ -1,82 +1,17 @@
 const fs = require("fs");
-const { resolve, join } = require("path");
+const path = require("path");
 
-const sass = require("sass");
-const CleanCSS = require("clean-css");
+const _config = require("./_config.json");
 
-const APP_NAME = "flecss";
-const SOURCE_DIR_PATH = resolve("./src/");
-const TARGET_DIR_PATH = resolve("./dist/");
-const WATCH_INTERVAL = 1000;
-const FLAG = {
-    watch: process.argv.includes("--watch")
-}
+const { transpile } = require("./lib/api");
 
-
-process.on("exit", buildSCSS);
-process.on("SIGINT", () => { buildSCSS(); process.exit(0); });
-
-
-const lastError = {
-    index: null,
-    message: null
-};
-let i = 0;
-function buildCSS(path = SOURCE_DIR_PATH) {
-    const dirents = fs.readdirSync(path, {
-        recursive: true,
-        withFileTypes: true,
-    });
-
-    for(const dirent of dirents) {
-        if(dirent.isDirectory()
-        || ((i !== lastError.index)
-            && (Date.now() - fs.statSync(join(dirent.path, dirent.name)).mtimeMs) > (i ? WATCH_INTERVAL : Infinity))) continue;
-        
-        let css;
-        try{
-            css = !FLAG.watch ? new CleanCSS({}).minify(transpile().css).styles : transpile().css;
-        } catch(err) {
-            !FLAG.watch && process.exit(1);
-
-            ((i !== lastError.index) || err.toString() !== lastError.message)
-            && console.error(`\x1b[31m${err}\x1b[0m`);
-                        
-            lastError.index = i;
-            lastError.message = err.toString();
-
-            break;
-        }
-        
-        const printNumber = (value) => value.toLocaleString();
-        const targetFilePath = join(TARGET_DIR_PATH, `${APP_NAME}.css`);
-        fs.writeFile(targetFilePath, css, null, () => {
-            const date = new Date();
-            console.log(`${
-                (i !== lastError.index) ? "\x1b[2K\r\x1b[1A\x1b[2K\r" : ""
-            }\x1b[2m${
-                [ date.getHours(), date.getMinutes(), date.getSeconds() ]
-                .map((segment) => segment.toString().padStart(2, "0"))
-                .join(":")
-            }\x1b[22m \x1b[34m${
-                `\x1b[1m${APP_NAME}\x1b[22m library built with success`
-            }\x1b[2m${
-                ` (${printNumber(fs.statSync(targetFilePath).size)} B / ${printNumber((fs.statSync(targetFilePath).size / 1024).toFixed(2))} kB)`
-            }${
-                i++ ? ` (${i}x)` : ""
-            }\x1b[0m`)
-        });
-
-        break;
-    }
-
-    if(!FLAG.watch) return;
-    setTimeout(buildCSS, WATCH_INTERVAL);
-}
 
 function buildSCSS() {
+    const targetFilePath = path.resolve("./dist/", `${_config.appName}.scss`);
+    fs.mkdirSync(path.dirname(targetFilePath), { recursive: true });
+
     const scssModules = [];
-    transpile().loadedUrls
+    transpile(path.resolve("./src/", `${_config.appName}.scss`)).loadedUrls
     .forEach((loadedUrl) => {
         const scss = fs.readFileSync(loadedUrl)
         .toString()
@@ -84,17 +19,16 @@ function buildSCSS() {
         .trim();
         scss.length && scssModules.push(scss);
     });
-    fs.writeFileSync(join(TARGET_DIR_PATH, `${APP_NAME}.scss`), scssModules.join("\n"));
-}
-
-function transpile() {
-    return sass.compile(join(SOURCE_DIR_PATH, `${APP_NAME}.scss`), {
-        style: FLAG.watch ? "expanded" : "compressed"
-    });
+    
+    fs.writeFileSync(targetFilePath, scssModules.join("\n"));
 }
 
 
-fs.mkdirSync(TARGET_DIR_PATH, { recursive: true });
+process.on("exit", (code) => !code && buildSCSS());
+process.on("SIGINT", () => process.exit(0));
 
-process.stdout.write("\n");
-buildCSS();
+console.log(`${
+    " ".repeat(3 * (2 + (2/3)) + 1)
+}\x1b[1m\x1b[39m\x1b[48;2;${[ 224, 0, 106 ].join(";")}m ${"development build".toUpperCase()} \x1b[0m`);
+
+require("./lib/cli");

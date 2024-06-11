@@ -9,13 +9,11 @@
         @content;
     }
 }
-
 @mixin flecss_breakpoint--m {
     @include breakpoint_break($breakpoint-m) {
         @content;
     }
 }
-
 @mixin flecss_breakpoint--l {
     @include breakpoint_break($breakpoint-l) {
         @content;

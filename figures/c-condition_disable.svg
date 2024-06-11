@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <pattern x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse" viewBox="0 0 20 20" id="pattern-0">
+      <path d="M 14.007 0 L 20 0 L -0.003 20 L -5.996 20 L 14.007 0 Z" style=""/>
+      <path d="M 33.99 0 L 39.983 0 L 19.98 20 L 13.987 20 L 33.99 0 Z" style=""/>
+    </pattern>
+    <pattern id="pattern-0-0" patternTransform="matrix(1.45072, 0, 0, 1.870889, 90.351585, 126.615358)" xlink:href="#pattern-0"/>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="146.623" y1="62.529" x2="146.623" y2="220.449" id="gradient-0" gradientTransform="matrix(0.998272, 0, 0, -0.998272, 5.758158, 282.869997)">
+      <stop offset="0" style="stop-color: rgb(100% 43.922% 70.196%)"/>
+      <stop offset="1" style="stop-color: rgb(173, 245, 255);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="150" y2="300" id="gradient-1">
+      <stop offset="0" style="stop-color: rgb(12.549% 12.549% 12.549%)"/>
+      <stop offset="1" style="stop-color: rgb(8.7105% 8.7105% 8.7105%)"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" style="stroke-linecap: square; stroke-width: 50px; pointer-events: none; fill: url('#gradient-1');"/>
+  <rect x="29.666" y="29.667" width="157.64" height="240.666" style="stroke-linecap: square; stroke-width: 50px; fill: url('#pattern-0-0'); paint-order: fill; fill-rule: nonzero;"/>
+  <rect width="240.666" height="157.92" style="stroke-linecap: square; stroke-width: 50px; transform-origin: 150.001px 141.487px; fill: url('#gradient-0'); fill-opacity: 0.5;" y="62.529" x="29.666" transform="matrix(0, -1, -1, 0, -41.373169, 8.510864)"/>
+  <rect width="240.666" height="65.073" style="stroke-linecap: square; stroke-width: 50px; transform-origin: 150px 58.302px; fill: rgb(80, 80, 80);" y="25.766" x="29.667" transform="matrix(0, -1, 1, 0, 87.795906, 91.698387)"/>
+</svg>

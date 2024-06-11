@@ -1,0 +1,7 @@
+Usage: npx flecss <path:source> <path:target> [--<flag:key|-<flag:shorthand>]*
+
+Flags:
+--standalone, -S        Build without including flecss.
+--watch, -W             Watch file changes for incremental builds.
+
+https://github.com/t-ski/flecss

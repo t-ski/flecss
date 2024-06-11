@@ -1,9 +1,8 @@
 {
-  "private": true,
   "name": "flecss",
   "version": "0.1.0",
   "author": "Thassilo Martin Schiepanski",
-  "description": "Flexible, flex-major CSS framework.",
+  "description": "Modern and simple CSS framework utilising the power of flexbox.",
   "homepage": "https://github.com/t-ski/flecss#readme",
   "keywords": [
     "css",
@@ -18,15 +17,23 @@
   "bugs": {
     "url": "https://github.com/t-ski/flecss/issues"
   },
+  "main": "./lib/api.js",
+  "bin": {
+    "flecss": "./lib/cli.js"
+  },
   "scripts": {
     "prepare": "npx husky install",
-    "example": "open ./example/index.html",
-    "build": "node --no-deprecation ./build.js",
-    "build:watch": "npm run build -- --watch"
+    "build": "node --no-deprecation ./build.js ./src/flecss.scss ./dist/flecss.css --standalone",
+    "build:watch": "npm run build -- --watch",
+    "example:build": "node --no-deprecation ./lib/cli.js ./example/example.scss ./example/",
+    "example:build:watch": "npm run example:build -- --watch",
+    "example:view": "npm run example:build && open ./example/example.html"
+  },
+  "dependencies": {
+    "clean-css": "^5.3.3",
+    "sass": "^1.72.0"
   },
   "devDependencies": {
-    "clean-css": "^5.3.3",
-    "husky": "^9.0.11",
-    "sass": "^1.72.0"
+    "husky": "^9.0.11"
   }
 }

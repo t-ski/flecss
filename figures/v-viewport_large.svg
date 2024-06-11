@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="93.591" y1="108.644" x2="93.591" y2="208.956" id="gradient-0" gradientTransform="matrix(0, -2.398955, 2.398955, 0, -230.966874, 435.625227)">
+      <stop offset="0" style="stop-color: rgb(100% 43.922% 70.196%)"/>
+      <stop offset="1" style="stop-color: rgb(173, 245, 255);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="150" y2="300" id="gradient-1">
+      <stop offset="0" style="stop-color: rgb(12.549% 12.549% 12.549%)"/>
+      <stop offset="1" style="stop-color: rgb(8.7105% 8.7105% 8.7105%)"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" style="stroke-linecap: square; stroke-width: 50px; pointer-events: none; fill: url('#gradient-1');"/>
+  <rect width="120.458" height="240.668" style="stroke-linecap: square; stroke-width: 50px; transform-origin: 75.077px 215.624px; fill: rgb(80, 80, 80);" y="95.292" x="14.847" transform="matrix(0, -1, -1, 0, 74.924171, -5.731621)"/>
+  <rect width="105.958" height="67.029" style="stroke-linecap: square; stroke-width: 50px; transform-origin: 39.92px 6.975px; fill: rgb(80, 80, 80);" y="-26.539" x="-13.061" transform="matrix(0, -1, -1, 0, 23.260485, 75.669947)"/>
+  <rect width="105.959" height="159.942" style="stroke-linecap: square; stroke-width: 50px; transform-origin: 39.921px 16.641px; fill: rgb(80, 80, 80);" y="-63.329" x="-13.061" transform="matrix(0, -1, -1, 0, 150.441591, 66.003473)"/>
+  <rect x="156.57" y="149.664" width="113.763" height="120.458" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-0');"/>
+</svg>

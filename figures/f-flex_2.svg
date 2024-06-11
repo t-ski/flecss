@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="-68.724" y1="-191.275" x2="-68.724" y2="-83.727" id="gradient-0" gradientTransform="matrix(0, -2.22636, 2.22636, 0, 456.019583, -55.791975)">
+      <stop offset="0" style="stop-color: rgb(100% 43.922% 70.196%)"/>
+      <stop offset="1" style="stop-color: rgb(173, 245, 255);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="150" y2="300" id="gradient-1">
+      <stop offset="0" style="stop-color: rgb(12.549% 12.549% 12.549%)"/>
+      <stop offset="1" style="stop-color: rgb(8.7105% 8.7105% 8.7105%)"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" style="stroke-linecap: square; stroke-width: 50px; pointer-events: none; fill: url('#gradient-1');"/>
+  <path d="M 269.613 29.667 L 269.613 136.701 L 156.675 136.701 L 156.675 29.667 Z M 143.138 29.667 L 143.138 164.412 L 30.2 164.412 L 30.2 29.667 Z M 269.611 177.076 L 269.611 270.194 L 156.674 270.194 L 156.674 177.076 Z M 143.138 177.076 L 143.138 261.14 L 30.201 261.14 L 30.201 177.076 Z" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-0');"/>
+</svg>

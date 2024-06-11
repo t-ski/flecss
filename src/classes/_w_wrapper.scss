@@ -1,13 +1,13 @@
 @include class("wrapper", "w") {
-    @include space(--wrapper_margin, $space-l);
+    @include space(--wrapper_padding, $space-l);
 
     margin: auto;
-    margin-top: var(--wrapper_margin);
-    margin-bottom: var(--wrapper_margin);
+    padding-top: var(--wrapper_padding);
+    padding-bottom: var(--wrapper_padding);
     width: 100%;
     max-width: #{$wrapper-width};
 
     @include class-connect("wrapper", "w") {
-        margin-top: 0;
+        padding-top: 0;
     }
 }

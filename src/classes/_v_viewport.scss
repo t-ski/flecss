@@ -20,22 +20,20 @@
         }
     }
     
-    @include class-member("not") {
-        @include class-member("small", "s") {
-            @media (max-width: $breakpoint-s) {
-                @include viewport_collapse;
-            } 
-        }
-        @include class-member("medium", "m") {
-            @media (min-width: $breakpoint-s)
-            or (max-width: $breakpoint-m) {
-                @include viewport_collapse;
-            } 
-        }
-        @include class-member("large", "l") {
-            @media (min-width: $breakpoint-m) {
-                @include viewport_collapse;
-            } 
-        }
+    @include class-member("not-small", "not-s") {
+        @media (max-width: $breakpoint-s) {
+            @include viewport_collapse;
+        } 
+    }
+    @include class-member("not-medium", "not-m") {
+        @media (min-width: $breakpoint-s)
+        or (max-width: $breakpoint-m) {
+            @include viewport_collapse;
+        } 
+    }
+    @include class-member("not-large", "not-l") {
+        @media (min-width: $breakpoint-m) {
+            @include viewport_collapse;
+        } 
     }
 }

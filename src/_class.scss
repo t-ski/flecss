@@ -5,20 +5,32 @@
 }
 
 @mixin class-core($name, $shorthand: $name) {
-    [class^="#{$name}--"], [class^="#{$shorthand}--"] {
+    [class^="#{$name}_"], [class^="#{$shorthand}_"],
+    [class*=" #{$name}_"], [class*=" #{$shorthand}_"] {
         @content;
     }
 }
 
 @mixin class-member($name, $shorthand: $name) {
+    &_#{$name}, &_#{$shorthand} {
+        @content;
+    }
+}
+@mixin class-modifier($name, $shorthand: $name) {
     &--#{$name}, &--#{$shorthand} {
+        @content;
+    }
+}
+
+@mixin class-connect($name, $shorthand: $name) {
+    & + .#{$name}, & + .#{$shorthand} {
         @content;
     }
 }
 
 @mixin class-reuse($name, $member: "") {
     @if variable-exists($member) {
-        @extend .#{$name}--#{$member};
+        @extend .#{$name}_#{$member};
     }  @else {
         @extend .#{$name};
     }

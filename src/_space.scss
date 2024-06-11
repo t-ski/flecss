@@ -1,0 +1,21 @@
+@mixin space($var, $default-space: $space-m) {
+    @at-root :root {
+        #{$var}: #{$default-space};
+    }
+
+    @include class-modifier("extra-small", "xs") {
+        #{$var}: #{$space-xs} !important;
+    }
+    @include class-modifier("small", "s") {
+        #{$var}: #{$space-s} !important;
+    }
+    @include class-modifier("medium", "m") {
+        #{$var}: #{$space-m} !important;
+    }
+    @include class-modifier("large", "l") {
+        #{$var}: #{$space-l} !important;
+    }
+    @include class-modifier("extra-large", "xl") {
+        #{$var}: #{$space-xl} !important;
+    }
+}

@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body, header, main, footer {
     display: flex;
     width: 100%;
@@ -12,6 +16,33 @@ main {
     flex: 1 0 0;
 }
 
+@mixin block_content-elements {
+    h1, h2, h3, h4, h5, h6,
+    p,
+    blockquote,
+    table,
+    ul, ol {
+        @content;
+    }
+}
+
+@include block_content-elements {
+    &, & ~ div {
+        margin-top: 0;
+        margin-bottom: #{$space-m};
+
+        &:last-child {
+            margin-bottom: 0
+        }
+    }
+}
+
 div {
-    @extend .flex--1;
+    @include class-reuse("flex");
+
+    & + {
+        @include block_content-elements {
+            margin-bottom: #{$space-m};
+        }
+    }
 }

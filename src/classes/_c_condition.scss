@@ -1,4 +1,4 @@
-@include class("flag", "f") {
+@include class("condition", "c") {
 
     @include class-member("disable") {
         user-select: none !important;
@@ -7,11 +7,11 @@
     }
 
     @include class-member("hide") {
-        visibility: hidden;
+        visibility: hidden !important;
     }
-
+    
     @include class-member("collapse") {
-        visibility: collapse;
+        display: none !important;
     }
 
 }

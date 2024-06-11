@@ -1,21 +1,13 @@
 html {
     font-size: $font-size;
     font-weight: 400;
+    text-rendering: optimizeLegibility;
 
     // TODO: Responsive
 }
 
 body {
     font-size: 1rem;
-}
-
-h1, h2, h3, h4, h5, h6,
-p,
-blockquote,
-table,
-ul, ol {
-    margin-top: 0;
-    margin-bottom: $space-m;
 }
 
 p, blockquote,
@@ -26,7 +18,8 @@ li {
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.375em;
-    transform: translateY(calc(-0.375em / 2));
+    margin-top: -0.375em;
+    transform: translateY(calc(0.375em / 2));
     font-weight: 600;
 }
 
@@ -35,17 +28,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @include typography_font-size(5);
+    @include typography_font-size(4.25);
 }
 h2 {
-    @include typography_font-size(4);
+    @include typography_font-size(3.75);
 }
 h3 {
-    @include typography_font-size(3);
+    @include typography_font-size(2.25);
 }
 h4 {
-    @include typography_font-size(2);
+    @include typography_font-size(1.75);
 }
 h5, h6 {
-    @include typography_font-size(1);
+    @include typography_font-size(1.25);
 }

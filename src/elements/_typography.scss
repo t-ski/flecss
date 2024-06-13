@@ -1,5 +1,5 @@
 html {
-    font-size: $font-size;
+    font-size: var(--font-size);
     font-weight: 400;
     text-rendering: optimizeLegibility;
 
@@ -23,22 +23,22 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
-@mixin typography_font-size($specific-scale-factor: 1) {
-    font-size: calc($font-size * $font-scale-factor * $specific-scale-factor);
+@mixin typography_size($levels: 1) {
+    font-size: calc(var(--font-size) * pow(var(--font-factor), $levels));
 }
 
 h1 {
-    @include typography_font-size(4.25);
+    @include typography_size(4);
 }
 h2 {
-    @include typography_font-size(3.75);
+    @include typography_size(3);
 }
 h3 {
-    @include typography_font-size(2.25);
+    @include typography_size(2);
 }
 h4 {
-    @include typography_font-size(1.75);
+    @include typography_size(1);
 }
 h5, h6 {
-    @include typography_font-size(1.25);
+    @include typography_size(0);
 }

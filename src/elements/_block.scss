@@ -29,7 +29,7 @@ main {
 @include block_content-elements {
     &, & ~ div {
         margin-top: 0;
-        margin-bottom: #{$space-m};
+        margin-bottom: var(--space-m);
 
         &:last-child {
             margin-bottom: 0
@@ -42,7 +42,7 @@ div {
 
     & + {
         @include block_content-elements {
-            margin-bottom: #{$space-m};
+            margin-bottom: var(--space-m);
         }
     }
 }

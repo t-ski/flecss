@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="150" y2="300" id="gradient-0">
-      <stop offset="0" style="stop-color: rgb(12.549% 12.549% 12.549%)"/>
-      <stop offset="1" style="stop-color: rgb(8.7105% 8.7105% 8.7105%)"/>
-    </linearGradient>
-  </defs>
-  <rect width="300" height="300" style="stroke-linecap: square; stroke-width: 50px; pointer-events: none; fill: url('#gradient-0');"/>
-  <rect width="240.666" height="240.667" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(80, 80, 80); transform-origin: 150px 215.625px;" y="95.293" x="29.667" transform="matrix(0, -1, 1, 0, -0.001839, -65.624847)"/>
+  <defs/>
+  <rect x="158.559" y="0.002" width="141.441" height="141.441" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(227, 232, 231);"/>
+  <rect width="141.441" height="141.441" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(227, 232, 231);"/>
+  <rect y="158.559" width="141.441" height="141.441" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(227, 232, 231);"/>
 </svg>

@@ -1,14 +1,14 @@
-$space-xs: 0.25rem;
-$space-s: 0.5rem;
-$space-m: 1rem;
-$space-l: 2rem;
-$space-xl: 4rem;
+:root {
+    --space: 1rem;
+    --space-factor: 2.0;
 
-$wrapper-width: 1360px;
+    --font-size: 16px;
+    --font-factor: 1.5;
+    
+    --wrapper-width: 1420px;
+}
 
-$breakpoint-s: 520px;
-$breakpoint-m: 940px;
-$breakpoint-l: $wrapper-width;
 
-$font-size: 16px;
-$font-scale-factor: 1.125;
+$breakpoint-s: calc((1/3) * var(--wrapper-width));
+$breakpoint-m: calc((2/3) * var(--wrapper-width));
+$breakpoint-l: calc(    1 * var(--wrapper-width));

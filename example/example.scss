@@ -1,6 +1,12 @@
-$wrapper-width: 600px;
+:root {
+    --wrapper-width: 600px;
+}
+
 
 html {
     background-color: darkslategrey;
     color: white;
+}
+
+.info {
 }

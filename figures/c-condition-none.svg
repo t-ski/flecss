@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="146.623" y1="62.529" x2="146.623" y2="220.449" id="gradient-0" gradientTransform="matrix(1.523981, 0.002733, 0.002733, -1.523981, -71.493772, 315.341383)">
-      <stop offset="0" style="stop-color: rgb(100% 43.922% 70.196%)"/>
-      <stop offset="1" style="stop-color: rgb(173, 245, 255);"/>
-    </linearGradient>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="150" y2="300" id="gradient-1">
-      <stop offset="0" style="stop-color: rgb(12.549% 12.549% 12.549%)"/>
-      <stop offset="1" style="stop-color: rgb(8.7105% 8.7105% 8.7105%)"/>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="75" y1="0" x2="75" y2="150" id="gradient-2" gradientTransform="matrix(0.652625, 0.6806, -2, 1.999987, 251.053352, -51.041516)">
+      <stop offset="0" style="stop-color: rgb(10, 255, 210);"/>
+      <stop offset="1" style="stop-color: rgb(133, 133, 255);"/>
     </linearGradient>
   </defs>
-  <rect width="300" height="300" style="stroke-linecap: square; stroke-width: 50px; pointer-events: none; fill: url('#gradient-1');"/>
-  <rect width="240.666" height="157.92" style="stroke-linecap: square; stroke-width: 50px; transform-origin: 150.001px 141.487px; fill: url('#gradient-0');" y="62.529" x="29.666" transform="matrix(0, -1, -1, 0, -41.373169, 8.510864)"/>
-  <rect width="240.666" height="65.073" style="stroke-linecap: square; stroke-width: 50px; transform-origin: 150px 58.302px; fill: rgb(80, 80, 80);" y="25.766" x="29.667" transform="matrix(0, -1, 1, 0, 87.795906, 91.698387)"/>
+  <rect x="158.559" y="0.002" width="141.441" height="141.441" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(227, 232, 231);"/>
+  <rect x="158.559" y="158.559" width="141.441" height="141.441" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(227, 232, 231);"/>
+  <rect y="158.559" width="141.441" height="141.441" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(227, 232, 231);"/>
+  <rect width="141.441" height="141.441" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-2');" y="0.002"/>
 </svg>

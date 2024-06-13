@@ -24,11 +24,24 @@ function buildSCSS() {
 }
 
 
-process.on("exit", (code) => !code && buildSCSS());
+process.on("exit", (code) => {
+    if(code) return;
+    
+    buildSCSS();
+    
+    const readmePath = path.join(__dirname, "./README.md");
+    fs.writeFileSync(
+        readmePath,
+        fs.readFileSync(readmePath).toString()
+        .replace(/&#8232;`[0-9]*kB`/, `&#8232;\`${
+            Math.round(fs.statSync(path.join(__dirname, "./dist/flecss.css")).size / 1024)
+        }kB\``)
+    );
+});
 process.on("SIGINT", () => process.exit(0));
 
 console.log(`${
     " ".repeat(3 * (2 + (2/3)) + 1)
-}\x1b[1m\x1b[39m\x1b[48;2;${[ 224, 0, 106 ].join(";")}m ${"development build".toUpperCase()} \x1b[0m`);
+}\x1b[1m\x1b[2m${"development build".toUpperCase()}\x1b[0m`);
 
 require("./lib/cli");

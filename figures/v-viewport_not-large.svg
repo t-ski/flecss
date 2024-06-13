@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="56.398" y1="39.827" x2="56.398" y2="77.278" id="gradient-1" gradientTransform="matrix(0, -11.23418, 11.23418, 0, -597.821807, 714.35707)">
-      <stop offset="0" style="stop-color: rgb(100% 43.922% 70.196%)"/>
-      <stop offset="0.633" style="stop-color: rgb(184, 227, 244);"/>
-      <stop offset="0.645" style="stop-color: rgb(255, 112, 179);"/>
-      <stop offset="1" style="stop-color: rgb(173, 245, 255);"/>
-    </linearGradient>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="150" y2="300" id="gradient-0">
-      <stop offset="0" style="stop-color: rgb(12.549% 12.549% 12.549%)"/>
-      <stop offset="1" style="stop-color: rgb(8.7105% 8.7105% 8.7105%)"/>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="90.16" y1="-65.861" x2="90.16" y2="84.139" id="gradient-3" gradientTransform="matrix(0.662474, 0.80219, -1.999999, 2.000007, 108.549396, 59.396968)">
+      <stop offset="0" style="stop-color: rgb(10, 255, 210);"/>
+      <stop offset="1" style="stop-color: rgb(133, 133, 255);"/>
     </linearGradient>
   </defs>
-  <rect width="300" height="300" style="stroke-linecap: square; stroke-width: 50px; pointer-events: none; fill: url('#gradient-0');"/>
-  <rect width="120.458" height="240.668" style="stroke-linecap: square; stroke-width: 50px; transform-origin: 75.077px 215.624px; fill: rgb(80, 80, 80);" y="95.292" x="14.847" transform="matrix(0, -1, -1, 0, 74.924171, -5.731621)"/>
-  <rect width="105.958" height="67.029" style="stroke-linecap: square; stroke-width: 50px; transform-origin: 39.92px 6.975px; fill: rgb(80, 80, 80);" y="-26.539" x="-13.061" transform="matrix(0, -1, -1, 0, 23.260485, 75.669947)"/>
-  <rect width="105.959" height="159.942" style="stroke-linecap: square; stroke-width: 50px; transform-origin: 39.921px 16.641px; fill: rgb(80, 80, 80);" y="-63.329" x="-13.061" transform="matrix(0, -1, -1, 0, 150.441591, 66.003473)"/>
-  <path d="M 29.665 86.666 L 96.694 86.666 L 96.694 135.697 L 29.665 135.697 L 29.665 86.666 Z M 195.636 29.668 L 270.333 29.668 L 270.333 135.626 L 195.636 135.626 L 195.636 29.668 Z" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-1');"/>
+  <rect width="300" height="161.528" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(227, 232, 231);" y="138.473"/>
+  <rect width="85.578" height="121.356" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(227, 232, 231);"/>
+  <rect width="197.304" height="121.356" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(227, 232, 231);" x="102.696" y="-0.001"/>
+  <path d="M 119.696 16.999 L 201.696 16.999 L 201.696 104.354 L 119.696 104.354 L 119.696 16.999 Z M 17 16.999 L 68.578 16.999 L 68.578 60.499 L 17 60.499 L 17 16.999 Z" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-3');"/>
 </svg>

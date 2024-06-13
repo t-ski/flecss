@@ -29,7 +29,7 @@ main {
 @include block_content-elements {
     &, & ~ div {
         margin-top: 0;
-        margin-bottom: var(--space-m);
+        margin-bottom: var(--space);
 
         &:last-child {
             margin-bottom: 0
@@ -39,10 +39,10 @@ main {
 
 div {
     @include class-reuse("flex");
-
+    
     & + {
         @include block_content-elements {
-            margin-bottom: var(--space-m);
+            margin-bottom: var(--space);
         }
     }
 }

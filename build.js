@@ -9,9 +9,11 @@ const { transpile } = require("./lib/api");
 function buildSCSS() {
     const targetFilePath = path.resolve("./dist/", `${_config.appName}.scss`);
     fs.mkdirSync(path.dirname(targetFilePath), { recursive: true });
-
+    
     const scssModules = [];
-    transpile(path.resolve("./src/", `${_config.appName}.scss`)).loadedUrls
+    transpile(path.resolve("./src/", `${_config.appName}.scss`), {
+        isStandalone: true
+    }).loadedUrls
     .forEach((loadedUrl) => {
         const scss = fs.readFileSync(loadedUrl)
         .toString()
@@ -19,7 +21,7 @@ function buildSCSS() {
         .trim();
         scss.length && scssModules.push(scss);
     });
-    
+
     fs.writeFileSync(targetFilePath, scssModules.join("\n"));
 }
 

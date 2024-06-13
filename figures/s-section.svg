@@ -11,5 +11,5 @@
     </linearGradient>
   </defs>
   <rect width="300" height="300" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-2');"/>
-  <path d="M 17.118 17.118 L 38.518 17.118 L 38.518 282.882 L 17.118 282.882 L 17.118 17.118 Z M 261.482 17.118 L 282.882 17.118 L 282.882 282.882 L 261.482 282.882 L 261.482 17.118 Z" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-0');"/>
+  <path d="M 0 0 L 21.4 0 L 21.509 300 L 0.109 300 L 0 0 Z M 278.558 0 L 299.958 0 L 300.059 300 L 278.659 300 L 278.558 0 Z" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-0');"/>
 </svg>

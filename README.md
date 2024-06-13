@@ -6,7 +6,7 @@
 
 Unlike _Bootstrap_ or _Tailwind_, flecss does not mediate CSS in its entirety. Instead, it follows a minimal approach: Each class bases on a style requirement common for the majority of web-based designs <sup>1</sup>. Above that, styling is leat to individual stylesheets.
 
-> 📦 flecss ships with a total of &#8232;`9kB`, compared to Bootstrap with `248kB` <sup>2</sup>.
+> 📦 flecss ships with a total of &#8232;`10kB`, compared to Bootstrap with `248kB` <sup>2</sup>.
 
 [1. Integration](#integration)  
 [2. Classes](#classes)  
@@ -23,7 +23,7 @@ Unlike _Bootstrap_ or _Tailwind_, flecss does not mediate CSS in its entirety. I
 &emsp; [4.1 Breakpoints](#breakpoints)  
 &emsp; [4.2 Colors](#colors)  
 &emsp; [4.3 Themes](#themes)  
-[5. Example](#example)  
+[5. Abstract Example](#abstract-example)  
 
 ## Integration
 
@@ -90,15 +90,17 @@ The **flex** class is the vibrant layouting class in flecss. It allows for a num
 
 The **margin** class simply induces a margin to the respective element.
 
-<sup>`   `</sup> <sup>`    default`</sup> &emsp; **Margin to all sides.**  
-`_t` `    _top` &emsp; **Margin to the top only.**  
-`_b` ` _bottom` &emsp; **Margin to the bottom only.**  
-`_l` `   _left` &emsp; **Margin to the left only.**  
-`_r` `  _right` &emsp; **Margin to the right only.**  
+<sup>`   `</sup> <sup>`        default`</sup> &emsp; **Margin to all sides.**  
+`_h` `_horizontal` &emsp; **Margin to top and bottom sides.**  
+`_v` `  _vertical` &emsp; **Margin to left and right sides.**  
+`_t` `       _top` &emsp; **Margin to top side only.**  
+`_b` `    _bottom` &emsp; **Margin to bottom side only.**  
+`_l` `      _left` &emsp; **Margin to left side only.**  
+`_r` `     _right` &emsp; **Margin to right side only.**  
 
-| <sup>`default`</sup> | <sup>`_top`</sup> | <sup>`_bottom`</sup> | <sup>`_left`</sup> | <sup>`_right`</sup> |
-| :- | :- | :- | :- | :- |
-| <img src="./figures/m-margin.svg" width="145"> | <img src="./figures/m-margin_top.svg" width="145"> | <img src="./figures/m-margin_bottom.svg" width="145"> | <img src="./figures/m-margin_left.svg" width="145"> | <img src="./figures/m-margin_right.svg" width="145"> |
+| <sup>`default`</sup> | <sup>`_horizontal`</sup> | <sup>`_vertical`</sup> | <sup>`_top`</sup> | <sup>`_bottom`</sup> | <sup>`_left`</sup> | <sup>`_right`</sup> |
+| :- | :- | :- | :- | :- | :- | :- |
+| <img src="./figures/m-margin.svg" width="145"> | <img src="./figures/m-margin_horizontal.svg" width="145"> | <img src="./figures/m-margin_vertical.svg" width="145"> | <img src="./figures/m-margin_top.svg" width="145"> | <img src="./figures/m-margin_bottom.svg" width="145"> | <img src="./figures/m-margin_left.svg" width="145"> | <img src="./figures/m-margin_right.svg" width="145"> |
 
 #### Example
 
@@ -111,15 +113,17 @@ The **margin** class simply induces a margin to the respective element.
 
 The **padding** class simply induces a padding to the respective element.
 
-<sup>`   `</sup> <sup>`    default`</sup> &emsp; **Padding to all sides.**  
-`_t` `    _top` &emsp; **Padding to the top only.**  
-`_b` ` _bottom` &emsp; **Padding to the bottom only.**  
-`_l` `   _left` &emsp; **Padding to the left only.**  
-`_r` `  _right` &emsp; **Padding to the right only.**  
+<sup>`   `</sup> <sup>`        default`</sup> &emsp; **Padding to all sides.**  
+`_h` `_horizontal` &emsp; **Padding to top and bottom sides.**  
+`_v` `  _vertical` &emsp; **Padding to left and right sides.**  
+`_t` `       _top` &emsp; **Padding to top side only.**  
+`_b` `    _bottom` &emsp; **Padding to bottom side only.**  
+`_l` `      _left` &emsp; **Padding to left side only.**  
+`_r` `     _right` &emsp; **Padding to right side only.**  
  
-| <sup>`default`</sup> | <sup>`_top`</sup> | <sup>`_bottom`</sup> | <sup>`_left`</sup> | <sup>`_right`</sup> |
-| :- | :- | :- | :- | :- |
-| <img src="./figures/p-padding.svg" width="145"> | <img src="./figures/p-padding_top.svg" width="145"> | <img src="./figures/p-padding_bottom.svg" width="145"> | <img src="./figures/p-padding_left.svg" width="145"> | <img src="./figures/p-padding_right.svg" width="145"> |
+| <sup>`default`</sup> | <sup>`_horizontal`</sup> | <sup>`_vertical`</sup> | <sup>`_top`</sup> | <sup>`_bottom`</sup> | <sup>`_left`</sup> | <sup>`_right`</sup> |
+| :- | :- | :- | :- | :- | :- | :- |
+| <img src="./figures/p-padding.svg" width="145"> | <img src="./figures/p-padding_horizontal.svg" width="145"> | <img src="./figures/p-padding_vertical.svg" width="145"> | <img src="./figures/p-padding_top.svg" width="145"> | <img src="./figures/p-padding_bottom.svg" width="145"> | <img src="./figures/p-padding_left.svg" width="145"> | <img src="./figures/p-padding_right.svg" width="145"> |
 
 #### Example
 
@@ -156,7 +160,7 @@ The **text** class helps with applying deviant text formatting.
 `_l` `   _left` &emsp; **Align text to the left.**  
 `_r` `  _right` &emsp; **Align text to the right.**  
 `_c` ` _center` &emsp; **Align text to the center.**  
-`_j` `_justify` &emsp; **Align text equally wide.**  
+`_j` `_justify` &emsp; **Align text across the whole width.**  
 
 | <sup>`_left`</sup> | <sup>`_right`</sup> | <sup>`_center`</sup> | <sup>`_justify`</sup> |
 | :- | :- | :- | :- |
@@ -237,7 +241,7 @@ Integrated via NPM, flecss comes with a mature build interface.
 
 > ℹ️ The flecss build interface bases on [SASS](https://github.com/sass/dart-sass) transpilation and [clean-css](https://github.com/clean-css/clean-css) optimisation.
 
-> ℹ️ Working with flecss on the SCSS layer enables custom overrides of the global flecss variables (e.g. `--space-m`).
+> ℹ️ Working with flecss on the SCSS layer enables custom overrides of the global flecss variables (e.g. `--space`).
 
 #### Via CLI
 
@@ -320,8 +324,9 @@ Apply styles for a certain color scheme (system).
 @include flecss_theme--dark
 ```
 
-## Example
+## Abstract Example
 
+<sup>[…] [example/](./example/)</sup>
 ``` html
 <style>
   .section {

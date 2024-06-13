@@ -1,9 +1,13 @@
 @mixin space_size($var, $levels: 1) {
-    #{$var}: calc(var(--space) * pow(var(--space-factor), $levels)) !important;
+    #{$var}: calc(var(--space) * pow(var(--space-factor), $levels));
 }
 
 
-@mixin space($var, $default-space: var(--space-m)) {
+@mixin space($var, $default-level: 0) {
+    @at-root :root {
+        @include space_size($var, #{$default-level});
+    }
+
     @include class-modifier("extra-small", "xs") {
         @include space_size($var, -2);
     }

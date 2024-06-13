@@ -1,5 +1,5 @@
 @include class("wrapper", "w") {
-    @include space(--wrapper_padding, var(--space-l));
+    @include space(--wrapper_padding, 1);
 
     margin: auto;
     padding-top: var(--wrapper_padding);

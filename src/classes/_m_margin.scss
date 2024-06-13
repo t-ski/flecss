@@ -3,6 +3,14 @@
 
     margin: var(--margin);
     
+    @include class-member("vertical", "v") {
+        margin-top: var(--margin);
+        margin-bottom: var(--margin);
+    }
+    @include class-member("horizontal", "h") {
+        margin-left: var(--margin);
+        margin-right: var(--margin);
+    }
     @include class-member("top", "t") {
         margin-top: var(--margin);
     }

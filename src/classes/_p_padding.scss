@@ -3,6 +3,14 @@
 
     padding: var(--padding);
     
+    @include class-member("vertical", "v") {
+        padding-top: var(--padding);
+        padding-bottom: var(--padding);
+    }
+    @include class-member("horizontal", "h") {
+        padding-left: var(--padding);
+        padding-right: var(--padding);
+    }
     @include class-member("top", "t") {
         padding-top: var(--padding);
     }

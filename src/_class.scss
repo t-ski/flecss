@@ -28,10 +28,6 @@
     }
 }
 
-@mixin class-reuse($name, $member: "") {
-    @if variable-exists($member) {
-        @extend .#{$name}_#{$member};
-    }  @else {
-        @extend .#{$name};
-    }
+@mixin class-reuse($name) {
+    @extend .#{$name};
 }

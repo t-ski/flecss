@@ -3,11 +3,11 @@
   <defs>
     <linearGradient gradientUnits="userSpaceOnUse" x1="150.113" y1="17.118" x2="150.113" y2="282.882" id="gradient-4" gradientTransform="matrix(0.314466, 0.794188, -1.235793, 1.128821, 273.520546, -155.659184)">
       <stop offset="0" style="stop-color: rgb(99.216% 100% 68.627%)"/>
-      <stop offset="1" style="stop-color: rgb(255, 119, 235);"/>
+      <stop offset="1" style="stop-color: rgb(255, 162, 241);"/>
     </linearGradient>
     <linearGradient gradientUnits="userSpaceOnUse" x1="149.92" y1="0" x2="149.92" y2="300" id="gradient-1" gradientTransform="matrix(0.994752, 0.587571, -1, 1, 150.947582, -88.088169)">
       <stop offset="0" style="stop-color: rgb(3.9216% 100% 82.353%)"/>
-      <stop offset="1" style="stop-color: rgb(133, 133, 255);"/>
+      <stop offset="1" style="stop-color: rgb(163, 163, 255);"/>
     </linearGradient>
   </defs>
   <rect width="192.285" height="300" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-1');" x="53.858"/>

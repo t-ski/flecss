@@ -19,7 +19,7 @@ window.addEventListener("error", (err) => {
 
 window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => document.querySelector(".scroll-to")?.scrollIntoView(), 0);
-    setTimeout(() => console.log(total.failure + total.err), 1000);
+    setTimeout(() => console.log(total.failure + total.errors), 1000);
 });
 
 

@@ -26,10 +26,7 @@
     "build": "node --no-deprecation ./build.js ./src/flecss.scss ./dist/flecss.css --standalone",
     "build:watch": "npm run build -- --watch",
     "test": "npm run build && node ./test/test.js",
-    "test:view": "npm run build && open ./test/test.html",
-    "example:build": "npm run build && echo '' && node --no-deprecation ./lib/cli.js ./example/example.scss ./example/",
-    "example:build:watch": "npm run example:build -- --watch",
-    "example:view": "npm run example:build && open ./example/example.html"
+    "test:view": "npm run build && open ./test/test.html"
   },
   "dependencies": {
     "clean-css": "^5.3.3",

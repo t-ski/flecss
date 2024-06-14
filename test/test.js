@@ -30,6 +30,6 @@ puppeteer.launch()
         && console.log("\x1b[31mVirtual browser test failed.\x1b[0m");
         !wasSuccessful && console.log(`\x1b[2mCheck failures in browser:\n\x1b[34m${testPagePath}\x1b[0m`)
         
-        process.exit(+wasSuccessful);
+        process.exit(+!wasSuccessful);
     });    
 });

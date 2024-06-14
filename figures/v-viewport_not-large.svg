@@ -2,12 +2,12 @@
 <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient gradientUnits="userSpaceOnUse" x1="90.16" y1="-65.861" x2="90.16" y2="84.139" id="gradient-3" gradientTransform="matrix(0.662474, 0.80219, -1.999999, 2.000007, 108.549396, 59.396968)">
-      <stop offset="0" style="stop-color: rgb(10, 255, 210);"/>
-      <stop offset="1" style="stop-color: rgb(133, 133, 255);"/>
+      <stop offset="0" style="stop-color: rgb(95, 255, 226);"/>
+      <stop offset="1" style="stop-color: rgb(163, 163, 255);"/>
     </linearGradient>
   </defs>
-  <rect width="300" height="161.528" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(227, 232, 231);" y="138.473"/>
-  <rect width="85.578" height="121.356" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(227, 232, 231);"/>
-  <rect width="197.304" height="121.356" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(227, 232, 231);" x="102.696" y="-0.001"/>
+  <rect width="300" height="161.528" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(235, 240, 239);" y="138.473"/>
+  <rect width="85.578" height="121.356" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(235, 240, 239);"/>
+  <rect width="197.304" height="121.356" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(235, 240, 239);" x="102.696" y="-0.001"/>
   <path d="M 119.696 16.999 L 201.696 16.999 L 201.696 104.354 L 119.696 104.354 L 119.696 16.999 Z M 17 16.999 L 68.578 16.999 L 68.578 60.499 L 17 60.499 L 17 16.999 Z" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-3');"/>
 </svg>

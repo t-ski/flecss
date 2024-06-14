@@ -2,16 +2,16 @@
 <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient gradientUnits="userSpaceOnUse" x1="75" y1="0" x2="75" y2="150" id="gradient-2" gradientTransform="matrix(2.526964, 2.567839, -2, 2.000001, 110.478127, -192.588028)">
-      <stop offset="0" style="stop-color: rgb(10, 255, 210);"/>
-      <stop offset="1" style="stop-color: rgb(133, 133, 255);"/>
+      <stop offset="0" style="stop-color: rgb(95, 255, 226);"/>
+      <stop offset="1" style="stop-color: rgb(163, 163, 255);"/>
     </linearGradient>
     <linearGradient gradientUnits="userSpaceOnUse" x1="150.113" y1="17.118" x2="150.113" y2="282.882" id="gradient-4" gradientTransform="matrix(0.314466, 0.794188, -1.235793, 1.128821, 273.520075, -155.408142)">
       <stop offset="0" style="stop-color: rgb(99.216% 100% 68.627%)"/>
-      <stop offset="1" style="stop-color: rgb(255, 119, 235);"/>
+      <stop offset="1" style="stop-color: rgb(255, 162, 241);"/>
     </linearGradient>
     <linearGradient gradientUnits="userSpaceOnUse" x1="38.042" y1="17.118" x2="38.042" y2="282.882" id="gradient-0" gradientTransform="matrix(0.705529, 0.708681, -1.128821, 1.128821, 292.230125, -46.282578)">
       <stop offset="0" style="stop-color: rgb(99.216% 100% 68.627%)"/>
-      <stop offset="1" style="stop-color: rgb(255, 119, 235);"/>
+      <stop offset="1" style="stop-color: rgb(255, 162, 241);"/>
     </linearGradient>
   </defs>
   <rect width="300" height="300" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-2');"/>

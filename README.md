@@ -2,28 +2,30 @@
 
 **flecss** (pron. ‘_flex_’): Simple and minimal CSS framework utilising the power of flexbox.
 
-<img src="./figures/flecss-logo.svg" width="200">
+<a href="https://github.com/t-ski/flecss">
+  <img src="./figures/flecss-logo.svg" width="200">
+</a>
 
-Unlike _Bootstrap_ or _Tailwind_, flecss does not mediate CSS in its entirety. Instead, it follows a minimal approach: Each class bases on a style requirement common for the majority of web-based designs <sup>1</sup>. Above that, styling is leat to individual stylesheets.
+Unlike _Bootstrap_ or _Tailwind_, flecss is not as granular as CSS itself. Instead, it follows a minimal approach: Each class bases on a style requirement common for the majority of web-based designs <sup>1</sup>. Above that, styling is leat to individual stylesheets.
 
 > 📦 flecss ships with a total of &#8232;`10kB`, compared to Bootstrap with `248kB` <sup>2</sup>.
 
 [1. Integration](#integration)  
 [2. Classes](#classes)  
-&emsp; [2.1 `.c` Condition](#%EF%B8%8F⃣-c-condition)  
-&emsp; [2.2 `.f` Flex](#%EF%B8%8F⃣-f-flex)  
-&emsp; [2.3 `.m` Margin](#%EF%B8%8F⃣-m-margin)  
-&emsp; [2.4 `.p` Padding](#%EF%B8%8F⃣-p-padding)  
-&emsp; [2.5 `.s` Section + `.w` Wrapper](#%EF%B8%8F⃣-s-section--%EF%B8%8F⃣-w-wrapper)  
-&emsp; [2.6 `.t` Text](#%EF%B8%8F⃣-t-text)  
-&emsp; [2.7 `.v` Viewport](#%EF%B8%8F⃣-v-viewport)  
+&emsp; [2.1 `.c` Condition](#c-condition)  
+&emsp; [2.2 `.f` Flex](#f-flex)  
+&emsp; [2.3 `.m` Margin](#m-margin)  
+&emsp; [2.4 `.p` Padding](#p-padding)  
+&emsp; [2.5 `.s` Section + `.w` Wrapper](#s-section--w-wrapper)  
+&emsp; [2.6 `.t` Text](#t-text)  
+&emsp; [2.7 `.v` Viewport](#v-viewport)  
 [3. Modifiers](#modifiers)  
-&emsp; [3.1 Space](#%EF%B8%8F⃣-space)  
+&emsp; [3.1 Space](#space)  
 [4. Build Interface](#build-interface)  
-&emsp; [4.1 Breakpoints](#%EF%B8%8F⃣-breakpoints)  
-&emsp; [4.2 Colors](#%EF%B8%8F⃣-colors)  
-&emsp; [4.3 Themes](#%EF%B8%8F⃣-themes)  
-[5. Abstract Example](#abstract-example)  
+[5. Mixins](#mixins)  
+&emsp; [5.1 Breakpoint](#breakpoint)  
+&emsp; [5.2 Color](#colour)  
+&emsp; [5.3 Theme](#theme)  
 
 ## Integration
 
@@ -47,9 +49,29 @@ The flecss class anatomy consists of a purposeful classifier `A`, and possibly a
 
 > ℹ️ Unlike for _BEM_, specific classes are standlone, i.e. inherit all shared style foundations. It is thus not required to assign the joint default and specific class name <sub>`❌ .p.p_top` `✅ .p_top`</sub>.
 
+#### Example
+
+
+``` html
+<section>
+  <div class="wrapper">
+    <h1>flecss</h1>
+  </div>
+</section>
+<section class="section">
+  <div class="wrapper">
+    <h2 class="viewport_not-s">About</h2>
+    <p class="padding text_center">
+      flecss is a modern and simple CSS framework.
+    </p>
+    <a class="margin--l margin_top" href="/try">Try</a>
+  </div>
+</section>
+```
+
 ## Classes
 
-### *️⃣ `.c` `.condition`
+### `.c` `.condition`
 
 The **condition** class represents toggleable layout conditions. At that, the explicit class describes the less common condition, whereas absence implies the complementary (common) condition.
 
@@ -67,7 +89,7 @@ The **condition** class represents toggleable layout conditions. At that, the ex
 <button class="c--disable">Submit</button>
 ```
 
-### *️⃣ `.f` `.flex`
+### `.f` `.flex`
 
 The **flex** class is the vibrant layouting class in flecss. It allows for a number of flexbox-based content arrangements.
 
@@ -86,7 +108,7 @@ The **flex** class is the vibrant layouting class in flecss. It allows for a num
 </div>
 ```
 
-### *️⃣ `.m` `.margin`
+### `.m` `.margin`
 
 The **margin** class simply induces a margin to the respective element.
 
@@ -109,7 +131,7 @@ The **margin** class simply induces a margin to the respective element.
 <p>Panel on web technologies.</p>
 ```
 
-### *️⃣ `.p` `.padding`
+### `.p` `.padding`
 
 The **padding** class simply induces a padding to the respective element.
 
@@ -133,7 +155,7 @@ The **padding** class simply induces a padding to the respective element.
 </div>
 ```
 
-### *️⃣ `.s` `.section` + *️⃣ `.w` `.wrapper`
+### `.s` `.section` + `.w` `.wrapper`
 
 The **section** and **wrapper** class describe common vertical layouting containers. A section stretches across the full width, with a small affixed vertical content padding. The wrapper has a limited width and is centered within a section, with an extra large affixed horizontal content padding. Used in combination, the section-wrapper layouting classes provide a simple yet powerful tool.
 
@@ -153,7 +175,7 @@ The **section** and **wrapper** class describe common vertical layouting contain
 </div>
 ```
 
-### *️⃣ `.t` `.text`
+### `.t` `.text`
 
 The **text** class helps with applying deviant text formatting.
 
@@ -174,7 +196,7 @@ The **text** class helps with applying deviant text formatting.
 </p>
 ```
 
-### *️⃣ `.v` `.viewport`
+### `.v` `.viewport`
 
 The **viewport** class enables .
 
@@ -189,13 +211,13 @@ The **viewport** class enables .
 | :- | :- |
 | <img src="./figures/v-viewport_large.svg" width="145"> | <img src="./figures/v-viewport_not-large.svg" width="145"> |
 
-**Breakpoints**
+#### Breakpoints
 
 > Breakpoint `l`: `1 × --wrapper-width` = `1420px`  
 > Breakpoint `m`: `⅔ × --wrapper-width` = `~947px`  
 > Breakpoint `s`: `⅓ × --wrapper-width` = `~473px`  
 
-> *️⃣ Breakpoints are not mutable, i.e. overriding `--wrapper-width` does not affect the breakpoints.
+> Breakpoints are not mutable, i.e. overriding `--wrapper-width` does not affect the breakpoints.
 
 #### Example
 
@@ -211,7 +233,7 @@ Instead of a specifier, a double dash indicated modifier `C` can be used to over
 
 > ℹ️ Modifiers simply override a certain variable. They are in fact not standalone like specified classed. Like for _BEM_, it is thus required to assign the joint class and modified class name <sub>`❌ .p--large` `✅ .p.p--large`</sub>.
 
-### *️⃣ Space
+### Space
 
 The space modifier describes a space unit that applies with all area space-related classes. For instance, using `.m m--large` would result in subsequently larger margin compared to just `.m` (which equals `.m .m--medium`).
 
@@ -243,11 +265,11 @@ Font sizing in flecss behaves analogous to the above described spacing. Heading 
 
 Integrated via NPM, flecss comes with a mature build interface.
 
-> ℹ️ The flecss build interface bases on [SASS](https://github.com/sass/dart-sass) transpilation and [clean-css](https://github.com/clean-css/clean-css) optimisation.
+> ℹ️ The flecss build interface bases on the [sass](https://github.com/sass/dart-sass) transpiler and [clean-css](https://github.com/clean-css/clean-css) optimiser.
 
 > ℹ️ Working with flecss on the SCSS layer enables custom overrides of the global flecss variables (e.g. `--space`).
 
-#### Via CLI
+### CLI
 
 ``` cli
 npx flecss <path:source> <path:target> [--<flag:key|-<flag:shorthand>]*
@@ -258,7 +280,7 @@ npx flecss <path:source> <path:target> [--<flag:key|-<flag:shorthand>]*
 | `--standalone` `-S` | Build without including flecss. | 
 | `--watch` `-W` | Watch file changes for incremental builds. | 
 
-#### Via API
+### API
 
 ``` ts
 interface IBuildOptions {
@@ -293,11 +315,13 @@ const flecss = require("flecss");
 flecss.buildCSS("./app.scss");
 ```
 
-Notably, the flecss build interface supplies a set of helpful utility mixins:
+## Mixins
 
-### *️⃣ Breakpoints
+The flecss build interface predefines a set of helpful utility mixins that can be used throughout custom SCSS code.
 
-Apply styles below a certain breakpoint (revisit [breakpoints](#%EF%B8%8F⃣-v-viewport)).
+### Breakpoint
+
+Apply styles below a certain breakpoint (revisit [breakpoints](#breakpoints)).
 
 ``` scss
 @include flecss_breakpoint--s
@@ -305,7 +329,7 @@ Apply styles below a certain breakpoint (revisit [breakpoints](#%EF%B8%8F⃣-v-v
 @include flecss_breakpoint--l
 ```
 
-### *️⃣ Colors
+### Colour
 
 Define a color through a global CSS variable (property) including biaxial shading.
 
@@ -319,35 +343,13 @@ Define a color through a global CSS variable (property) including biaxial shadin
 --color-#{$name}--dark: darken($color, 10%)
 ```
 
-### *️⃣ Themes
+### Theme
 
 Apply styles for a certain color scheme (system).
 
 ``` scss
 @include flecss_theme--light
 @include flecss_theme--dark
-```
-
-## Abstract Example
-
-<sup>🔍 […] [example/](./example/)</sup>
-``` html
-<style>
-  .section {
-    background-color: cornsilk;
-  }
-</style>
-<main>
-  <section class="section">
-    <div class="wrapper">
-      <h2>About</h2>
-      <p class="margin--l m_t text_c">
-        flecss is a modern and simple CSS framework.
-      </p>
-      <a class="viewport_not-s" href="/sandbox">Try yourself</a>
-    </div>
-  </section>
-</main>
 ```
 
 ---

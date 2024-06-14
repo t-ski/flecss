@@ -1,5 +1,5 @@
 @mixin viewport_collapse {
-    visibility: collapse;
+    display: none !important;
 }
 
 @include class("viewport", "v") {

@@ -25,7 +25,9 @@
     "prepare": "npx husky install",
     "build": "node --no-deprecation ./build.js ./src/flecss.scss ./dist/flecss.css --standalone",
     "build:watch": "npm run build -- --watch",
-    "example:build": "npm run build && node --no-deprecation ./lib/cli.js ./example/example.scss ./example/",
+    "test": "npm run build && node ./test/test.js",
+    "test:view": "npm run build && open ./test/test.html",
+    "example:build": "npm run build && echo '' && node --no-deprecation ./lib/cli.js ./example/example.scss ./example/",
     "example:build:watch": "npm run example:build -- --watch",
     "example:view": "npm run example:build && open ./example/example.html"
   },
@@ -34,6 +36,7 @@
     "sass": "^1.72.0"
   },
   "devDependencies": {
-    "husky": "^9.0.11"
+    "husky": "^9.0.11",
+    "puppeteer": "^22.11.0"
   }
 }

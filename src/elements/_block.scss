@@ -38,8 +38,6 @@ main {
 }
 
 div {
-    @include class-reuse("flex");
-    
     & + {
         @include block_content-elements {
             margin-bottom: var(--space);

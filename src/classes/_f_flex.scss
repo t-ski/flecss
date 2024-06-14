@@ -23,17 +23,17 @@
 
 @include class-core("flex", "f") {    
     display: flex;
+    flex-direction: row;  
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
+    
+    // TODO: Responsive
 }
 @include class("flex", "f") {
     @include space(--flex_margin);
-
-    @include class-member("1") {
-        flex-direction: column;      
-    }
-
+    
+    @include flex_partition(1);
     @include flex_partition(2);
     @include flex_partition(3);
     @include flex_partition(4);

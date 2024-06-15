@@ -4,7 +4,7 @@
 
 <a href="https://github.com/t-ski/flecss">
   <img src="./figures/flecss-logo.svg" width="200">
-</a>
+</a><br><br>
 
 Unlike _Bootstrap_ or _Tailwind_, flecss is not as granular as CSS itself. Instead, it follows a minimal approach: Each class bases on a style requirement common for the majority of web-based designs <sup>1</sup>. Above that, styling is leat to individual stylesheets.
 

@@ -25,8 +25,8 @@
     "prepare": "npx husky install",
     "build": "node --no-deprecation ./build.js ./src/flecss.scss ./dist/flecss.css --standalone",
     "build:watch": "npm run build -- --watch",
-    "test": "npm run build && node ./test/test.js",
-    "test:view": "npm run build && open ./test/test.html"
+    "test": "node ./test/test.js",
+    "test:view": "open ./test/test.html"
   },
   "dependencies": {
     "clean-css": "^5.3.3",

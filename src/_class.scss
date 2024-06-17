@@ -27,7 +27,3 @@
         @content;
     }
 }
-
-@mixin class-reuse($name) {
-    @extend .#{$name};
-}

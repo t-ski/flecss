@@ -79,12 +79,9 @@
                     test("flex-direction", "row");
                     test("justify-content", "space-between");
                     test("align-items", "flex-start");
+                    test("gap", M_PX);
                     flexW = document.querySelector("section").clientWidth * 0.9;
                     test("width", (actual) => parseInt(actual) > flexW, 0);
-                    test("margin-top", ZERO_PX, 0);
-                    test("margin-right", ZERO_PX, 0);
-                    test("margin-top", M_PX, 1);
-                    test("margin-right", ZERO_PX, 1);
                 </script>
 
                 <div test="2">
@@ -96,14 +93,10 @@
                 </div>
                 <script>
                     test("display", "flex");
+                    test("gap", M_PX);
                     flexW = document.querySelector("section").clientWidth * 0.45;
                     test("width", (actual) => parseInt(actual) > flexW, 0);
-                    test("margin-top", ZERO_PX, 0);
-                    test("margin-right", M_PX, 0);
                     test("width", (actual) => parseInt(actual) > flexW, 1);
-                    test("margin-top", ZERO_PX, 1);
-                    test("margin-right", ZERO_PX, 1);
-                    test("margin-top", M_PX, 2);
                 </script>
 
                 <div test="3">
@@ -116,14 +109,9 @@
                 </div>
                 <script>
                     flexW = document.querySelector("section").clientWidth * 0.275;
+                    test("gap", M_PX);
                     test("width", (actual) => parseInt(actual) > flexW, 0);
-                    test("margin-top", ZERO_PX, 0);
-                    test("margin-right", M_PX, 0);
-                    test("margin-top", ZERO_PX, 2);
-                    test("margin-right", ZERO_PX, 2);
                     test("width", (actual) => parseInt(actual) > flexW, 2);
-                    test("margin-top", M_PX, 3);
-                    test("margin-right", M_PX, 3);
                 </script>
 
                 <div test="margin extra large">
@@ -135,10 +123,7 @@
                     </div>
                 </div>
                 <script>
-                    test("margin-top", ZERO_PX, 0);
-                    test("margin-right", XL_PX, 0);
-                    test("margin-top", ZERO_PX, 1);
-                    test("margin-right", ZERO_PX, 1);
+                    test("gap", XL_PX);
                 </script>
             </section>
 
@@ -316,7 +301,7 @@
                     <div class="viewport_large"></div>
                 </div>
                 <script>
-                    test("display", "block");
+                    test("display", "flex");
                 </script>
 
                 <div test="not large">

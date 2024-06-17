@@ -8,7 +8,7 @@
 
 Unlike _Bootstrap_ or _Tailwind_, flecss is not as granular as CSS itself. Instead, it follows a minimal approach: Each class bases on a style requirement common for the majority of web-based designs <sup>1</sup>. Above that, styling is leat to individual stylesheets.
 
-> 📦 flecss ships with a total of &#8232;`10kB`, compared to Bootstrap with `248kB` <sup>2</sup>.
+> 📦 flecss ships with a total of &#8232;`7kB`, compared to Bootstrap with `248kB` <sup>2</sup>.
 
 [1. Integration](#integration)  
 [2. Classes](#classes)  
@@ -51,7 +51,6 @@ The flecss class anatomy consists of a purposeful classifier `A`, and possibly a
 
 #### Example
 
-
 ``` html
 <section>
   <div class="wrapper">
@@ -75,12 +74,12 @@ The flecss class anatomy consists of a purposeful classifier `A`, and possibly a
 
 The **condition** class represents toggleable layout conditions. At that, the explicit class describes the less common condition, whereas absence implies the complementary (common) condition.
 
-` _disable` &emsp; **Greyout and disable for interaction.**  
-`    _hide` &emsp; **Hide, but keep layout.**  
-`_collapse` &emsp; **Hide, including layout (bounding box).**  
+**` _disable`** &emsp; **Greyout and disable for interaction.**  
+**`    _hide`** &emsp; **Hide, but keep layout.**  
+**`_collapse`** &emsp; **Hide, including layout (bounding box).**  
 
-| <sup>&emsp;</sup> | <sup>`_disable`</sup> | <sup>`_hide`</sup> | <sup>`_collapse`</sup> |
-| :- | :- | :- | :- |
+| &emsp; | `_disable` | `_hide` | `_collapse` |
+| - | - | - | - |
 | <img src="./figures/c-condition-none.svg" width="145"> | <img src="./figures/c-condition_disable.svg" width="145"> | <img src="./figures/c-condition_hide.svg" width="145"> | <img src="./figures/c-condition_collapse.svg" width="145"> |
 
 #### Example
@@ -93,10 +92,10 @@ The **condition** class represents toggleable layout conditions. At that, the ex
 
 The **flex** class is the vibrant layouting class in flecss. It allows for a number of flexbox-based content arrangements.
 
-` _1` - `_9` &emsp; **`n` equal-sized content tiles per row with a homogeneous margin in between.**  
+**` _1`** - **`_9`** &emsp; **`n` equal-sized content tiles per row with a homogeneous margin in between.**  
 
-| <sup>`_1`</sup> | <sup>`_2`</sup> | <sup>`_3`</sup> |
-| :- | :- | :- |
+| `_1` | `_2` | `_3` |
+| - | - | - |
 | <img src="./figures/f-flex_1.svg" width="145"> | <img src="./figures/f-flex_2.svg" width="145"> | <img src="./figures/f-flex_3.svg" width="145"> |
 
 #### Example
@@ -112,16 +111,16 @@ The **flex** class is the vibrant layouting class in flecss. It allows for a num
 
 The **margin** class simply induces a margin to the respective element.
 
-<sup>`   `</sup> <sup>`        default`</sup> &emsp; **Margin to all sides.**  
-`_h` `_horizontal` &emsp; **Margin to top and bottom sides.**  
-`_v` `  _vertical` &emsp; **Margin to left and right sides.**  
-`_t` `       _top` &emsp; **Margin to top side only.**  
-`_b` `    _bottom` &emsp; **Margin to bottom side only.**  
-`_l` `      _left` &emsp; **Margin to left side only.**  
-`_r` `     _right` &emsp; **Margin to right side only.**  
+**<sup>`   `</sup> <sup>`        default`</sup>** &emsp; **Margin to all sides.**  
+**`_h` `_horizontal`** &emsp; **Margin to top and bottom sides.**  
+**`_v` `  _vertical`** &emsp; **Margin to left and right sides.**  
+**`_t` `       _top`** &emsp; **Margin to top side only.**  
+**`_b` `    _bottom`** &emsp; **Margin to bottom side only.**  
+**`_l` `      _left`** &emsp; **Margin to left side only.**  
+**`_r` `     _right`** &emsp; **Margin to right side only.**  
 
-| <sup>`default`</sup> | <sup>`_horizontal`</sup> | <sup>`_vertical`</sup> | <sup>`_top`</sup> | <sup>`_bottom`</sup> | <sup>`_left`</sup> | <sup>`_right`</sup> |
-| :- | :- | :- | :- | :- | :- | :- |
+| <sup>`default`</sup> | `_horizontal` | `_vertical` | `_top` | `_bottom` | `_left` | `_right` |
+| - | - | - | - | - | - | - |
 | <img src="./figures/m-margin.svg" width="145"> | <img src="./figures/m-margin_horizontal.svg" width="145"> | <img src="./figures/m-margin_vertical.svg" width="145"> | <img src="./figures/m-margin_top.svg" width="145"> | <img src="./figures/m-margin_bottom.svg" width="145"> | <img src="./figures/m-margin_left.svg" width="145"> | <img src="./figures/m-margin_right.svg" width="145"> |
 
 #### Example
@@ -135,16 +134,16 @@ The **margin** class simply induces a margin to the respective element.
 
 The **padding** class simply induces a padding to the respective element.
 
-<sup>`   `</sup> <sup>`        default`</sup> &emsp; **Padding to all sides.**  
-`_h` `_horizontal` &emsp; **Padding to top and bottom sides.**  
-`_v` `  _vertical` &emsp; **Padding to left and right sides.**  
-`_t` `       _top` &emsp; **Padding to top side only.**  
-`_b` `    _bottom` &emsp; **Padding to bottom side only.**  
-`_l` `      _left` &emsp; **Padding to left side only.**  
-`_r` `     _right` &emsp; **Padding to right side only.**  
+**<sup>`   `</sup> <sup>`        default`</sup>** &emsp; **Padding to all sides.**  
+**`_h` `_horizontal`** &emsp; **Padding to top and bottom sides.**  
+**`_v` `  _vertical`** &emsp; **Padding to left and right sides.**  
+**`_t` `       _top`** &emsp; **Padding to top side only.**  
+**`_b` `    _bottom`** &emsp; **Padding to bottom side only.**  
+**`_l` `      _left`** &emsp; **Padding to left side only.**  
+**`_r` `     _right`** &emsp; **Padding to right side only.**  
  
-| <sup>`default`</sup> | <sup>`_horizontal`</sup> | <sup>`_vertical`</sup> | <sup>`_top`</sup> | <sup>`_bottom`</sup> | <sup>`_left`</sup> | <sup>`_right`</sup> |
-| :- | :- | :- | :- | :- | :- | :- |
+| <sup>`default`</sup> | `_horizontal` | `_vertical` | `_top` | `_bottom` | `_left` | `_right` |
+| - | - | - | - | - | - | - |
 | <img src="./figures/p-padding.svg" width="145"> | <img src="./figures/p-padding_horizontal.svg" width="145"> | <img src="./figures/p-padding_vertical.svg" width="145"> | <img src="./figures/p-padding_top.svg" width="145"> | <img src="./figures/p-padding_bottom.svg" width="145"> | <img src="./figures/p-padding_left.svg" width="145"> | <img src="./figures/p-padding_right.svg" width="145"> |
 
 #### Example
@@ -159,8 +158,8 @@ The **padding** class simply induces a padding to the respective element.
 
 The **section** and **wrapper** class describe common vertical layouting containers. A section stretches across the full width, with a small affixed vertical content padding. The wrapper has a limited width and is centered within a section, with an extra large affixed horizontal content padding. Used in combination, the section-wrapper layouting classes provide a simple yet powerful tool.
 
-| <sup>`.s`</sup> | <sup>`.w`</sup> | <sup>`.s` `>` `.w`</sup> |
-| :- | :- | :- |
+| `.s` | `.w` | `.s` `>` `.w` |
+| - | - | - |
 | <img src="./figures/s-section.svg" width="145"> | <img src="./figures/w-wrapper.svg" width="145"> | <img src="./figures/s-section--w-wrapper.svg" width="145"> |
 
 > `--wrapper-width`: `1420px`
@@ -179,13 +178,13 @@ The **section** and **wrapper** class describe common vertical layouting contain
 
 The **text** class helps with applying deviant text formatting.
 
-`_l` `   _left` &emsp; **Align text to the left.**  
-`_r` `  _right` &emsp; **Align text to the right.**  
-`_c` ` _center` &emsp; **Align text to the center.**  
-`_j` `_justify` &emsp; **Align text across the whole width.**  
+**`_l` `   _left`** &emsp; **Align text to the left.**  
+**`_r` `  _right`** &emsp; **Align text to the right.**  
+**`_c` ` _center`** &emsp; **Align text to the center.**  
+**`_j` `_justify`** &emsp; **Align text across the whole width.**  
 
-| <sup>`_left`</sup> | <sup>`_right`</sup> | <sup>`_center`</sup> | <sup>`_justify`</sup> |
-| :- | :- | :- | :- |
+| `_left` | `_right` | `_center` | `_justify` |
+| - | - | - | - |
 | <img src="./figures/t-text_left.svg" width="145"> | <img src="./figures/t-text_right.svg" width="145"> | <img src="./figures/t-text_center.svg" width="145"> | <img src="./figures/t-text_justify.svg" width="145"> |
 
 #### Example
@@ -200,15 +199,15 @@ The **text** class helps with applying deviant text formatting.
 
 The **viewport** class enables .
 
-`    _s` `     _small` &emsp; **Show on small viewport only.**  
-`    _m` `    _medium` &emsp; **Show on medium viewport only.**  
-`    _l` `     _large` &emsp; **Show on large viewport only.**  
-`_not-s` ` _not-small` &emsp; **Do not show on small viewport.**  
-`_not-m` `_not-medium` &emsp; **Show on medium viewport only.**  
-`_not-l` ` _not-large` &emsp; **Show on large viewport only.**  
+**`    _s` `     _small`** &emsp; **Show on small viewport only.**  
+**`    _m` `    _medium`** &emsp; **Show on medium viewport only.**  
+**`    _l` `     _large`** &emsp; **Show on large viewport only.**  
+**`_not-s` ` _not-small`** &emsp; **Do not show on small viewport.**  
+**`_not-m` `_not-medium`** &emsp; **Show on medium viewport only.**  
+**`_not-l` ` _not-large`** &emsp; **Show on large viewport only.**  
 
-| <sup>`_large`</sup> | <sup>`_not-large`</sup> |
-| :- | :- |
+| `_large` | `_not-large` |
+| - | - |
 | <img src="./figures/v-viewport_large.svg" width="145"> | <img src="./figures/v-viewport_not-large.svg" width="145"> |
 
 #### Breakpoints
@@ -237,11 +236,11 @@ Instead of a specifier, a double dash indicated modifier `C` can be used to over
 
 The space modifier describes a space unit that applies with all area space-related classes. For instance, using `.m m--large` would result in subsequently larger margin compared to just `.m` (which equals `.m .m--medium`).
 
-`--xs` `--extra-small` &emsp; **Extra small spacing.**  
-` --s` `      --small` &emsp; **Small spacing.**  
-` --m` `     --medium` &emsp; **Medium spacing <sup>`default`</sup>.**  
-` --l` `      --large` &emsp; **Large spacing.**  
-`--xl` `--extra-large` &emsp; **Extra large spacing.**  
+**`--xs` `--extra-small`** &emsp; **Extra small spacing.**  
+**` --s` `      --small`** &emsp; **Small spacing.**  
+**` --m` `     --medium`** &emsp; **Medium spacing <sup>`default`</sup>.**  
+**` --l` `      --large`** &emsp; **Large spacing.**  
+**`--xl` `--extra-large`** &emsp; **Extra large spacing.**  
 
 The size of a space unit (e.g. `--s`) scales progressively aroud the `--m` (≡ `--space`) by a factor `--font-factor`. For instance, `--xl` corresponds to `--space * --font-factor^2` – i.e. `4rem` by default.
 
@@ -331,7 +330,7 @@ Apply styles below a certain breakpoint (revisit [breakpoints](#breakpoints)).
 
 ### Colour
 
-Define a color through a global CSS variable (property) including biaxial shading.
+Define a color through a global CSS variable (property) including shades.
 
 ``` scss
 @include flecss_color($name, $color)

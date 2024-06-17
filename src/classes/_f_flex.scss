@@ -1,21 +1,7 @@
 @mixin flex_partition($n) {
     @include class-member($n) {
-        flex-wrap: wrap;
-        flex-direction: row;
-        
         & > * {
-            margin-top: var(--flex_margin);
             width: calc((100% / #{$n}) - (var(--flex_margin) * (#{$n} - 1) / #{$n}));
-    
-            &:not(:nth-of-type(#{$n}n)) {
-                margin-right: var(--flex_margin);
-            }
-    
-            @for $i from 1 through $n {
-                &:nth-of-type(#{$i}) {
-                    margin-top: 0;
-                }
-            }
         }
     }
 }
@@ -23,9 +9,11 @@
 
 @include class-core("flex", "f") {    
     display: flex;
-    flex-direction: row;  
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
+    gap: var(--flex_margin);
     width: 100%;
     
     // TODO: Responsive

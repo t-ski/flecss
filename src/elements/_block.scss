@@ -14,33 +14,11 @@ body, main {
 
 main {
     flex: 1 0 0;
-}
-
-@mixin block_content-elements {
-    h1, h2, h3, h4, h5, h6,
-    p,
-    blockquote,
-    table,
-    ul, ol {
-        @content;
-    }
-}
-
-@include block_content-elements {
-    &, & ~ div {
-        margin-top: 0;
-        margin-bottom: var(--space);
-
-        &:last-child {
-            margin-bottom: 0
-        }
-    }
-}
-
-div {
-    & + {
-        @include block_content-elements {
-            margin-bottom: var(--space);
-        }
+    
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space);
     }
 }

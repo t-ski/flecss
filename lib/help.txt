@@ -1,4 +1,4 @@
-Usage: npx flecss <path:source> <path:target> [--<flag:key|-<flag:shorthand>]*
+Usage: npx flecss <path:source> <path:target> [--<flag:key>|-<flag:shorthand>]*
 
 Flags:
 --standalone, -S        Build without including flecss.

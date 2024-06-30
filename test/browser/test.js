@@ -10,11 +10,11 @@ setTimeout(() => {
 }, 10000);
 
 
-puppeteer.launch()
+puppeteer.launch({ headless: "shell" })
 .then(async (browser) => {
     const page = await browser.newPage();
     
-    const testPagePath = `${"file://"}${path.join(__dirname, "./test.html")}`;
+    const testPagePath = `${"file://"}${path.join(__dirname, "./_test.html")}`;
 
     await page.setViewport({ width: 1440, height: 800, deviceScaleFactor: 1.0 });
     await page.goto(testPagePath);

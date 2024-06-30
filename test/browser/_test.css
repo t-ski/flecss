@@ -19,22 +19,24 @@ main {
     margin: auto;
     max-width: 900px;
 }
-section {
+main > section {
     margin-bottom: 2rem;
     padding: 1rem;
     background-color: mintcream;
 }
-h3 {
+main > section > * {
+    margin-bottom: 1rem;
+}
+main > section > h3 {
     font-size: 1.5rem;
 }
-h4 {
-    margin-top: 1.5rem;
+main > section > h4 {
+    padding-top: 1rem;
     font-size: 1.25rem;
 }
 
 .error {
     display: block;
-    margin-bottom: 0.5rem;
     color: red;
     font-size: 0.9em;
 }
@@ -60,29 +62,10 @@ h4 {
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
-*[test] {
-    position: relative;
-    padding: 1rem;
-    max-height: 20vh;
-    background-color: seashell;
-    overflow: scroll;
-}
-*[test] > * {
-    min-height: 1rem;
-    background-color: cornflowerblue;
-    color: white;
-}
-*[test] > * > * {
-    min-height: 1rem;
-    background-color: powderblue;
-}
 .result {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    margin-bottom: 1rem;
-}
-.result > *:not(:empty) {
-    margin-left: 1rem;
 }
 .result::before {
     content: "";
@@ -109,4 +92,24 @@ h4 {
 .result-child {
     color: gray;
     font-size: 0.9em;
+}
+
+*[test] {
+    position: relative;
+    padding: 1rem;
+    max-height: 20vh;
+    background-color: seashell;
+    overflow: scroll;
+}
+*[test] > *,
+*[test] > * > * {
+    min-width: 1rem;
+    min-height: 1rem;
+}
+*[test] > * {
+    background-color: cornflowerblue;
+    color: white;
+}
+*[test] > * > * {
+    background-color: powderblue;
 }

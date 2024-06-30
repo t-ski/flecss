@@ -1,6 +1,6 @@
 {
   "name": "flecss",
-  "version": "0.1.0",
+  "version": "0.8.0",
   "author": "Thassilo Martin Schiepanski",
   "description": "Modern and simple CSS framework utilising the power of flexbox.",
   "homepage": "https://github.com/t-ski/flecss#readme",
@@ -12,7 +12,8 @@
   ],
   "files": [
     "./dist/",
-    "./lib/"
+    "./lib/",
+    "./readme/"
   ],
   "repository": {
     "type": "git",
@@ -23,21 +24,27 @@
   },
   "main": "./lib/api.js",
   "bin": {
-    "flecss": "./lib/cli.js"
+    "flecss": "lib/cli.js"
   },
   "scripts": {
     "prepare": "npx husky install",
     "build": "node --no-deprecation ./build.js ./src/flecss.scss ./dist/flecss.css --standalone",
     "build:watch": "npm run build -- --watch",
-    "test": "node ./test/test.js",
-    "test:view": "npm run build && open ./test/test.html"
+    "test:browser": "node ./test/browser/test.js",
+    "test:browser:view": "open ./test/browser/_test.html",
+    "test:lib": "node ./test/lib/test.js",
+    "test": "npm run build && npm run test:browser && npm run test:lib",
+    "release:minor": "npm run test && npx release --minor",
+    "release:patch": "npm run test && npx release --patch"
   },
   "dependencies": {
     "clean-css": "^5.3.3",
     "sass": "^1.72.0"
   },
   "devDependencies": {
+    "@t-ski/gh-npm-release": "github:t-ski/gh-npm-release",
     "husky": "^9.0.11",
     "puppeteer": "^22.11.0"
-  }
+  },
+  "license": "Apache-2.0"
 }

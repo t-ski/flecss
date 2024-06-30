@@ -46,4 +46,5 @@ console.log(`${
     " ".repeat(3 * (2 + (2/3)) + 1)
 }\x1b[1m\x1b[2m${"development build".toUpperCase()}\x1b[0m`);
 
+
 require("./lib/cli");

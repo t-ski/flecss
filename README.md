@@ -1,9 +1,14 @@
 # flecss
 
-**flecss** (pron. ‘_flex_’): Simple and minimal CSS framework utilising the power of flexbox.
+![GitHub Test Action Status](https://img.shields.io/github/actions/workflow/status/t-ski/flecss/test.yml?label=test&logo=github)
+![NPM Version](https://img.shields.io/npm/v/flecss?logo=npm)
+![NPM Bundle Size](https://img.shields.io/bundlephobia/minzip/flecss)
+![CSS/SCSS](https://img.shields.io/badge/SCSS-%20?label=CSS&labelColor=blue&color=orchid)
+
+**flecss** (pron. ‘_flex_’): Simple and minimalist CSS framework utilising the power of flexbox.
 
 <a href="https://github.com/t-ski/flecss">
-  <img src="./figures/flecss-logo.svg" width="200">
+  <img src="./readme/flecss-logo.svg" width="200">
 </a><br><br>
 
 Unlike _Bootstrap_ or _Tailwind_, flecss is not as granular as CSS itself. Instead, it follows a minimal approach: Each class bases on a style requirement common for the majority of web-based designs <sup>1</sup>. Above that, styling is leat to individual stylesheets.
@@ -80,7 +85,7 @@ The **condition** class represents toggleable layout conditions. At that, the ex
 
 | &emsp; | `_disable` | `_hide` | `_collapse` |
 | - | - | - | - |
-| <img src="./figures/c-condition-none.svg" width="145"> | <img src="./figures/c-condition_disable.svg" width="145"> | <img src="./figures/c-condition_hide.svg" width="145"> | <img src="./figures/c-condition_collapse.svg" width="145"> |
+| <img src="./readme/c-condition-none.svg" width="145"> | <img src="./readme/c-condition_disable.svg" width="145"> | <img src="./readme/c-condition_hide.svg" width="145"> | <img src="./readme/c-condition_collapse.svg" width="145"> |
 
 #### Example
 
@@ -96,7 +101,7 @@ The **flex** class is the vibrant layouting class in flecss. It allows for a num
 
 | `_1` | `_2` | `_3` |
 | - | - | - |
-| <img src="./figures/f-flex_1.svg" width="145"> | <img src="./figures/f-flex_2.svg" width="145"> | <img src="./figures/f-flex_3.svg" width="145"> |
+| <img src="./readme/f-flex_1.svg" width="145"> | <img src="./readme/f-flex_2.svg" width="145"> | <img src="./readme/f-flex_3.svg" width="145"> |
 
 #### Example
 
@@ -121,7 +126,7 @@ The **margin** class simply induces a margin to the respective element.
 
 | <sup>`default`</sup> | `_horizontal` | `_vertical` | `_top` | `_bottom` | `_left` | `_right` |
 | - | - | - | - | - | - | - |
-| <img src="./figures/m-margin.svg" width="145"> | <img src="./figures/m-margin_horizontal.svg" width="145"> | <img src="./figures/m-margin_vertical.svg" width="145"> | <img src="./figures/m-margin_top.svg" width="145"> | <img src="./figures/m-margin_bottom.svg" width="145"> | <img src="./figures/m-margin_left.svg" width="145"> | <img src="./figures/m-margin_right.svg" width="145"> |
+| <img src="./readme/m-margin.svg" width="145"> | <img src="./readme/m-margin_horizontal.svg" width="145"> | <img src="./readme/m-margin_vertical.svg" width="145"> | <img src="./readme/m-margin_top.svg" width="145"> | <img src="./readme/m-margin_bottom.svg" width="145"> | <img src="./readme/m-margin_left.svg" width="145"> | <img src="./readme/m-margin_right.svg" width="145"> |
 
 #### Example
 
@@ -144,7 +149,7 @@ The **padding** class simply induces a padding to the respective element.
  
 | <sup>`default`</sup> | `_horizontal` | `_vertical` | `_top` | `_bottom` | `_left` | `_right` |
 | - | - | - | - | - | - | - |
-| <img src="./figures/p-padding.svg" width="145"> | <img src="./figures/p-padding_horizontal.svg" width="145"> | <img src="./figures/p-padding_vertical.svg" width="145"> | <img src="./figures/p-padding_top.svg" width="145"> | <img src="./figures/p-padding_bottom.svg" width="145"> | <img src="./figures/p-padding_left.svg" width="145"> | <img src="./figures/p-padding_right.svg" width="145"> |
+| <img src="./readme/p-padding.svg" width="145"> | <img src="./readme/p-padding_horizontal.svg" width="145"> | <img src="./readme/p-padding_vertical.svg" width="145"> | <img src="./readme/p-padding_top.svg" width="145"> | <img src="./readme/p-padding_bottom.svg" width="145"> | <img src="./readme/p-padding_left.svg" width="145"> | <img src="./readme/p-padding_right.svg" width="145"> |
 
 #### Example
 
@@ -160,7 +165,7 @@ The **section** and **wrapper** class describe common vertical layouting contain
 
 | `.s` | `.w` | `.s` `>` `.w` |
 | - | - | - |
-| <img src="./figures/s-section.svg" width="145"> | <img src="./figures/w-wrapper.svg" width="145"> | <img src="./figures/s-section--w-wrapper.svg" width="145"> |
+| <img src="./readme/s-section.svg" width="145"> | <img src="./readme/w-wrapper.svg" width="145"> | <img src="./readme/s-section--w-wrapper.svg" width="145"> |
 
 > `--wrapper-width`: `1420px`
 
@@ -185,7 +190,7 @@ The **text** class helps with applying deviant text formatting.
 
 | `_left` | `_right` | `_center` | `_justify` |
 | - | - | - | - |
-| <img src="./figures/t-text_left.svg" width="145"> | <img src="./figures/t-text_right.svg" width="145"> | <img src="./figures/t-text_center.svg" width="145"> | <img src="./figures/t-text_justify.svg" width="145"> |
+| <img src="./readme/t-text_left.svg" width="145"> | <img src="./readme/t-text_right.svg" width="145"> | <img src="./readme/t-text_center.svg" width="145"> | <img src="./readme/t-text_justify.svg" width="145"> |
 
 #### Example
 
@@ -208,7 +213,7 @@ The **viewport** class enables .
 
 | `_large` | `_not-large` |
 | - | - |
-| <img src="./figures/v-viewport_large.svg" width="145"> | <img src="./figures/v-viewport_not-large.svg" width="145"> |
+| <img src="./readme/v-viewport_large.svg" width="145"> | <img src="./readme/v-viewport_not-large.svg" width="145"> |
 
 #### Breakpoints
 

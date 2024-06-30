@@ -2,7 +2,6 @@
 
 ![GitHub Test Action Status](https://img.shields.io/github/actions/workflow/status/t-ski/flecss/test.yml?label=test&logo=github)
 ![NPM Version](https://img.shields.io/npm/v/flecss?logo=npm)
-![NPM Bundle Size](https://img.shields.io/bundlephobia/minzip/flecss)
 ![CSS/SCSS](https://img.shields.io/badge/SCSS-%20?label=CSS&labelColor=blue&color=orchid)
 
 **flecss** (pron. ‘_flex_’): Simple and minimalist CSS framework utilising the power of flexbox.
@@ -11,7 +10,7 @@
   <img src="./readme/flecss-logo.svg" width="200">
 </a><br><br>
 
-Unlike _Bootstrap_ or _Tailwind_, flecss is not as granular as CSS itself. Instead, it follows a minimal approach: Each class bases on a style requirement common for the majority of web-based designs <sup>1</sup>. Above that, styling is leat to individual stylesheets.
+Unlike _Bootstrap_ or _Tailwind_, flecss is not as granular as CSS itself. Instead, it follows a minimal approach: Each class bases on a style requirement common for the majority of web-based designs <sup>1</sup>. Anything else is left to individual stylesheets.
 
 > 📦 flecss ships with a total of &#8232;`7kB`, compared to Bootstrap with `248kB` <sup>2</sup>.
 
@@ -37,7 +36,7 @@ Unlike _Bootstrap_ or _Tailwind_, flecss is not as granular as CSS itself. Inste
 #### From CDN
 
 ``` html
-<link rel="stylesheet" href="https://raw.githubusercontent.com/t-ski/flecss/main/dist/flecss.css">
+<link rel="stylesheet" href="https://unpkg.com/flecss/dist/flecss.css">
 ```
 
 #### From NPM
@@ -95,7 +94,7 @@ The **condition** class represents toggleable layout conditions. At that, the ex
 
 ### `.f` `.flex`
 
-The **flex** class is the vibrant layouting class in flecss. It allows for a number of flexbox-based content arrangements.
+The **flex** class is the key layouting class in flecss. It allows for a number of flexbox-based content arrangements.
 
 **` _1`** - **`_9`** &emsp; **`n` equal-sized content tiles per row with a homogeneous margin in between.**  
 

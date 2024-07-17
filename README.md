@@ -1,8 +1,8 @@
-# flecss
-
-![GitHub Test Action Status](https://img.shields.io/github/actions/workflow/status/t-ski/flecss/test.yml?label=test&logo=github)
-![NPM Version](https://img.shields.io/npm/v/flecss?logo=npm)
-![CSS/SCSS](https://img.shields.io/badge/SCSS-%20?label=CSS&labelColor=blue&color=orchid)
+<a href="https://github.com/t-ski/flecss/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/t-ski/flecss/test.yml?label=test&logo=github" alt="GitHub Test"></a>
+&hairsp;
+<a href="https://www.npmjs.com/package/flecss"><img src="https://img.shields.io/npm/v/flecss?logo=npm" alt="NPM"></a>
+&hairsp;
+<a href="https://sass-lang.com/"><img src="https://img.shields.io/badge/SCSS-%20?label=CSS&labelColor=blue&color=orchid" alt="CSS/SCSS"></a>
 
 **flecss** (pron. ‘_flex_’): Simple and minimalist CSS framework utilising the power of flexbox.
 
@@ -45,7 +45,7 @@ Unlike _Bootstrap_ or _Tailwind_, flecss is not as granular as CSS itself. Inste
 npm install -D flecss
 ```
 
-> ℹ️ Certain CSS resetsa are inherent to a flecss integration (see [_reset.scss](./src/_reset.scss)). 
+> ℹ️ Certain CSS resets are inherent to a flecss integration (see [_reset.scss](./src/_reset.scss)). 
 
 #### Get Started
 

@@ -2,12 +2,12 @@
 <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient gradientUnits="userSpaceOnUse" x1="75" y1="0" x2="75" y2="150" id="gradient-2" gradientTransform="matrix(2.785551, 1.840044, -2.000001, 2, 91.083673, -138.003286)">
-      <stop offset="0" style="stop-color: rgb(95, 255, 226);"/>
-      <stop offset="1" style="stop-color: rgb(163, 163, 255);"/>
+      <stop offset="0" style="stop-color: rgb(109, 237, 231);"/>
+      <stop offset="1" style="stop-color: rgb(84, 95, 242);"/>
     </linearGradient>
     <linearGradient gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="150" y2="41.387" id="gradient-4" gradientTransform="matrix(0.714908, 0.699219, -7.248652, 7.248651, 192.763962, -104.882629)">
-      <stop offset="0" style="stop-color: rgb(99.216% 100% 68.627%)"/>
-      <stop offset="1" style="stop-color: rgb(255, 162, 241);"/>
+      <stop offset="0" style="stop-color: rgb(252, 230, 148);"/>
+      <stop offset="1" style="stop-color: rgb(255, 153, 161);"/>
     </linearGradient>
   </defs>
   <rect width="300" height="241.495" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-2');" y="58.505"/>

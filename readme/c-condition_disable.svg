@@ -7,8 +7,8 @@
     </pattern>
     <pattern id="pattern-0-0" patternTransform="matrix(1.299345, 0, 0, 1.099536, 54.3535, 56.979371)" xlink:href="#pattern-0"/>
     <linearGradient gradientUnits="userSpaceOnUse" x1="75" y1="0" x2="75" y2="150" id="gradient-2" gradientTransform="matrix(0.665704, 0.667812, -2, 2, 250.072197, -50.085926)">
-      <stop offset="0" style="stop-color: rgb(95, 255, 226);"/>
-      <stop offset="1" style="stop-color: rgb(163, 163, 255);"/>
+      <stop offset="0" style="stop-color: rgb(109, 237, 231);"/>
+      <stop offset="1" style="stop-color: rgb(84, 95, 242);"/>
     </linearGradient>
   </defs>
   <path d="M 0 0.002 C 0 0 141.441 0.002 141.441 0.002 C 141.441 0.002 141.441 141.441 141.441 141.443 L 0 141.441 C 0 141.443 0 0.002 0 0.002 Z" style="stroke-linecap: square; stroke-width: 50px; fill: url('#pattern-0-0'); paint-order: fill; fill-rule: nonzero;"/>

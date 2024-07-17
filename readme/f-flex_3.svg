@@ -2,10 +2,9 @@
 <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient gradientUnits="userSpaceOnUse" x1="501.476" y1="-20.433" x2="501.476" y2="129.567" id="gradient-2" gradientTransform="matrix(0.413127, 0.422153, -2.000001, 1.999999, 51.960864, -170.833817)">
-      <stop offset="0" style="stop-color: rgb(95, 255, 226);"/>
-      <stop offset="1" style="stop-color: rgb(163, 163, 255);"/>
+      <stop offset="0" style="stop-color: rgb(109, 237, 231);"/>
+      <stop offset="1" style="stop-color: rgb(84, 95, 242);"/>
     </linearGradient>
   </defs>
-  <rect width="300" height="300" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(235, 240, 239);"/>
   <path d="M 0 0 L 88.6 0 L 88.6 155.41 L 0 155.41 Z M 105.718 0 L 194.318 0 L 194.318 106.159 L 105.718 106.159 Z M 211.436 -0.031 L 300.036 -0.031 L 300.036 133.393 L 211.436 133.393 Z M 0 172.528 L 88.6 172.528 L 88.6 274.26 L 0 274.26 Z M 105.718 172.528 L 194.318 172.528 L 194.318 300 L 105.718 300 Z" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-2');"/>
 </svg>

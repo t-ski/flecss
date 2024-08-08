@@ -1,5 +1,4 @@
 @include class("condition", "c") {
-
     @include class-member("disable") {
         user-select: none !important;
         pointer-events: none !important;
@@ -13,5 +12,4 @@
     @include class-member("collapse") {
         display: none !important;
     }
-
 }

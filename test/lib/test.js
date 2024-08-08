@@ -6,7 +6,7 @@ const flecss = require("../../lib/api");
 
 const TRANSPILED = flecss.transpile(join(__dirname, "./_test.scss"));
 
-deepEqual(TRANSPILED.loadedUrls.length, 1);
+deepEqual(TRANSPILED.loadedUrls.length, 2);
 deepEqual(TRANSPILED.css.length > 100, true);
 deepEqual(TRANSPILED.css.includes("a{color:green}a{color:red}"), true);
 

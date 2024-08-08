@@ -22,6 +22,7 @@ main {
 main > section {
     margin-bottom: 2rem;
     padding: 1rem;
+    width: 100%;
     background-color: mintcream;
 }
 main > section > * {

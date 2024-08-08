@@ -2,10 +2,11 @@
 @import "./variables";
 
 @import "./class";
-@import "./space";
 
 @import "./elements/block";
 @import "./elements/typography";
+
+@import "./modifiers/s-space";
 
 @import "./classes/c_condition";
 @import "./classes/f_flex";
@@ -18,4 +19,5 @@
 
 @import "./utils/breakpoint";
 @import "./utils/color";
+@import "./utils/fontsize";
 @import "./utils/theme";

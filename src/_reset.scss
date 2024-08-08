@@ -2,15 +2,14 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-}
 html {
     padding: 0;
+    height: 100%;
     font-family: sans-serif;
 }
 body {
     margin: 0;
+    min-height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6,

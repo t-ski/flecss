@@ -13,7 +13,8 @@
   "files": [
     "./dist/",
     "./lib/",
-    "./readme/"
+    "./readme/",
+    "./_config.json"
   ],
   "repository": {
     "type": "git",

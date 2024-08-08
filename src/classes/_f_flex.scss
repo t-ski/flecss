@@ -15,9 +15,9 @@
     align-items: flex-start;
     gap: var(--flex_margin);
     width: 100%;
+    height: fit-content;
     overflow-x: hidden;
-    overflow-y: scroll
-    
+        
     // TODO: Responsive
 }
 @include class("flex", "f") {

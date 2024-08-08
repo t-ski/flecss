@@ -1,0 +1,7 @@
+@mixin flecss_fontsize($name, $scale-factor: 1) {
+    :root {
+        --fontsize-#{$name}: calc(var(--font-size) * #{$scale-factor});
+    }
+
+    // TODO: Defaults?
+}

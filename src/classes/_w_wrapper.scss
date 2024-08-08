@@ -1,7 +1,7 @@
 @include class("wrapper", "w") {
-    @include space(--wrapper_padding, 2);
+    @include space(--wrapper_padding, "xl");
 
-    margin: auto;
+    margin: 0 auto;
     padding-top: var(--wrapper_padding);
     padding-bottom: var(--wrapper_padding);
     width: 100%;

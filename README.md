@@ -12,7 +12,7 @@
 
 Unlike _Bootstrap_ or _Tailwind_, flecss is not as granular as CSS itself. Instead, it follows a minimal approach: Each class bases on a style requirement common for the majority of web-based designs <sup>1</sup>. Anything else is left to individual stylesheets.
 
-> 📦 flecss ships with a total of &#8232;`7kB`, compared to Bootstrap with `248kB` <sup>2</sup>.
+> 📦 flecss ships with a total of &#8232;`8kB`, compared to Bootstrap with `248kB` <sup>2</sup>.
 
 [1. Integration](#integration)  
 [2. Classes](#classes)  
@@ -26,7 +26,7 @@ Unlike _Bootstrap_ or _Tailwind_, flecss is not as granular as CSS itself. Inste
 [3. Modifiers](#modifiers)  
 &emsp; [3.1 Space](#space)  
 [4. Build Interface](#build-interface)  
-[5. Mixins](#mixins)  
+[5. Utilities](#utilities)  
 &emsp; [5.1 Breakpoint](#breakpoint)  
 &emsp; [5.2 Color](#colour)  
 &emsp; [5.3 Theme](#theme)  
@@ -246,12 +246,12 @@ The space modifier describes a space unit that applies with all area space-relat
 **` --l` `      --large`** &emsp; **Large spacing.**  
 **`--xl` `--extra-large`** &emsp; **Extra large spacing.**  
 
-The size of a space unit (e.g. `--s`) scales progressively aroud the `--m` (≡ `--space`) by a factor `--font-factor`. For instance, `--xl` corresponds to `--space * --font-factor^2` – i.e. `4rem` by default.
+The size of a space unit (e.g. `--s`) scales progressively aroud the `--m` (≡ `--space`) by a factor `--space-factor`. For instance, `--xl` corresponds to `--space * --space-factor^2` – i.e. `4rem` by default.
 
 > `       --space`: `1rem`  
 > `--space-factor`: `2.0`  
 
-Font sizing in flecss behaves analogous to the above described spacing. Heading sizes thus scale increasingly from `h5` on.
+Font sizing in flecss behaves analogous to the above described spacing. Heading sizes scale quadratically to `--font-factor` with respect to their level.
 
 > `  --font-size`: `16px` (≡ `1rem`)  
 > `--font-factor`: `1.5`  
@@ -293,7 +293,7 @@ interface IBuildOptions {
 ```
 
 ``` ts
-function buildCSS(sourcePath: string, targetPath: string, options?: IBuildOptions & {
+function buildCSS(sourcePath: string, targetPath?: string, options?: IBuildOptions & {
   modTimeTolerance?: number;
 }): Promise<{
   executionTimeMs: number;
@@ -315,14 +315,14 @@ function transpile(sourcePath: string, targetPath: string, options?: IBuildOptio
 ``` js
 const flecss = require("flecss");
 
-flecss.buildCSS("./app.scss");
+flecss.buildCSS("./app.scss");  // target path: app.css
 ```
 
-## Mixins
+## Utilities
 
-The flecss build interface predefines a set of helpful utility mixins that can be used throughout custom SCSS code.
+The flecss build interface predefines a set of helpful utility mixins (`flecss_<*>`) and functions (`flecss-<*>`) that can be used throughout custom SCSS code.
 
-### Breakpoint
+### `mx` Breakpoint
 
 Apply styles below a certain breakpoint (revisit [breakpoints](#breakpoints)).
 
@@ -332,7 +332,7 @@ Apply styles below a certain breakpoint (revisit [breakpoints](#breakpoints)).
 @include flecss_breakpoint--l
 ```
 
-### Colour
+### `mx` Colour
 
 Define a color through a global CSS variable (property) including shades.
 
@@ -346,13 +346,33 @@ Define a color through a global CSS variable (property) including shades.
 --color-#{$name}--dark: darken($color, 10%)
 ```
 
-### Theme
+### `mx` Fontsize
 
-Apply styles for a certain color scheme (system).
+Define a font size through a global CSS variable (property) scaling to the base font size `--font-size`.
+
+``` scss
+@include flecss_fontsize($name, $scale-factor: 1)
+```
+
+``` scss
+--fontsize-#{$name}: calc(--font-size * $scale-factor)
+```
+
+### `mx` Theme
+
+Apply styles only when a certain color scheme is active (system).
 
 ``` scss
 @include flecss_theme--light
 @include flecss_theme--dark
+```
+
+### `fn` Space
+
+Get a space value by order (e.g. `'extra-large'`, or `'xl'`).
+
+``` scss
+flecss-space($order: "medium")
 ```
 
 ---

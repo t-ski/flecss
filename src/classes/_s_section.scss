@@ -1,5 +1,5 @@
 @include class("section", "s") {
-    @include space(--section_padding, -1);
+    @include space(--section_padding, "s");
     
     padding-left: var(--section_padding);
     padding-right: var(--section_padding);

@@ -1,3 +1,5 @@
+# flecss
+
 <a href="https://github.com/t-ski/flecss/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/t-ski/flecss/test.yml?label=test&logo=github" alt="GitHub Test"></a>
 &hairsp;
 <a href="https://www.npmjs.com/package/flecss"><img src="https://img.shields.io/npm/v/flecss?logo=npm" alt="NPM"></a>
@@ -201,7 +203,7 @@ The **text** class helps with applying deviant text formatting.
 
 ### `.v` `.viewport`
 
-The **viewport** class enables .
+The **viewport** class allows display of elements depending in viewport size.
 
 **`    _s` `     _small`** &emsp; **Show on small viewport only.**  
 **`    _m` `    _medium`** &emsp; **Show on medium viewport only.**  

@@ -12,6 +12,9 @@ $space-orders: (
         #{$var}: flecss_space($default-order);
     }
     
+    @include class-modifier("zero") {
+        #{$var}: 0;
+    }
     @include class-modifier("extra-small", "xs") {
         #{$var}: flecss_space("xs");
     }

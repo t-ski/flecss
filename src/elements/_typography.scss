@@ -18,11 +18,11 @@ li {
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.375em;
-    transform: translateY(calc(0.375em / 2));
     font-weight: 600;
+    transform: translateY(-calc(0.375em / 2));
     
-    &:not(:last-child) {
-        margin-top: -0.375em;
+    &:not(:first-child):not(:last-child) {
+        margin-top: calc(0.5 * var(--space));
     }
 }
 

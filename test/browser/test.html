@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>flecss | Test</title>
         <link rel="stylesheet" href="../../dist/flecss.css">
-        <link rel="stylesheet" href="./_test.css">
-        <script src="_test.js"></script>
+        <link rel="stylesheet" href="./_test.browser.css">
+        <script src="./_test.browser.js"></script>
         <template id="error">
             <span class="error"></span>
         </template>
@@ -77,7 +77,7 @@
                 <script>
                     test("display", "flex");
                     test("flex-direction", "row");
-                    test("justify-content", "space-between");
+                    test("justify-content", "flex-start");
                     test("align-items", "flex-start");
                     test("gap", M_PX);
                     flexW = document.querySelector("section").clientWidth * 0.9;

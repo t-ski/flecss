@@ -98,6 +98,7 @@ main > section > h4 {
 *[test] {
     position: relative;
     padding: 1rem;
+    width: 100%;
     max-height: 20vh;
     background-color: seashell;
     overflow: scroll;

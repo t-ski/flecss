@@ -9,7 +9,7 @@ body, header, main, footer {
 
 body,
 main,
-main div {
+main div, main section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;

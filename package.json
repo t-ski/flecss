@@ -31,9 +31,9 @@
     "prepare": "npx husky install",
     "build": "node --no-deprecation ./build.js ./src/flecss.scss ./dist/flecss.css --standalone",
     "build:watch": "npm run build -- --watch",
-    "test:browser": "node ./test/browser/test.js",
-    "test:browser:view": "open ./test/browser/_test.html",
-    "test:lib": "node ./test/lib/test.js",
+    "test:browser": "node ./test/browser/_test.node.js",
+    "test:browser:view": "open ./test/browser/test.html",
+    "test:lib": "node ./test/lib/_test.node.js",
     "test": "npm run build && npm run test:browser && npm run test:lib",
     "release:minor": "npm run test && npx release --minor",
     "release:patch": "npm run test && npx release --patch"

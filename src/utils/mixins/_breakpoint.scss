@@ -1,0 +1,15 @@
+@mixin flecss_breakpoint--s {
+    @media (max-width: $breakpoint-s) {
+        @content;
+    }
+}
+@mixin flecss_breakpoint--m {
+    @media (max-width: $breakpoint-m) {
+        @content;
+    }
+}
+@mixin flecss_breakpoint--l {
+    @media (max-width: $breakpoint-l) {
+        @content;
+    }
+}

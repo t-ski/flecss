@@ -1,37 +1,32 @@
 const fs = require("fs");
 const path = require("path");
 
-const _config = require("./_config.json");
-
-const { transpile } = require("./lib/api");
+const API = require("./lib/api");
 
 
-function buildSCSS() {
-    const targetFilePath = path.resolve("./dist/", `${_config.appName}.scss`);
-    fs.mkdirSync(path.dirname(targetFilePath), { recursive: true });
-    
-    const scssModules = [];
-    transpile(path.resolve("./src/", `${_config.appName}.scss`), {
+async function buildCSS(sourcePath, targetPath) {
+    await API.buildCSS(sourcePath, targetPath, {
+        isDevelopment: false,
+        isStandalone: true
+    });
+}
+
+function buildSCSS(sourcePath, targetPath) {
+    const concatenatedSCSS = API.transpile(sourcePath, {
         isStandalone: true
     }).loadedUrls
-    .forEach((loadedUrl) => {
-        const scss = fs.readFileSync(loadedUrl)
+    .map((loadedUrl) => {
+        return fs.readFileSync(loadedUrl)
         .toString()
         .replace(/@import +[^);\n]+\)? *;? *\n?/g, "")
         .trim();
-        scss.length && scssModules.push(scss);
-    });
-
-    fs.writeFileSync(targetFilePath, scssModules.join("\n"));
+    })
+    .filter(scss => scss)
+    .join("\n");
+    fs.writeFileSync(targetPath, concatenatedSCSS);
 }
 
-
-process.on("exit", (code) => {
-    if(code) return;
-    
-    buildSCSS();
-    
-    const readmePath = path.join(__dirname, "./README.md");
+function updateSizeInREADME(readmePath) {
     fs.writeFileSync(
         readmePath,
         fs.readFileSync(readmePath).toString()
@@ -39,12 +34,27 @@ process.on("exit", (code) => {
             Math.round(fs.statSync(path.join(__dirname, "./dist/flecss.css")).size / 1024)
         }kB\``)
     );
+}
+
+function logStep(description) {
+    console.log(`\x1b[2m• \x1b[22m\x1b[35m${description}\x1b[0m`);
+}
+
+
+console.log("\x1b[2m⚙ \x1b[1mflecss BUILD\x1b[0m");
+
+logStep("Write core CSS (flecss.css)");
+buildCSS(
+    path.join(__dirname, "./src/core/core.scss"),
+    path.join(__dirname, "./dist/flecss.css")
+)
+.then(async () => {
+    logStep("Write utils SCSS (flecss.scss)");
+    buildSCSS(
+        path.join(__dirname, "./src/utils/utils.scss"),
+        path.join(__dirname, "./dist/flecss.utils.scss")
+    );
+
+    logStep("Update core filesize in README");
+    updateSizeInREADME(path.join(__dirname, "./README.md"));
 });
-process.on("SIGINT", () => process.exit(0));
-
-console.log(`${
-    " ".repeat(3 * (2 + (2/3)) + 1)
-}\x1b[1m\x1b[2m${"development build".toUpperCase()}\x1b[0m`);
-
-
-require("./lib/cli");

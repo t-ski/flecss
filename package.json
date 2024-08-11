@@ -29,7 +29,7 @@
   },
   "scripts": {
     "prepare": "npx husky install",
-    "build": "node --no-deprecation ./build.js ./src/flecss.scss ./dist/flecss.css --standalone",
+    "build": "node --no-deprecation ./build.js ./src/flecss/flecss.scss ./dist/flecss.css --standalone",
     "build:watch": "npm run build -- --watch",
     "test:browser": "node ./test/browser/_test.node.js",
     "test:browser:view": "open ./test/browser/test.html",

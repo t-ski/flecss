@@ -1,12 +1,3 @@
-$space-orders: (
-    "extra-small": -2, "xs": -2,
-    "small": -1, "s": -1,
-    "medium": 0, "m": 0,
-    "large": 1, "l": 1,
-    "extra-large": 2, "xl": 2
-);
-
-
 @mixin space($var, $default-order: "m") {
     @at-root :root {
         #{$var}: flecss_space($default-order);
@@ -30,13 +21,4 @@ $space-orders: (
     @include class-modifier("extra-large", "xl") {
         #{$var}: flecss_space("xl");
     }
-}
-
-@function flecss-space($order: "m") {
-    $power: 0;
-    @if map-has-key($space-orders, $order) {
-        $power: map-get($space-orders, $order);
-    }
-
-    @return calc(var(--space) * pow(var(--space-factor), $power));
 }

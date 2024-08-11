@@ -1,12 +1,12 @@
+@import "../utils/utils.scss";
+
 @import "./reset";
 @import "./variables";
-
+@import "./elements";
+@import "./typography";
 @import "./class";
 
-@import "./elements/block";
-@import "./elements/typography";
-
-@import "./modifiers/s-space";
+@import "./modifiers/space";
 
 @import "./classes/c_condition";
 @import "./classes/f_flex";
@@ -16,8 +16,3 @@
 @import "./classes/t_text";
 @import "./classes/v_viewport";
 @import "./classes/w_wrapper";
-
-@import "./utils/breakpoint";
-@import "./utils/color";
-@import "./utils/fontsize";
-@import "./utils/theme";

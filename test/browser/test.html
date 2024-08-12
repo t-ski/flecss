@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>flecss | Test</title>
-        <link rel="stylesheet" href="../../dist/flecss.css">
-        <link rel="stylesheet" href="./_test.browser.css">
         <script src="./_test.browser.js"></script>
+        <link rel="stylesheet" href="./_test.browser.css">
+        <link rel="stylesheet" href="./test.css">
         <template id="error">
             <span class="error"></span>
         </template>
@@ -80,8 +80,12 @@
                     test("justify-content", "flex-start");
                     test("align-items", "flex-start");
                     test("gap", M_PX);
-                    flexW = document.querySelector("section").clientWidth * 0.9;
-                    test("width", (actual) => parseInt(actual) > flexW, 0);
+                    flexW = Math.round(document.querySelector("section").clientWidth * 0.9);
+                    test("width", {
+                        fn: (actual) => parseInt(actual),
+                        expected: flexW,
+                        eval: (actual, expected) => actual > expected
+                    }, 0);
                 </script>
 
                 <div test="2">
@@ -95,8 +99,16 @@
                     test("display", "flex");
                     test("gap", M_PX);
                     flexW = document.querySelector("section").clientWidth * 0.45;
-                    test("width", (actual) => parseInt(actual) > flexW, 0);
-                    test("width", (actual) => parseInt(actual) > flexW, 1);
+                    test("width", {
+                        fn: (actual) => parseInt(actual),
+                        expected: flexW,
+                        eval: (actual, expected) => actual > expected
+                    }, 0);
+                    test("width", {
+                        fn: (actual) => parseInt(actual),
+                        expected: flexW,
+                        eval: (actual, expected) => actual > expected
+                    }, 1);
                 </script>
 
                 <div test="3">
@@ -110,8 +122,16 @@
                 <script>
                     flexW = document.querySelector("section").clientWidth * 0.275;
                     test("gap", M_PX);
-                    test("width", (actual) => parseInt(actual) > flexW, 0);
-                    test("width", (actual) => parseInt(actual) > flexW, 2);
+                    test("width", {
+                        fn: (actual) => parseInt(actual),
+                        expected: flexW,
+                        eval: (actual, expected) => actual > expected
+                    }, 0);
+                    test("width", {
+                        fn: (actual) => parseInt(actual),
+                        expected: flexW,
+                        eval: (actual, expected) => actual > expected
+                    }, 2);
                 </script>
 
                 <div test="margin extra large">
@@ -241,13 +261,17 @@
                     </div>
                 </div>
                 <style>
-                    :root { --wrapper-width: 400px; }
+                    :root { --flecss__wrapper-width: 400px; }
                 </style>
                 <script>
                     test("padding", [ ZERO_PX, S_PX ].join(" "));
                     test("padding-top", ZERO_PX);
-                    sectionW = document.querySelector("section").clientWidth * 0.9;
-                    test("width", (actual) => parseInt(actual) > sectionW);
+                    sectionW = Math.round(document.querySelector("section").clientWidth * 0.9);
+                    test("width", {
+                        fn: (actual) => parseInt(actual),
+                        expected: sectionW,
+                        eval: (actual, expected) => actual > expected
+                    });
                     test("width", "400px", 0);
                     test("padding", [ XL_PX, ZERO_PX ].join(" "), 0);
                     test("padding-left", ZERO_PX, 0);
@@ -309,6 +333,88 @@
                 </div>
                 <script>
                     test("display", "none");
+                </script>
+            </section>
+            
+            <section>
+                <h3>Util: mx flecss_class</h3>
+
+                <div test=".p_v">
+                    <div class="test--extend-pv"></div>
+                </div>
+                <script>
+                    test("padding-top", M_PX);
+                    test("padding-bottom", M_PX);
+                    test("padding-left", "0px");
+                    test("padding-right", "0px");
+                </script>
+
+                <div test=".p_v.p--l">
+                    <div class="test--extend-pvl"></div>
+                </div>
+                <script>
+                    test("padding-top", L_PX);
+                    test("padding-bottom", L_PX);
+                    test("padding-left", "0px");
+                    test("padding-right", "0px");
+                </script>
+            </section>
+            
+            <section>
+                <h3>Util: mx flecss_color</h3>
+
+                <div test="color">
+                    <div class="test--color"></div>
+                </div>
+                <script>
+                    test("color", "rgb(255, 0, 0)");
+                </script>
+            </section>
+            
+            <section>
+                <h3>Util: fn flecss-space</h3>
+
+                <div test="'xl'">
+                    <div class="test--flecss__space-p-xl"></div>
+                </div>
+                <script>
+                    test("padding-top", XL_PX);
+                    test("padding-bottom", "0px");
+                </script>
+            </section>
+
+            <section>
+                <h3>Default: Headings</h3>
+                <script>
+                    const getFontsize = level => {
+                        const compStyle = getComputedStyle(document.documentElement);
+                        return `${Math.round(
+                            parseInt(compStyle.getPropertyValue("--flecss__fontsize--l"))
+                            * compStyle.getPropertyValue("--flecss__fontsize-factor")**level
+                            * 10000
+                        ) / 10000}px`;
+                    };
+                </script>
+
+                <div test="h1">
+                    <h1>Lorem Ipsum</h1>
+                </div>
+                <script>
+                    test("font-size", getFontsize(6));
+                </script>
+
+                <div test="h3">
+                    <h3>Lorem Ipsum</h3>
+                </div>
+                <script>
+                    test("font-size", getFontsize(4));
+                </script>
+
+                <div test="h5">
+                    <h5>Lorem Ipsum</h5>
+                </div>
+                <script>
+                    test("font-size", getFontsize(2));
                 </script>
             </section>
 

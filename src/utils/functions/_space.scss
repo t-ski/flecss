@@ -1,16 +1,27 @@
-$space-orders: (
+$space-dimensions: (
+    "extra-extra-small": -3, "xxs": -3,
     "extra-small": -2, "xs": -2,
     "small": -1, "s": -1,
     "medium": 0, "m": 0,
     "large": 1, "l": 1,
-    "extra-large": 2, "xl": 2
+    "extra-large": 2, "xl": 2,
+    "extra-extra-large": 3, "xxl": 3
 );
 
-@function flecss-space($order: "m") {
+:root {
+    --flecss__space: 1rem;
+    --flecss__space-factor: 2.0;
+}
+
+@function flecss-space($dimension: "m", $negative: false) {
     $power: 0;
-    @if map-has-key($space-orders, $order) {
-        $power: map-get($space-orders, $order);
+    @if map-has-key($space-dimensions, $dimension) {
+        $power: map-get($space-dimensions, $dimension);
+    }
+    $factor: 1;
+    @if $negative {
+        $factor: -1;
     }
 
-    @return calc(var(--space) * pow(var(--space-factor), $power));
+    @return calc($factor * var(--flecss__space) * pow(var(--flecss__space-factor), $power));
 }

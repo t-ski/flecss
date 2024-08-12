@@ -12,7 +12,7 @@
 
 Unlike _Bootstrap_ or _Tailwind_, flecss is not as granular as CSS itself. Instead, it follows a minimal approach: Each class bases on a style requirement common for the majority of web-based designs <sup>1</sup>. Anything else is left to individual stylesheets.
 
-> 📦 flecss ships with a total of &#8232;`8kB`, compared to Bootstrap with `248kB` <sup>2</sup>.
+> 📦 flecss ships with a total of &#8232;`9kB`, compared to Bootstrap with `248kB` <sup>2</sup>.
 
 [1. Integration](#integration)  
 [2. Classes](#classes)  
@@ -166,7 +166,7 @@ The **section** and **wrapper** class describe common vertical layouting contain
 | - | - | - |
 | <img src="./readme/s-section.svg" width="145"> | <img src="./readme/w-wrapper.svg" width="145"> | <img src="./readme/s-section--w-wrapper.svg" width="145"> |
 
-> `--wrapper-width`: `1420px`
+> `--flecss__wrapper-width`: `1420px`
 
 #### Example
 
@@ -216,11 +216,11 @@ The **viewport** class allows display of elements depending in viewport size.
 
 #### Breakpoints
 
-> Breakpoint `l`: `1 × --wrapper-width` = `1420px`  
-> Breakpoint `m`: `⅔ × --wrapper-width` = `~947px`  
-> Breakpoint `s`: `⅓ × --wrapper-width` = `~473px`  
+> Breakpoint `l`: `1 × --flecss__wrapper-width` = `1420px`  
+> Breakpoint `m`: `⅔ × --flecss__wrapper-width` = `~947px`  
+> Breakpoint `s`: `⅓ × --flecss__wrapper-width` = `~473px`  
 
-> Breakpoints are not mutable, i.e. overriding `--wrapper-width` does not affect the breakpoints.
+> Breakpoints are not mutable, i.e. overriding `--flecss__wrapper-width` does not affect the breakpoints.
 
 #### Example
 
@@ -246,15 +246,15 @@ The space modifier describes a space unit that applies with all area space-relat
 **` --l` `      --large`** &emsp; **Large spacing.**  
 **`--xl` `--extra-large`** &emsp; **Extra large spacing.**  
 
-The size of a space unit (e.g. `--s`) scales progressively aroud the `--m` (≡ `--space`) by a factor `--space-factor`. For instance, `--xl` corresponds to `--space * --space-factor^2` – i.e. `4rem` by default.
+The size of a space unit (e.g. `--s`) scales progressively aroud the `--m` (≡ `--flecss__space`) by a factor `--flecss__space-factor`. For instance, `--xl` corresponds to `--flecss__space * --flecss__space-factor^2` – i.e. `4rem` by default.
 
-> `       --space`: `1rem`  
-> `--space-factor`: `2.0`  
+> `       --flecss__space`: `1rem`  
+> `--flecss__space-factor`: `2.0`  
 
-Font sizing in flecss behaves analogous to the above described spacing. Heading sizes scale quadratically to `--font-factor` with respect to their level.
+Font sizing in flecss behaves analogous to the above described spacing. Heading sizes scale quadratically to `--flecss__fontsize-factor` with respect to their level.
 
-> `  --font-size`: `16px` (≡ `1rem`)  
-> `--font-factor`: `1.5`  
+> `  --flecss__fontsize`: `16px` (≡ `1rem`)  
+> `--flecss__fontsize-factor`: `1.5`  
 
 #### Example
 
@@ -270,7 +270,7 @@ Integrated via NPM, flecss comes with a mature build interface.
 
 > ℹ️ The flecss build interface bases on the [sass](https://github.com/sass/dart-sass) transpiler and [clean-css](https://github.com/clean-css/clean-css) optimiser.
 
-> ℹ️ Working with flecss on the SCSS layer enables custom overrides of the global flecss variables (e.g. `--space`).
+> ℹ️ Working with flecss on the SCSS layer enables custom overrides of the global flecss variables (e.g. `--flecss__space`).
 
 ### CLI
 
@@ -348,14 +348,14 @@ Define a color through a global CSS variable (property) including shades.
 
 ### `mx` Fontsize
 
-Define a font size through a global CSS variable (property) scaling to the base font size `--font-size`.
+Define a font size through a global CSS variable (property) scaling to the base font size `--flecss__fontsize`.
 
 ``` scss
 @include flecss_fontsize($name, $scale-factor: 1)
 ```
 
 ``` scss
---fontsize-#{$name}: calc(--font-size * $scale-factor)
+--flecss__fontsize-#{$name}: calc(--flecss__fontsize * $scale-factor)
 ```
 
 ### `mx` Theme

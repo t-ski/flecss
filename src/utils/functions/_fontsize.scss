@@ -1,0 +1,23 @@
+$fontsize-dimensions: (
+    "extra-extra-small": -1.5, "xxs": -1.5,
+    "extra-small": -1, "xs": -1,
+    "small": -0.5, "s": -0.5,
+    "medium": 0, "m": 0,
+    "large": 0.5, "l": 0.5,
+    "extra-large": 1, "xl": 1,
+    "extra-extra-large": 1.5, "xxl": 1.5
+);
+
+:root {
+    --flecss__fontsize--l: 16px;
+    --flecss__fontsize--m: 14px;
+    --flecss__fontsize--s: 12px;
+    --flecss__fontsize-factor: 1.3;
+}
+
+@function flecss-fontsize($dimension: "m") {
+    @if map-has-key($fontsize-dimensions, $dimension) {
+        $dimension: map-get($fontsize-dimensions, $dimension);
+    }
+    @return calc(1rem * pow(var(--flecss__fontsize-factor), $dimension));
+}

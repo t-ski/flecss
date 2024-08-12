@@ -9,12 +9,14 @@ body, header, main, footer {
 
 body,
 main,
+aside,
 main header, main footer,
-main section, main div {
+main section, main div,
+aside section, aside div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space);
+    gap: flecss-space("m");
     height: fit-content;
 }
 

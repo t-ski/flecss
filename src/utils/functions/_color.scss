@@ -1,0 +1,11 @@
+@function flecss-color($name, $shade: null) {
+    $shadeInfix: "";
+    @if $shade {
+        @if $shade != "light" and $shade != "dark" {
+            @error "Invalid color shade #{$shade} (expects null for normal, 'light' or 'dark')";
+        }
+
+        $shadeInfix: "--#{$shade}"
+    }
+    @return var(--flecss_color--#{$name}#{$shadeInfix});
+}

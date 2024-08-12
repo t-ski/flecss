@@ -1,6 +1,9 @@
-@import "./functions/space";
-
+@import "./mixins/class";
 @import "./mixins/breakpoint";
 @import "./mixins/color";
-@import "./mixins/fontsize";
+@import "./mixins/font";
 @import "./mixins/theme";
+
+@import "./functions/color";
+@import "./functions/fontsize";
+@import "./functions/space";

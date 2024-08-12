@@ -5,7 +5,7 @@
     padding-top: var(--wrapper_padding);
     padding-bottom: var(--wrapper_padding);
     width: 100%;
-    max-width: var(--wrapper-width);
+    max-width: var(--flecss__wrapper-width);
     
     @include class-connect("wrapper", "w") {
         padding-top: 0;

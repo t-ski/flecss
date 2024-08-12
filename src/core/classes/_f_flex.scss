@@ -2,6 +2,10 @@
     @include class-member($n) {
         & > * {
             width: calc((100% / #{$n}) - (var(--flex_margin) * (#{$n} - 1) / #{$n}));
+            
+            @include flecss_breakpoint--s {
+                width: 100%;
+            }
         }
     }
 }
@@ -17,8 +21,6 @@
     width: 100%;
     height: fit-content;
     overflow-x: hidden;
-        
-    // TODO: Responsive
 }
 @include class("flex", "f") {
     @include space(--flex_margin);

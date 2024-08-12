@@ -30,15 +30,18 @@ function test(styleProperty, expectedValue, subChildIndex) {
 
     const resultElement = document.querySelector("#result").content.cloneNode(true);
     const actualValue = window.getComputedStyle(testPivotElement)[styleProperty];
+    const resolvedActualValue = expectedValue.fn
+    ? expectedValue.fn(actualValue)
+    : actualValue;
+    const resolvedExpectedValue = expectedValue.expected
+    ? expectedValue.expected
+    : expectedValue;
+    const wasSuccessful = (expectedValue.eval ?? ((a, b) => a == b))
+    .call(null, resolvedActualValue, resolvedExpectedValue);
 
-    const isEvalExpect = (expectedValue instanceof Function);
-    const wasSuccessful = (expectedValue instanceof Function)
-    ? expectedValue(actualValue)
-    : (actualValue == expectedValue);
-    
     resultElement.querySelector(".result-property").textContent = styleProperty;
-    resultElement.querySelector(".result-expected").textContent = !isEvalExpect ? expectedValue : "{ } ( )";
-    resultElement.querySelector(".result-actual").textContent = !wasSuccessful ? (actualValue ?? "-") : "";
+    resultElement.querySelector(".result-expected").textContent = resolvedExpectedValue;
+    resultElement.querySelector(".result-actual").textContent = !wasSuccessful ? (resolvedActualValue ?? "-") : "";
     resultElement.querySelector(".result-child").textContent = !isNaN(subChildIndex) ? `on child ${subChildIndex}` : "";
 
     testElement.parentNode.appendChild(resultElement);

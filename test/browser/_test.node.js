@@ -1,6 +1,15 @@
+const fs = require("fs");
 const path = require("path");
 
 const puppeteer = require("puppeteer");
+
+const flecss = require("../../lib/api");
+
+
+const TRANSPILED = flecss.transpile(path.join(__dirname, "./test.scss"), {
+    isDevelopment: true
+});
+fs.writeFileSync(path.join(__dirname, "./test.css"), TRANSPILED.css);
 
 
 setTimeout(() => {

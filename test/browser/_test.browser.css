@@ -17,6 +17,7 @@ body {
 }
 main {
     margin: auto;
+    min-width: 900px;
     max-width: 900px;
 }
 main > section {
@@ -25,15 +26,8 @@ main > section {
     width: 100%;
     background-color: mintcream;
 }
-main > section > * {
-    margin-bottom: 1rem;
-}
-main > section > h3 {
-    font-size: 1.5rem;
-}
 main > section > h4 {
-    padding-top: 1rem;
-    font-size: 1.25rem;
+    padding-top: 0.5rem;
 }
 
 .error {

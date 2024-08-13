@@ -10,9 +10,17 @@ $fontsize-dimensions: (
 
 :root {
     --flecss__fontsize--l: 16px;
-    --flecss__fontsize--m: 14px;
-    --flecss__fontsize--s: 12px;
-    --flecss__fontsize-factor: 1.3;
+    --flecss__fontsize--m: 15px;
+    --flecss__fontsize--s: 14px;
+    --flecss__fontsize: var(--flecss__fontsize--l);
+    --flecss__fontsize-factor: 1.25;
+    
+    @include flecss_breakpoint--m {
+        --flecss__fontsize: var(--flecss__fontsize--m);
+    }
+    @include flecss_breakpoint--s {
+        --flecss__fontsize: var(--flecss__fontsize--s);
+    }
 }
 
 @function flecss-fontsize($dimension: "m") {

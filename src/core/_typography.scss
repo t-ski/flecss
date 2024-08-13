@@ -1,14 +1,7 @@
 html {
-    font-size: var(--flecss__fontsize--l);
+    font-size: var(--flecss__fontsize);
     font-weight: 400;
     text-rendering: optimizeLegibility;
-
-    @include flecss_breakpoint--m {
-        font-size: var(--flecss__fontsize--m);
-    }
-    @include flecss_breakpoint--s {
-        font-size: var(--flecss__fontsize--s);
-    }
 }
 
 body {
@@ -27,10 +20,10 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(calc(-1 * (0.375em / 2)));
     
     &:not(:first-child) {
-        margin-top: calc(0.75 * flecss-space("m"));
+        margin-top: calc(0.5 * flecss-space("m"));
     }
     &:not(:last-child) {
-        margin-bottom: calc(-1 * (0.375em / 2));
+        margin-bottom: -0.375em;
     }
 }
 

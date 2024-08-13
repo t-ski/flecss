@@ -1,4 +1,5 @@
 $space-dimensions: (
+    "zero": null,
     "extra-extra-small": -3, "xxs": -3,
     "extra-small": -2, "xs": -2,
     "small": -1, "s": -1,
@@ -9,15 +10,29 @@ $space-dimensions: (
 );
 
 :root {
-    --flecss__space: 1rem;
-    --flecss__space-factor: 2.0;
+    --flecss__space--l: 1.75rem;
+    --flecss__space--m: 1.5rem;
+    --flecss__space--s: 1.35rem;
+    --flecss__space: var(--flecss__space--l);
+    --flecss__space-factor: 1.75;
+
+    @include flecss_breakpoint--m {
+        --flecss__space: var(--flecss__space--m);
+    }
+    @include flecss_breakpoint--s {
+        --flecss__space: var(--flecss__space--s);
+    }
 }
 
 @function flecss-space($dimension: "m", $negative: false) {
-    $power: 0;
+    $power: null;
     @if map-has-key($space-dimensions, $dimension) {
         $power: map-get($space-dimensions, $dimension);
     }
+    @if not $power {
+        @return 0;
+    }
+
     $factor: 1;
     @if $negative {
         $factor: -1;

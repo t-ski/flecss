@@ -1,26 +1,38 @@
 @include class("padding", "p") {
-    @include space(--padding);
-
-    padding: var(--padding);
+    @include space-modifier(--flecss__padding) {
+        padding: var(--flecss__padding);
+    }
     
-    @include class-member("vertical", "v") {
-        padding-top: var(--padding);
-        padding-bottom: var(--padding);
+    @include class-specifier("vertical", "v") {
+        @include space-modifier(--flecss__padding--v) {
+            padding-top: var(--flecss__padding--v);
+            padding-bottom: var(--flecss__padding--v);
+        }
     }
-    @include class-member("horizontal", "h") {
-        padding-left: var(--padding);
-        padding-right: var(--padding);
+    @include class-specifier("horizontal", "h") {
+        @include space-modifier(--flecss__padding--h) {
+            padding-left: var(--flecss__padding--h);
+            padding-right: var(--flecss__padding--h);
+        }
     }
-    @include class-member("top", "t") {
-        padding-top: var(--padding);
+    @include class-specifier("top", "t") {
+        @include space-modifier(--flecss__padding--t) {
+            padding-top: var(--flecss__padding--t);
+        }
     }
-    @include class-member("bottom", "b") {
-        padding-bottom: var(--padding);
+    @include class-specifier("bottom", "b") {
+        @include space-modifier(--flecss__padding--b) {
+            padding-bottom: var(--flecss__padding--b);
+        }
     }
-    @include class-member("left", "l") {
-        padding-left: var(--padding);
+    @include class-specifier("left", "l") {
+        @include space-modifier(--flecss__padding--l) {
+            padding-left: var(--flecss__padding--l);
+        }
     }
-    @include class-member("right", "t") {
-        padding-right: var(--padding);
+    @include class-specifier("right", "r") {
+        @include space-modifier(--flecss__padding--r) {
+            padding-right: var(--flecss__padding--r);
+        }
     }
 }

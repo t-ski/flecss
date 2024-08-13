@@ -25,11 +25,10 @@
     <body>
         <script>
             const ZERO_PX = "0px";
-            const XS_PX = "4px";
-            const S_PX = "8px";
-            const M_PX = "16px";
-            const L_PX = "32px";
-            const XL_PX = "64px";
+            const S_PX = "16px";
+            const M_PX = "28px";
+            const L_PX = "49px";
+            const XL_PX = "85.75px";
         </script>
 
         <div class="total">
@@ -40,10 +39,10 @@
         <main>
 
             <section>
-                <h3>Condition</h3>
+                <h3>Display</h3>
 
                 <div test="disable">
-                    <div class="condition_disable">Lorem Ipsum</div>
+                    <div class="display_disable">Lorem Ipsum</div>
                 </div>
                 <script>
                     test("pointer-events", "none");
@@ -51,14 +50,14 @@
                 </script>
                 
                 <div test="hide">
-                    <div class="c_hide">Lorem Ipsum</div>
+                    <div class="d_hide">Lorem Ipsum</div>
                 </div>
                 <script>
                     test("visibility", "hidden");
                 </script>
                 
                 <div test="collapse">
-                    <div class="c_collapse">Lorem Ipsum</div>
+                    <div class="d_collapse">Lorem Ipsum</div>
                 </div>
                 <script>
                     test("display", "none");
@@ -69,7 +68,7 @@
                 <h3>Flex</h3>
 
                 <div test="1">
-                    <div class="flex_1">
+                    <div class="flex_1--m">
                         <div></div>
                         <div></div>
                     </div>
@@ -89,7 +88,7 @@
                 </script>
 
                 <div test="2">
-                    <div class="flex_2">
+                    <div class="flex_2--l">
                         <div></div>
                         <div></div>
                         <div></div>
@@ -97,8 +96,8 @@
                 </div>
                 <script>
                     test("display", "flex");
-                    test("gap", M_PX);
-                    flexW = document.querySelector("section").clientWidth * 0.45;
+                    test("gap", L_PX);
+                    flexW = document.querySelector("section").clientWidth * 0.4;
                     test("width", {
                         fn: (actual) => parseInt(actual),
                         expected: flexW,
@@ -120,8 +119,8 @@
                     </div>
                 </div>
                 <script>
-                    flexW = document.querySelector("section").clientWidth * 0.275;
-                    test("gap", M_PX);
+                    flexW = document.querySelector("section").clientWidth * 0.25;
+                    test("gap", L_PX);
                     test("width", {
                         fn: (actual) => parseInt(actual),
                         expected: flexW,
@@ -134,8 +133,8 @@
                     }, 2);
                 </script>
 
-                <div test="margin extra large">
-                    <div class="flex_2 flex--xl">
+                <div test="gap extra large">
+                    <div class="flex_2--xl">
                         <div></div>
                         <div></div>
                         <div></div>
@@ -244,7 +243,7 @@
                 </script>
 
                 <div test="top small">
-                    <div class="p_t p--s"></div>
+                    <div class="p_t--s"></div>
                 </div>
                 <script>
                     test("padding-top", S_PX);
@@ -349,7 +348,7 @@
                     test("padding-right", "0px");
                 </script>
 
-                <div test=".p_v.p--l">
+                <div test=".p_v--l">
                     <div class="test--extend-pvl"></div>
                 </div>
                 <script>
@@ -389,7 +388,7 @@
                     const getFontsize = level => {
                         const compStyle = getComputedStyle(document.documentElement);
                         return `${Math.round(
-                            parseInt(compStyle.getPropertyValue("--flecss__fontsize--l"))
+                            parseInt(compStyle.getPropertyValue("--flecss__fontsize"))
                             * compStyle.getPropertyValue("--flecss__fontsize-factor")**level
                             * 10000
                         ) / 10000}px`;

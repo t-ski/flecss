@@ -3,12 +3,12 @@
 }
 
 @include class("viewport", "v") {
-    @include class-member("small", "s") {
+    @include class-specifier("small", "s") {
         @include flecss_breakpoint--s(true) {
             @include viewport_collapse;
         }
     }
-    @include class-member("medium", "m") {
+    @include class-specifier("medium", "m") {
         @include flecss_breakpoint--s {
             @include viewport_collapse;
         }
@@ -16,18 +16,18 @@
             @include viewport_collapse;
         }
     }
-    @include class-member("large", "l") {
+    @include class-specifier("large", "l") {
         @include flecss_breakpoint--m {
             @include viewport_collapse;
         }
     }
     
-    @include class-member("not-small", "not-s") {
+    @include class-specifier("not-small", "not-s") {
         @include flecss_breakpoint--s {
             @include viewport_collapse;
         } 
     }
-    @include class-member("not-medium", "not-m") {
+    @include class-specifier("not-medium", "not-m") {
         @include flecss_breakpoint--s(true) {
             @include viewport_collapse;
         }
@@ -35,7 +35,7 @@
             @include viewport_collapse;
         }
     }
-    @include class-member("not-large", "not-l") {
+    @include class-specifier("not-large", "not-l") {
         @include flecss_breakpoint--m(true) {
             @include viewport_collapse;
         } 

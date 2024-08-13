@@ -6,7 +6,7 @@ const API = require("./lib/api");
 
 async function buildCSS(sourcePath, targetPath) {
     await API.buildCSS(sourcePath, targetPath, {
-        isDevelopment: false,
+        isDevelopment: process.argv.slice(2).includes("-D"),
         isStandalone: true
     });
 }
@@ -51,8 +51,8 @@ buildCSS(
 .then(async () => {
     logStep("Write utils SCSS (flecss.scss)");
     buildSCSS(
-        path.join(__dirname, "./src/utils/utils.scss"),
-        path.join(__dirname, "./dist/flecss.utils.scss")
+        path.join(__dirname, "./src/util/util.scss"),
+        path.join(__dirname, "./dist/flecss.util.scss")
     );
 
     logStep("Update core filesize in README");

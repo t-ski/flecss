@@ -1,8 +1,9 @@
 $wrapper-width: 1420;
-
-$breakpoint-s: calc((1/3) * $wrapper-width);
+$breakpoint-xs: calc((1/3) * $wrapper-width);
+$breakpoint-s: calc((1/2) * $wrapper-width);
 $breakpoint-m: calc((2/3) * $wrapper-width);
-$breakpoint-l: calc(    1 * $wrapper-width);
+$breakpoint-l: calc(1 * $wrapper-width);
+$breakpoint-xl: calc((1 + (1/3)) * $wrapper-width);
 
 :root {
     --flecss__wrapper-width: #{$wrapper-width}px;
@@ -19,6 +20,11 @@ $breakpoint-l: calc(    1 * $wrapper-width);
     }
 }
 
+@mixin flecss_breakpoint--xs($min: false) {
+    @include flecss_breakpoint($breakpoint-xs, $min) {
+        @content;
+    }
+}
 @mixin flecss_breakpoint--s($min: false) {
     @include flecss_breakpoint($breakpoint-s, $min) {
         @content;
@@ -31,6 +37,11 @@ $breakpoint-l: calc(    1 * $wrapper-width);
 }
 @mixin flecss_breakpoint--l($min: false) {
     @include flecss_breakpoint($breakpoint-l, $min) {
+        @content;
+    }
+}
+@mixin flecss_breakpoint--xl($min: false) {
+    @include flecss_breakpoint($breakpoint-xl, $min) {
         @content;
     }
 }

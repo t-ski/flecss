@@ -1,8 +1,8 @@
 .test--extend-pv {
-    @include flecss_class("p", "v");
+    @include flecss_class("p_v");
 }
 .test--extend-pvl {
-    @include flecss_class("p", "v", "l");
+    @include flecss_class("p_v--l");
 }
 
 @include flecss_color("test", #FF0000);

@@ -1,0 +1,3 @@
+@mixin flecss_class($classifier) {
+    @extend .#{$classifier} !optional;
+}

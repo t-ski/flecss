@@ -12,7 +12,7 @@
 
 Unlike _Bootstrap_ or _Tailwind_, flecss is not as granular as CSS itself. Instead, it follows a minimal approach: Each class bases on a style requirement common for the majority of web-based designs <sup>1</sup>. Anything else is left to individual stylesheets.
 
-> 📦 flecss ships with a total of &#8232;`9kB`, compared to Bootstrap with `248kB` <sup>2</sup>.
+> 📦 flecss ships with a total of &#8232;`74kB`, compared to Bootstrap with `248kB` <sup>2</sup>.
 
 [1. Integration](#integration)  
 [2. Classes](#classes)  

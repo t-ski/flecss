@@ -3,6 +3,7 @@
   "version": "0.9.1",
   "author": "Thassilo Martin Schiepanski",
   "description": "Modern and simple CSS framework utilising the power of flexbox.",
+  "license": "Apache-2.0",
   "homepage": "https://github.com/t-ski/flecss#readme",
   "keywords": [
     "css",
@@ -30,11 +31,11 @@
   "scripts": {
     "prepare": "npx husky install",
     "build": "node --no-deprecation ./build.js ./src/flecss/flecss.scss ./dist/flecss.css --standalone",
-    "build:watch": "npm run build -- --watch",
+    "build:develop": "npm run build -- -D",
     "test:browser": "node ./test/browser/_test.node.js",
     "test:browser:view": "open ./test/browser/test.html",
-    "test:lib": "node ./test/lib/_test.node.js",
-    "test": "npm run build && npm run test:browser && npm run test:lib",
+    "test:lib": "node ./test/lib/test.js",
+    "test": "npm run test:browser && npm run test:lib",
     "release:minor": "npm run test && npx release --minor",
     "release:patch": "npm run test && npx release --patch"
   },
@@ -46,6 +47,5 @@
     "@t-ski/gh-npm-release": "github:t-ski/gh-npm-release",
     "husky": "^9.0.11",
     "puppeteer": "^22.11.0"
-  },
-  "license": "Apache-2.0"
+  }
 }

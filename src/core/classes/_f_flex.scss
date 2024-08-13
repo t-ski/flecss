@@ -1,50 +1,72 @@
+@function flex-child-width($m) {
+    @return calc((100% / #{$m}) - (var(--flecss__gap) * (#{$m} - 1) / #{$m}));
+}
+
 @mixin flex_partition($n) {
-    @include class-member($n) {
-        & > * {
-            width: calc((100% / #{$n}) - (var(--flex_margin) * (#{$n} - 1) / #{$n}));
-            
-            @include flecss_breakpoint--s {
-                width: 100%;
+    @include class-specifier($n) {
+        @include space-modifier(--flecss__gap, "l") {    
+            & > * {
+                width: flex-child-width($n);
+                
+                @if $n > 3 {
+                    @include flecss_breakpoint--m {
+                        width: flex-child-width(3);
+                    }
+                }
+                @if $n > 2 {
+                    @include flecss_breakpoint--s {
+                        width: flex-child-width(2);
+                    }
+                }
+                @if $n > 1 {
+                    @include flecss_breakpoint--xs {
+                        width: flex-child-width(1);
+                    }
+                }
             }
         }
     }
 }
 
-
-@include class-core("flex", "f") {    
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: var(--flex_margin);
-    width: 100%;
-    height: fit-content;
-    overflow-x: hidden;
-}
 @include class("flex", "f") {
-    @include space(--flex_margin);
+    @include space-modifier(--flecss__gap, "xl");
     
+    @include class-shared("flex", "f") {    
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: var(--flecss__gap);
+        width: 100%;
+        height: fit-content;
+        overflow-x: hidden;
+    }
+
     @include flex_partition(1);
     @include flex_partition(2);
     @include flex_partition(3);
     @include flex_partition(4);
     @include flex_partition(5);
+    
+    @include class-specifier("left", "l") {
+        @include space-modifier(--flecss__gap, "xl") {
+            flex-direction: row;
 
-    @include class-member("left", "l") {
-        flex-direction: row;
-
-        & > *:first-child {
-            margin-right: var(--flex_margin);
-            flex: 1 0 0;
+            & > *:first-child {
+                flex: 1 0 0;
+                max-width: 100%;
+            }
         }
     }
-    @include class-member("right", "r") {
-        flex-direction: row;
-        
-        & > *:last-child {
-            margin-left: var(--flex_margin);
-            flex: 1 0 0;
+    @include class-specifier("right", "r") {
+        @include space-modifier(--flecss__gap, "xl") {
+            flex-direction: row;
+            
+            & > *:last-child {
+                flex: 1 0 0;
+                max-width: 100%;
+            }
         }
     }
 }

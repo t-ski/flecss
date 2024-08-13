@@ -1,14 +1,14 @@
 @include class("text", "t") {
-    @include class-member("left", "l") {
+    @include class-specifier("left", "l") {
         text-align: left;
     }
-    @include class-member("center", "c") {
+    @include class-specifier("center", "c") {
         text-align: center;
     }
-    @include class-member("right", "r") {
+    @include class-specifier("right", "r") {
         text-align: right;
     }
-    @include class-member("justify", "j") {
+    @include class-specifier("justify", "j") {
         text-align: justify;
     }
 }

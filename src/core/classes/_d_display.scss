@@ -1,15 +1,15 @@
-@include class("condition", "c") {
-    @include class-member("disable") {
+@include class("display", "d") {
+    @include class-specifier("disable") {
         user-select: none !important;
         pointer-events: none !important;
         opacity: 0.25 !important;
     }
 
-    @include class-member("hide") {
+    @include class-specifier("hide") {
         visibility: hidden !important;
     }
     
-    @include class-member("collapse") {
+    @include class-specifier("collapse") {
         display: none !important;
     }
 }

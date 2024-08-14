@@ -13,9 +13,7 @@
   ],
   "files": [
     "./dist/",
-    "./lib/",
-    "./readme/",
-    "./_config.json"
+    "./lib/"
   ],
   "repository": {
     "type": "git",
@@ -37,7 +35,10 @@
     "test:lib": "node ./test/lib/test.js",
     "test": "npm run test:browser && npm run test:lib",
     "release:minor": "npm run test && npx release --minor",
-    "release:patch": "npm run test && npx release --patch"
+    "release:patch": "npm run test && npx release --patch",
+    "docs:flecss": "./bin.sh ./docs/scss/app.scss ./docs/public/app.css",
+    "docs:flecss:watch": "npm run docs:flecss -- --watch",
+    "docs:preview": "open ./docs/public/index.html"
   },
   "dependencies": {
     "clean-css": "^5.3.3",

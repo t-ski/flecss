@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-node --no-deprecation ./lib/cli.js $@
+node --no-deprecation $(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)/lib/cli.js $@

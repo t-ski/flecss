@@ -1,0 +1,38 @@
+.footer {
+    color: flecss-color("fg-gray");
+    font-size: flecss-fontsize("s");
+    font-weight: 300;
+    overflow: hidden;
+
+    &-nav {
+        &, ul {
+            @include flecss_class("flex");
+            
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: flecss-space("m");
+            width: 100%;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        strong {
+            font-weight: 500;
+        }
+        a {
+            font-weight: 500;
+            
+            @include font-title;
+        }
+    }
+    
+    span {
+        font-size: flecss-fontsize("xs");
+        
+        a {
+            font-weight: 400;
+        }
+    }
+}

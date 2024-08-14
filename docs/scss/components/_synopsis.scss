@@ -1,0 +1,36 @@
+.synopsis {
+    width: 100%;
+
+    &-syntax {
+        td:first-of-type {
+            @include flecss_class("p_r--m");
+            
+            white-space: nowrap;
+            width: 0;
+        }
+        td:last-of-type p {
+            color: flecss-color("fg");
+            font-weight: 500;
+        }
+    }
+    &-figures {
+        align-items: flex-end;
+
+        &:not(:first-child) {
+            margin-top: flecss-space("xs");
+        }
+
+        div {
+            gap: 1rem;
+        }
+        span {
+            white-space: nowrap;
+        }
+        img {
+            max-height: 30vh;
+            height: auto;
+            pointer-events: none;
+            user-select: none;
+        }
+    }
+}

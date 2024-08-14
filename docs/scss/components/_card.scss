@@ -1,0 +1,23 @@
+.card {
+    @include flecss_class("p--l");
+
+    position: relative;
+    width: 100%;
+    background-color: flecss-color("bg-translucent");
+    
+    &--transparent {
+        @include flecss_class("p_v--zero");
+
+        background-color: transparent;
+    }
+    &--dense {
+        h3 {
+            margin-top: flecss-space("l");
+        }
+    }
+
+    p, blockquote {
+        position: relative;
+        color: flecss-color("fg-gray");
+    }
+}

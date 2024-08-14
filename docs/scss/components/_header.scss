@@ -1,0 +1,30 @@
+.header {
+    @include flecss_class("p_t--xl");
+
+    @include flecss_breakpoint--s {
+        padding-top: 0;
+    }
+
+    h1 {
+        position: absolute;
+        transform: translateX(-10000px);
+        filter: opacity(0);
+        pointer-events: none;
+        user-select: none;
+    }
+    p {
+        color: flecss-color("fg-gray");
+        font-size: flecss-fontsize("l");
+    }
+    strong {
+        color: flecss-color("fg");
+        font-size: 1.25em;
+        font-weight: 600;
+        
+        @include font-title;
+    }
+    
+    .wrapper {
+        padding-top: 0;
+    }
+}

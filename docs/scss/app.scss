@@ -1,0 +1,31 @@
+@import "./overrides";
+@import "./variables";
+@import "./elements";
+@import "./typography";
+
+@import "./components/sidebar";
+@import "./components/header";
+@import "./components/footer";
+@import "./components/card";
+@import "./components/badge";
+@import "./components/synopsis";
+
+
+#wave {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 150vw;
+    height: auto;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+    filter: opacity(0.5);
+
+    @include flecss_breakpoint--m {
+        width: 300vw;
+    }
+    @include flecss_breakpoint--s {
+        width: 450vw;
+    }
+}

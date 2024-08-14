@@ -1,0 +1,24 @@
+@include flecss_font("Outfit", "./fonts/Outfit/Outfit-600.ttf", 600);
+@include flecss_font("Outfit", "./fonts/Outfit/Outfit-700.ttf", 700);
+@include flecss_font("Rubik", "./fonts/Rubik/Rubik-300.ttf", 300);
+@include flecss_font("Rubik", "./fonts/Rubik/Rubik-400.ttf", 400);
+@include flecss_font("Rubik", "./fonts/Rubik/Rubik-500.ttf", 500);
+
+
+@mixin font-text {
+    font-family: "Rubik", Arial, Helvetica, sans-serif;
+}
+
+@mixin font-title {
+    font-family: "Outfit", "Rubik", Arial, Helvetica, sans-serif;
+}
+
+html {
+    @include font-text;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    
+    @include font-title;
+}

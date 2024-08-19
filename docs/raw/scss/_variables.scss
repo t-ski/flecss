@@ -1,0 +1,14 @@
+:root {
+    --max-text-width: 40rem;
+}
+
+@include flecss_color("primary", #4854FF, #6973FF);
+@include flecss_color("secondary", #70FFD2, #4D7B6F);
+@include flecss_color("code", #DB3E8D, #F98BC2);
+@include flecss_color("bg", #FDFEFF, #242636);
+@include flecss_color("bg-translucent", #F6F7FF80, #24263680);
+@include flecss_color("bg-primary-translucent", #CAD1FF80, #2E325780);
+@include flecss_color("bg-secondary-translucent", #BEFBFF80, #1C4A4F80);
+@include flecss_color("fg", #1E1E21, #F9F9FF);
+@include flecss_color("fg-gray", #52525E, #838AA4);
+@include flecss_color("fg-light", #FFFFFF, #020426);

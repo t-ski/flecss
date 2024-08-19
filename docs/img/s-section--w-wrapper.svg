@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+      --fg-0: #C295FC;
+      --fg-1: #CFC0EB;
+      --fg-2: #BDF5FC;
+      --fg-3: #A8F7DE;
+    }
+  </style>
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="75" y1="0" x2="75" y2="150" id="gradient-2" gradientTransform="matrix(2.526964, 2.567839, -2, 2.000001, 110.478127, -192.588028)">
+      <stop offset="0" style="stop-color: var(--fg-1);"/>
+      <stop offset="1" style="stop-color: var(--fg-0);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="150.113" y1="17.118" x2="150.113" y2="282.882" id="gradient-4" gradientTransform="matrix(0.314466, 0.794188, -1.235793, 1.128821, 273.520075, -155.408142)">
+      <stop offset="0" style="stop-color: var(--fg-2)"/>
+      <stop offset="1" style="stop-color: var(--fg-3);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="38.042" y1="17.118" x2="38.042" y2="282.882" id="gradient-0" gradientTransform="matrix(0.705529, 0.708681, -1.128821, 1.128821, 292.230125, -46.282578)">
+      <stop offset="0" style="stop-color: var(--fg-2)"/>
+      <stop offset="1" style="stop-color: var(--fg-3);"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-2');"/>
+  <rect x="53.857" width="192.285" height="300.152" style="stroke-linecap: square; stroke-width: 50px; fill: rgb(255, 255, 255); fill-opacity: 0.25;"/>
+  <path d="M 53.857 258.979 L 246.142 258.979 L 246.142 300.152 L 53.857 300.152 L 53.857 258.979 Z M 53.857 0.251 L 246.142 -0.152 L 246.142 41.021 L 53.857 41.424 L 53.857 0.251 Z" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-4');"/>
+  <path d="M -0.029 0 L 21.371 0 L 21.48 300 L 0.08 300 L -0.029 0 Z M 278.529 0 L 299.929 0 L 300.03 300 L 278.63 300 L 278.529 0 Z" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-0');"/>
+</svg>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.00,maximum-scale=2.00,minimum-scale=1.00">
+        <title>flecss – CSS Framework</title>
+        <link rel="stylesheet" href="./app.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@t-ski/html-sourcecode-element/dist/HTMLSourceCodeElement.opaque.glitch.js"></script>
+        <script src="./app.js"></script>
+    </head>
+    <body>
+        <svg id="wave" viewBox="0 0 1440 250" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="gradient" x1="0" x2="0" y1="1" y2="0">
+                    <stop stop-color="var(--flecss_color--bg-primary-translucent)" offset="0%"></stop>
+                    <stop stop-color="var(--flecss_color--bg-secondary-translucent)" offset="100%"></stop>
+                </linearGradient>
+            </defs>
+            <path style="opacity:1" fill="url(#gradient)" d="M0,150L80,125C160,100,320,50,480,58.3C640,67,800,133,960,141.7C1120,150,1280,100,1440,79.2C1600,58,1760,67,1920,79.2C2080,92,2240,108,2400,104.2C2560,100,2720,75,2880,87.5C3040,100,3200,150,3360,145.8C3520,142,3680,83,3840,58.3C4000,33,4160,42,4320,62.5C4480,83,4640,117,4800,129.2C4960,142,5120,133,5280,133.3C5440,133,5600,142,5760,137.5C5920,133,6080,117,6240,108.3C6400,100,6560,100,6720,91.7C6880,83,7040,67,7200,75C7360,83,7520,117,7680,116.7C7840,117,8000,83,8160,66.7C8320,50,8480,50,8640,41.7C8800,33,8960,17,9120,33.3C9280,50,9440,100,9600,120.8C9760,142,9920,133,10080,141.7C10240,150,10400,175,10560,179.2C10720,183,10880,167,11040,166.7C11200,167,11360,183,11440,191.7L11520,200L11520,250L11440,250C11360,250,11200,250,11040,250C10880,250,10720,250,10560,250C10400,250,10240,250,10080,250C9920,250,9760,250,9600,250C9440,250,9280,250,9120,250C8960,250,8800,250,8640,250C8480,250,8320,250,8160,250C8000,250,7840,250,7680,250C7520,250,7360,250,7200,250C7040,250,6880,250,6720,250C6560,250,6400,250,6240,250C6080,250,5920,250,5760,250C5600,250,5440,250,5280,250C5120,250,4960,250,4800,250C4640,250,4480,250,4320,250C4160,250,4000,250,3840,250C3680,250,3520,250,3360,250C3200,250,3040,250,2880,250C2720,250,2560,250,2400,250C2240,250,2080,250,1920,250C1760,250,1600,250,1440,250C1280,250,1120,250,960,250C800,250,640,250,480,250C320,250,160,250,80,250L0,250Z"></path>
+            <path style="opacity:0.75" fill="url(#gradient)" d="M0,225L80,200C160,175,320,125,480,104.2C640,83,800,92,960,100C1120,108,1280,117,1440,100C1600,83,1760,42,1920,33.3C2080,25,2240,50,2400,58.3C2560,67,2720,58,2880,66.7C3040,75,3200,100,3360,112.5C3520,125,3680,125,3840,116.7C4000,108,4160,92,4320,100C4480,108,4640,142,4800,137.5C4960,133,5120,92,5280,75C5440,58,5600,67,5760,79.2C5920,92,6080,108,6240,100C6400,92,6560,58,6720,45.8C6880,33,7040,42,7200,50C7360,58,7520,67,7680,79.2C7840,92,8000,108,8160,125C8320,142,8480,158,8640,137.5C8800,117,8960,58,9120,50C9280,42,9440,83,9600,108.3C9760,133,9920,142,10080,129.2C10240,117,10400,83,10560,70.8C10720,58,10880,67,11040,95.8C11200,125,11360,175,11440,200L11520,225L11520,250L11440,250C11360,250,11200,250,11040,250C10880,250,10720,250,10560,250C10400,250,10240,250,10080,250C9920,250,9760,250,9600,250C9440,250,9280,250,9120,250C8960,250,8800,250,8640,250C8480,250,8320,250,8160,250C8000,250,7840,250,7680,250C7520,250,7360,250,7200,250C7040,250,6880,250,6720,250C6560,250,6400,250,6240,250C6080,250,5920,250,5760,250C5600,250,5440,250,5280,250C5120,250,4960,250,4800,250C4640,250,4480,250,4320,250C4160,250,4000,250,3840,250C3680,250,3520,250,3360,250C3200,250,3040,250,2880,250C2720,250,2560,250,2400,250C2240,250,2080,250,1920,250C1760,250,1600,250,1440,250C1280,250,1120,250,960,250C800,250,640,250,480,250C320,250,160,250,80,250L0,250Z"></path>
+            <path style="opacity:0.5" fill="url(#gradient)" d="M0,25L80,54.2C160,83,320,142,480,141.7C640,142,800,83,960,54.2C1120,25,1280,25,1440,25C1600,25,1760,25,1920,45.8C2080,67,2240,108,2400,104.2C2560,100,2720,50,2880,25C3040,0,3200,0,3360,33.3C3520,67,3680,133,3840,170.8C4000,208,4160,217,4320,195.8C4480,175,4640,125,4800,108.3C4960,92,5120,108,5280,104.2C5440,100,5600,75,5760,58.3C5920,42,6080,33,6240,37.5C6400,42,6560,58,6720,75C6880,92,7040,108,7200,108.3C7360,108,7520,92,7680,91.7C7840,92,8000,108,8160,104.2C8320,100,8480,75,8640,70.8C8800,67,8960,83,9120,100C9280,117,9440,133,9600,116.7C9760,100,9920,50,10080,29.2C10240,8,10400,17,10560,33.3C10720,50,10880,75,11040,95.8C11200,117,11360,133,11440,141.7L11520,150L11520,250L11440,250C11360,250,11200,250,11040,250C10880,250,10720,250,10560,250C10400,250,10240,250,10080,250C9920,250,9760,250,9600,250C9440,250,9280,250,9120,250C8960,250,8800,250,8640,250C8480,250,8320,250,8160,250C8000,250,7840,250,7680,250C7520,250,7360,250,7200,250C7040,250,6880,250,6720,250C6560,250,6400,250,6240,250C6080,250,5920,250,5760,250C5600,250,5440,250,5280,250C5120,250,4960,250,4800,250C4640,250,4480,250,4320,250C4160,250,4000,250,3840,250C3680,250,3520,250,3360,250C3200,250,3040,250,2880,250C2720,250,2560,250,2400,250C2240,250,2080,250,1920,250C1760,250,1600,250,1440,250C1280,250,1120,250,960,250C800,250,640,250,480,250C320,250,160,250,80,250L0,250Z"></path>
+            <path style="opacity:0.25" fill="url(#gradient)" d="M0,100L80,116.7C160,133,320,167,480,162.5C640,158,800,117,960,87.5C1120,58,1280,42,1440,50C1600,58,1760,92,1920,91.7C2080,92,2240,58,2400,37.5C2560,17,2720,8,2880,37.5C3040,67,3200,133,3360,133.3C3520,133,3680,67,3840,54.2C4000,42,4160,83,4320,100C4480,117,4640,108,4800,95.8C4960,83,5120,67,5280,62.5C5440,58,5600,67,5760,79.2C5920,92,6080,108,6240,129.2C6400,150,6560,175,6720,183.3C6880,192,7040,183,7200,158.3C7360,133,7520,92,7680,66.7C7840,42,8000,33,8160,41.7C8320,50,8480,75,8640,70.8C8800,67,8960,33,9120,16.7C9280,0,9440,0,9600,0C9760,0,9920,0,10080,25C10240,50,10400,100,10560,112.5C10720,125,10880,100,11040,83.3C11200,67,11360,58,11440,54.2L11520,50L11520,250L11440,250C11360,250,11200,250,11040,250C10880,250,10720,250,10560,250C10400,250,10240,250,10080,250C9920,250,9760,250,9600,250C9440,250,9280,250,9120,250C8960,250,8800,250,8640,250C8480,250,8320,250,8160,250C8000,250,7840,250,7680,250C7520,250,7360,250,7200,250C7040,250,6880,250,6720,250C6560,250,6400,250,6240,250C6080,250,5920,250,5760,250C5600,250,5440,250,5280,250C5120,250,4960,250,4800,250C4640,250,4480,250,4320,250C4160,250,4000,250,3840,250C3680,250,3520,250,3360,250C3200,250,3040,250,2880,250C2720,250,2560,250,2400,250C2240,250,2080,250,1920,250C1760,250,1600,250,1440,250C1280,250,1120,250,960,250C800,250,640,250,480,250C320,250,160,250,80,250L0,250Z"></path>
+        </svg>
+        <main class="wrapper--l flex_right--xl">
+            <aside class="sidebar">
+                <div class="sidebar-fixed">
+                    <a class="sidebar-logo" href="#hero">
+                        <img src="./img/flecss-logo.svg" alt="flecss">
+                    </a>
+                    <ol class="sidebar-toc">
+                        <li>
+<a>Integration</a>
+</li>
+<li>
+<a>Classes</a>
+<ol>
+<li>
+<a><code>.d</code> Display</a>
+</li>
+<li>
+<a><code>.f</code> Flex</a>
+</li>
+<li>
+<a><code>.m</code> Margin</a>
+</li>
+<li>
+<a><code>.p</code> Padding</a>
+</li>
+<li>
+<a><code>.s</code> Section etc.</a>
+</li>
+<li>
+<a><code>.t</code> Text</a>
+</li>
+<li>
+<a><code>.v</code> Viewport</a>
+</li>
+</ol>
+</li>
+<li>
+<a>Space Modifier</a>
+</li>
+<li>
+<a>Utilities</a>
+<ol>
+<li>
+<a><code>mx</code> Breakpoint</a>
+</li>
+<li>
+<a><code>mx</code> Class</a>
+</li>
+<li>
+<a><code>mx</code> Color</a>
+</li>
+<li>
+<a><code>mx</code> Font</a>
+</li>
+<li>
+<a><code>mx</code> Theme</a>
+</li>
+<li>
+<a><code>fn</code> Color</a>
+</li>
+<li>
+<a><code>fn</code> Fontsize</a>
+</li>
+<li>
+<a><code>fn</code> Space</a>
+</li>
+</ol>
+</li>
+                    </ol>
+                </div>
+            </aside>
+            <div>
+                <header class="header card card--transparent m_b" id="hero">
+                    <h1 tabindex="-1">flecss</h1>
+                    <p>
+                        <strong>flecss</strong> is a minimalist and straightforward (S)CSS framework.
+                    </p>
+                    <p>
+                        flecss is both a CSS library, and a related SCSS build interface.
+                        It is less granular than Bootstrap or Tailwind. Instead, it provides only highly resuable styles found in the majority of <nobr></nobr>web-based designs<sup>1</sup>.</nobr><br class="viewport_large">
+                        Anything else is left to individual stylesheets.
+                    </p>
+                    <blockquote>
+                        📦 &hairsp; All of flecss ships with a total of <code>74kB</code>, compared to Bootstrap with <nobr><code>248kB</code><sup>2</sup>.</nobr>
+                    </blockquote>
+                </header>
+                <section class="card"><h2>Integration</h2>
+<source-code language="html">&lt;link rel=&quot;stylesheet&quot;
+ href=&quot;https://cdn.jsdelivr.net/npm/flecss/dist/flecss.css&quot;&gt;
+</source-code>
+<blockquote>
+<p>ℹ️   Flecss applies a few CSS resets (see <a href="https://github.com/t-ski/flecss/blob/main/src/core/_reset.scss" target="_blank">_reset.scss</a>).</p>
+</blockquote>
+<p>As usual for a CSS library, styles can be assigned through inbuilt classes. flecss class names introduces a handy all-in-one anatomy. A class does fundamentally consist of a style identifier <code>&lt;identifier&gt;</code>. An identifier – which is either fully qualified or a related shorthand – depicts the class' purpose (e.g. padding). Without any further information, the class fulfills the most generic style (e.g. padding to all sides). Optionally, a specifier <code>_&lt;specifier&gt;</code>, and a space modifier <code>--&lt;modifier&gt;</code> can additionally be declared – in that order. A specifier can be used to specify a certain styling target (e.g. padding only to the top). A (space) modifier – if applicable – changes the effective space property that is related to the style (e.g. the padding size). Valid class names would thus comply with one of the following formats: <code>.&lt;identifier&gt;</code>, <code>.&lt;identifier&gt;_&lt;specifier&gt;</code>, <code>.&lt;identifier&gt;--&lt;modifier</code> or <code>.&lt;identifier&gt;_&lt;specifier&gt;--&lt;modifier&gt;</code>. The following format is particularly invalid <code>.&lt;identifier&gt;--&lt;modifier&gt;_&lt;specifier&gt;</code>.</p>
+<h4>Example</h4>
+<source-code language="html">&lt;section class=&quot;section&quot;&gt;
+    &lt;div class=&quot;wrapper--xl&quot;&gt;
+        &lt;h1&gt;flecss&lt;/h1&gt;
+        &lt;h2 class=&quot;m_top--xs viewport_not-s&quot;&gt;About&lt;/h2&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</source-code>
+<h3>SCSS Interface</h3>
+<source-code language="console">npm install -D flecss
+</source-code>
+<p>flecss comes with a mature build interface for SCSS to allow some customisation. Working with flecss on SCSS level furthermore enables custom overrides of the global flecss variables (e.g. <code>--flecss__fontsize--l</code>). In fact, flecss can even be used as a standalone SCSS transpiler.</p>
+<blockquote>
+<p>ℹ️   The flecss build interface bases on the <a href="https://github.com/sass/dart-sass" target="_blank">sass</a> transpiler and <a href="https://github.com/clean-css/clean-css" target="_blank">clean-css</a> optimiser.</p>
+</blockquote>
+<h4><span>CLI</span> <b class="badge">Recommended</b></h4>
+<source-code language="console">npx flecss &lt;path:source&gt; &lt;path:target&gt; [--&lt;flag:key|-&lt;flag:shorthand&gt;]*
+</source-code>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Flag</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>--standalone</code> <code>-S</code></td>
+<td style="text-align:left">Build without including flecss.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>--watch</code> <code>-W</code></td>
+<td style="text-align:left">Watch file changes for incremental builds.</td>
+</tr>
+</tbody>
+</table>
+<h4>Example</h4>
+<source-code language="console">npx flecss ./scss ./public/app.css --watch
+</source-code>
+<h4>API</h4>
+<source-code language="ts">interface IBuildOptions {
+    isDevelopment?: boolean;
+    isStandalone?: boolean;
+}
+</source-code>
+<source-code language="ts">function buildCSS(sourcePath: string, targetPath?: string, options?: IBuildOptions &amp; {
+    modTimeTolerance?: number;
+}): Promise&lt;{
+    executionTimeMs: number;
+    sourcePath: string;
+    targetPath: string;
+    targetSizeByte: number;
+}&gt;;
+</source-code>
+<source-code language="ts">function transpile(sourcePath: string, targetPath: string, options?: IBuildOptions): {
+    css: string;
+    loadedUrls: string[];
+}
+</source-code>
+<h4>Example</h4>
+<source-code language="js">const flecss = require(&quot;flecss&quot;);
+
+flecss.buildCSS(&quot;./app.scss&quot;);  // target path: app.css
+</source-code>
+</section>
+<section class="card"><h2>Classes</h2>
+
+<h3><code>.d</code> <code>.display</code></h3>
+<p>The display class allows to toggle binary display conditions. Absence of a display class (specifier) implies the common option, namely simple display.</p>
+<div class="synopsis">
+    <table class="synopsis-syntax">
+        <tr>
+            <td><code>_disable</code></td>
+            <td>
+                Greyout and disable element for interaction.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_hide</code></td>
+            <td>
+                Hide element, but keep in layout.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_collapse</code></td>
+            <td>
+                Hide element, including from layout (bounding box).
+            </td>
+        </tr>
+    </table>
+    <div class="synopsis-figures flex_5--l">
+        <div>
+            <img src="./img/d-display-none.svg">
+        </div>
+        <div>
+            <code>_disable</code>
+            <img src="./img/d-display_disable.svg">
+        </div>
+        <div>
+            <code>_hide</code>
+            <img src="./img/d-display_hide.svg">
+        </div>
+        <div>
+            <code>_collapse</code>
+            <img src="./img/d-display_collapse.svg">
+        </div>
+    </div>
+</div>
+<h4>Example</h4>
+<source-code language="html">&lt;button class=&quot;d_disable&quot;&gt;Submit&lt;/button&gt;
+</source-code>
+
+<h3><code>.f</code> <code>.flex</code></h3>
+<p>The flex class represents the key layouting class in flecss – flexbox based (pun intended).</p>
+<div class="synopsis">
+    <table class="synopsis-syntax">
+        <tr>
+            <td><nobr><code>_1</code> - <code>_9</code></nobr></td>
+            <td>
+                <code>n</code> equal-sized content tiles per row with a homogeneous margin in between.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_left</code></td>
+            <td>
+                Two-fold layout growing flexible to the left.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_right</code></td>
+            <td>
+                Two-fold layout growing flexible to the right.
+            </td>
+        </tr>
+    </table>
+    <div class="synopsis-figures flex_5--l m__flex_3 s__flex_2">
+        <div>
+            <code>_1</code>
+            <img src="./img/f-flex_1.svg">
+        </div>
+        <div>
+            <code>_2</code>
+            <img src="./img/f-flex_2.svg">
+        </div>
+        <div>
+            <code>_3</code>
+            <img src="./img/f-flex_3.svg">
+        </div>
+        <div class="viewport_l"></div>
+        <div class="viewport_l"></div>
+        <div>
+            <code>_left</code>
+            <img src="./img/f-flex_left.svg">
+        </div>
+        <div>
+            <code>_right</code>
+            <img src="./img/f-flex_right.svg">
+        </div>
+    </div>
+</div>
+<h4>Example</h4>
+<source-code language="html">&lt;div class=&quot;f_2&quot;&gt;
+    &lt;div&gt;
+        &lt;h4&gt;Free Rate&lt;/h4&gt;
+        &lt;span&gt;€0&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h4&gt;Enterprise Rate&lt;/h4&gt;
+        &lt;span&gt;€99&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</source-code>
+
+<h3><code>.m</code> <code>.margin</code></h3>
+<p>The margin class simply helps with inducing a margin. With a specifier, a certain side can be targeted in isolation.</p>
+<div class="synopsis">
+    <table class="synopsis-syntax">
+        <tr>
+            <td><b class="badge">default</b></td>
+            <td>
+                Margin to all sides.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_h</code> <code>_horizontal</code></td>
+            <td>
+                Margin to top and bottom side.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_v</code> <code>_vertical</code></td>
+            <td>
+                Margin to left and right side.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_t</code> <code>_top</code></td>
+            <td>
+                Margin to top side only.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_b</code> <code>_bottom</code></td>
+            <td>
+                Margin to bottom side only.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_l</code> <code>_left</code></td>
+            <td>
+                Margin to left side only.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_r</code> <code>_right</code></td>
+            <td>
+                Margin to right side only.
+            </td>
+        </tr>
+    </table>
+    <div class="synopsis-figures flex_5--l m__flex_3 s__flex_2">
+        <div>
+            <img src="./img/m-margin.svg">
+        </div>
+        <div>
+            <code>_horizontal</code>
+            <img src="./img/m-margin_horizontal.svg">
+        </div>
+        <div>
+            <code>_vertical</code>
+            <img src="./img/m-margin_vertical.svg">
+        </div>
+        <div class="viewport_l"></div>
+        <div class="viewport_l"></div>
+        <div>
+            <code>_top</code>
+            <img src="./img/m-margin_top.svg">
+        </div>
+        <div>
+            <code>_bottom</code>
+            <img src="./img/m-margin_bottom.svg">
+        </div>
+        <div>
+            <code>_left</code>
+            <img src="./img/m-margin_left.svg">
+        </div>
+        <div>
+            <code>_right</code>
+            <img src="./img/m-margin_right.svg">
+        </div>
+    </div>
+</div>
+<h4>Example</h4>
+<source-code language="html">&lt;p class=&quot;m_b&quot;&gt;Do not click the button!&lt;/p&gt;
+&lt;button&gt;Click me&lt;/button&gt;
+</source-code>
+
+<h3><code>.p</code> <code>.padding</code></h3>
+<p>The padding class simply helps with inducing a margin. It works analogous to the margin class.</p>
+<div class="synopsis">
+    <table class="synopsis-syntax">
+        <tr>
+            <td><b class="badge">default</b></td>
+            <td>
+                Padding to all sides.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_h</code> <code>_horizontal</code></td>
+            <td>
+                Padding to top and bottom side.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_v</code> <code>_vertical</code></td>
+            <td>
+                Padding to left and right side.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_t</code> <code>_top</code></td>
+            <td>
+                Padding to top side only.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_b</code> <code>_bottom</code></td>
+            <td>
+                Padding to bottom side only.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_l</code> <code>_left</code></td>
+            <td>
+                Padding to left side only.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_r</code> <code>_right</code></td>
+            <td>
+                Padding to right side only.
+            </td>
+        </tr>
+    </table>
+    <div class="synopsis-figures flex_5--l" m:class="flex_3" s:class="flex_2 flex--m">
+        <div>
+            <img src="./img/p-padding.svg">
+        </div>
+        <div>
+            <code>_horizontal</code>
+            <img src="./img/p-padding_horizontal.svg">
+        </div>
+        <div>
+            <code>_vertical</code>
+            <img src="./img/p-padding_vertical.svg">
+        </div>
+        <div class="viewport_l"></div>
+        <div class="viewport_l"></div>
+        <div>
+            <code>_top</code>
+            <img src="./img/p-padding_top.svg">
+        </div>
+        <div>
+            <code>_bottom</code>
+            <img src="./img/p-padding_bottom.svg">
+        </div>
+        <div>
+            <code>_left</code>
+            <img src="./img/p-padding_left.svg">
+        </div>
+        <div>
+            <code>_right</code>
+            <img src="./img/p-padding_right.svg">
+        </div>
+    </div>
+</div>
+<h4>Example</h4>
+<source-code language="html">&lt;div class=&quot;p--xl&quot;&gt;
+    &lt;h2&gt;Event&lt;/h2&gt;
+&lt;/div&gt;
+</source-code>
+
+<h3><nobr><code>.s</code> <code>.section</code><span>+</span></nobr><nobr><code>.w</code> <code>.wrapper</code></nobr></h3>
+<p>The section and wrapper class are vital to vertical layouting. In fact, each class represents a nestable container. A section stretches across the full width, with a small affixed vertical content padding as a safety area. The wrapper has a limited width and is centered within a section, with an extra large affixed horizontal content padding to separate stacked content. Used in combination, the section-wrapper layouting classes provide a simple yet powerful styling capabilities.</p>
+<div class="synopsis">
+    <div class="synopsis-figures flex_5--l m__flex_3 s__flex_2">
+        <div>
+            <span><code>.s</code> <code>.section</code></span>
+            <img src="./img/s-section.svg">
+        </div>
+        <div>
+            <span><code>.w</code> <code>.wrapper</code></span>
+            <img src="./img/w-wrapper.svg">
+        </div>
+        <div>
+            <span><code>.section</code> > <code>.wrapper</code></span>
+            <img src="./img/s-section--w-wrapper.svg">
+        </div>
+    </div>
+</div>
+<h4>Example</h4>
+<source-code language="html">&lt;section class=&quot;card wrapper&quot;&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;h2&gt;Event&lt;/h2&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</source-code>
+
+<h3><code>.t</code> <code>.text</code></h3>
+<p>The text class allows to set text alignment. It is particularly with text based content that requires deviant text alignment..</p>
+<div class="synopsis">
+    <table class="synopsis-syntax">
+        <tr>
+            <td><code>_l</code> <code>_left</code></td>
+            <td>
+                Align text to the left.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_r</code> <code>_right</code></td>
+            <td>
+                Align text to the right.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_c</code> <code>_center</code></td>
+            <td>
+                Align text to the center.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_j</code> <code>_justify</code></td>
+            <td>
+                Align text across the whole width.
+            </td>
+        </tr>
+    </table>
+    <div class="synopsis-figures flex_5--l m__flex_3 s__flex_2">
+        <div>
+            <code>_left</code>
+            <img src="./img/t-text_left.svg">
+        </div>
+        <div>
+            <code>_right</code>
+            <img src="./img/t-text_right.svg">
+        </div>
+        <div>
+            <code>_center</code>
+            <img src="./img/t-text_center.svg">
+        </div>
+        <div>
+            <code>_justify</code>
+            <img src="./img/t-text_justify.svg">
+        </div>
+    </div>
+</div>
+<h4>Example</h4>
+<source-code language="html">&lt;p class=&quot;t_center&quot;&gt;
+    &lt;strong&gt;Try flecss now.&lt;/strong&gt;
+&lt;/p&gt;
+</source-code>
+
+<h3><code>.v</code> <code>.viewport</code></h3>
+<p>The viewport class can be used to bind whether to display an element to the current viewport size.</p>
+<div class="synopsis">
+    <table class="synopsis-syntax">
+        <tr>
+            <td><code>_s</code> <code>_small</code></td>
+            <td>
+                Show on small viewport only.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_m</code> <code>_medium</code></td>
+            <td>
+                Show on medium viewport only.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_l</code> <code>_large</code></td>
+            <td>
+                Show on large viewport only.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_not-s</code> <code>_not-small</code></td>
+            <td>
+                Do not show on small viewport.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_not-m</code> <code>_not-medium</code></td>
+            <td>
+                Do not show on medium viewport.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_not-l</code> <code>_not-large</code></td>
+            <td>
+                Do not show on large viewport.
+            </td>
+        </tr>
+    </table>
+    <div class="synopsis-figures flex_5--l m__flex_3 s__flex_2">
+        <div>
+            <code>_large</code>
+            <img src="./img/v-viewport_large.svg">
+        </div>
+        <div>
+            <code>_not-large</code>
+            <img src="./img/v-viewport_not-large.svg">
+        </div>
+    </div>
+</div>
+<h4 id="breakpoints">Breakpoints</h4>
+<table>
+    <tr>
+        <td>Breakpoint <code>L</code></td>
+        <td class="text_r">1 × <code>--wrapper-width</code> = <code>1420px</code></td>
+    </tr>
+    <tr>
+        <td>Breakpoint <code>M</code></td>
+        <td class="text_r">⅔ × <code>--wrapper-width</code> = <code>~947px</code></td>
+    </tr>
+    <tr>
+        <td>Breakpoint <code>S</code></td>
+        <td class="text_r">⅓ × <code>--wrapper-width</code> = <code>~473px</code></td>
+    </tr>
+</table>
+<blockquote>
+<p>ℹ️   Breakpoints are not mutable, i.e. overriding <code>--wrapper-width</code> does not affect the fixed breakpoints.</p>
+</blockquote>
+<h4>Example</h4>
+<source-code language="html">&lt;a class=&quot;v_large&quot; href=&quot;/about&quot;&gt;About&lt;/a&gt;
+</source-code>
+</section>
+<section class="card"><h2>Space Modifier</h2>
+<p>The space modifier is quite a new idea in flecss. It allows to alternate the space for class styles built around a space property. For instance, the padding class obviously has a space property to define the padding. The wrapper class, on the other hand, has an inherent padding at the vertical sides.</p>
+<div class="synopsis">
+    <table class="synopsis-syntax">
+        <tr>
+            <td><code>--xxs</code> <code>--extra-extra-small</code></td>
+            <td>
+                Extra extra small spacing.
+            </td>
+        </tr>
+        <tr>
+            <td><code>--xs</code> <code>--extra-small</code></td>
+            <td>
+                Extra small spacing.
+            </td>
+        </tr>
+        <tr>
+            <td><code>--s</code> <code>--small</code></td>
+            <td>
+                Small spacing.
+            </td>
+        </tr>
+        <tr>
+            <td><code>--m</code> <code>--medium</code> <b class="badge">default</b></td>
+            <td>
+                Medium spacing.
+            </td>
+        </tr>
+        <tr>
+            <td><code>--l</code> <code>--large</code></td>
+            <td>
+                Large spacing.
+            </td>
+        </tr>
+        <tr>
+            <td><code>--xl</code> <code>--extra-large</code></td>
+            <td>
+                Extra large spacing.
+            </td>
+        </tr>
+        <tr>
+            <td><code>--xxl</code> <code>--extra-extra-large</code></td>
+            <td>
+                Extra extra large spacing.
+            </td>
+        </tr>
+    </table>
+</div>
+<p>The size of a space unit (e.g. <code>--s</code>) scales progressively aroud the medium space unit <code>--m</code> (≡ <code>--space</code>) by a factor <code>--space-factor</code>. For instance, <code>--xl</code> corresponds to <code>--space * --space-factor^2</code> – i.e. <code>~5rem</code> by default.</p>
+<table>
+    <tr>
+        <td><code>--space</code></td>
+        <td class="t_r"><code>&gt;</code> Breakpoint <code>L</code>: <code>--flecss__space--l</code> (≡ <code>1.75rem</code>)</td>
+    <tr>
+    <tr>
+        <td></td>
+        <td class="t_r"><code>&lt;</code> Breakpoint <code>M</code>: <code>--flecss__space--m</code> (≡ <code>1.55rem</code>)</td>
+    <tr>
+    <tr>
+        <td></td>
+        <td class="t_r"><code>&lt;</code> Breakpoint <code>S</code>: <code>--flecss__space--s</code> (≡ <code>1.55rem</code>)</td>
+    <tr>
+    <tr>
+        <td><code>--space-factor</code></td>
+        <td class="t_r"><code>2.0</code></td>
+    <tr>
+</table>
+<h4>Example</h4>
+<source-code language="html">&lt;p class=&quot;p_t--large p_b--s&quot;&gt;
+    We love flecss!
+&lt;/p&gt;
+</source-code>
+</section>
+<section class="card"><h2>SCSS Utilities</h2>
+<p>The flecss build interface exposes a set of helpful utilities – mixins (<code>mx</code>, <code>flecss_&lt;*&gt;</code>) and functions (<code>flecss-&lt;*&gt;</code>). Those  can be used from within custom, non-standalone flecss transpiled SCSS.</p>
+
+<h3><code>mx</code> <span>Breakpoint</span></h3>
+<p>The breakpoint mixin wraps styles to be only applied below a respective breakpoint (revisit <a href="#breakpoints">Breakpoints</a>).</p>
+<source-code language="scss">@include flecss_breakpoint--s
+@include flecss_breakpoint--m
+@include flecss_breakpoint--l
+</source-code>
+<h4>Example</h4>
+<source-code language="scss">b {
+    font-weight: 800;
+    
+    @include flecss_breakpoint--s {
+        font-weight: 600;
+    }
+}
+</source-code>
+
+<h3><code>mx</code> <span>Class</span></h3>
+<p>The class mixin provides extensibility of a flecss class from a custom class. This way, redundant class statements and inherent verbosity can be avoided. The classifier argument is a full class name string as it would be assigned to elements.</p>
+<source-code language="scss">@include flecss_class($classifier)
+</source-code>
+<h4>Example</h4>
+<source-code language="scss">.card {
+    @include flecss_class(&quot;padding_v--large&quot;);
+    
+    background-color: lightgray;
+}
+</source-code>
+
+<h3><code>mx</code> <span>Color</span></h3>
+<p>The color mixin defines a reusable color including a slightly lighter and a slightly darker shade (10% difference). It can be accessed through the function (<a href="#mx-color"><code>fn</code> Color</a>). Optionally, a color to use for dark themes can be given in addition.</p>
+<source-code language="scss">@include flecss_color($name, $color, $darkThemeColor: null)
+</source-code>
+<h4>Example</h4>
+<source-code language="scss">@include flecss_color(&quot;primary&quot;, #F08080, #541818);
+    
+strong {
+    color: flecss-color(&quot;primary&quot;, &quot;dark&quot;);
+}
+</source-code>
+
+<h3><code>mx</code> <span>Font</span></h3>
+<p>The font mixin defines a font family from a font file path on disc.</p>
+<source-code language="scss">@include flecss_font($name, $path, $weight: 400)
+</source-code>
+<h4>Example</h4>
+<source-code language="scss">@include flecss_font(&quot;Arial&quot;, &quot;./fonts/arial-light.ttf.&quot;, 200);
+@include flecss_font(&quot;Arial&quot;, &quot;./fonts/arial-regular.ttf.&quot;, 400);
+@include flecss_font(&quot;Arial&quot;, &quot;./fonts/arial-bold.ttf.&quot;, 600);
+    
+html {
+    font-family: &quot;Arial&quot;, sans-serif;
+}
+</source-code>
+
+<h3><code>mx</code> <span>Theme</span></h3>
+<p>The theme mixin wraps styles for a respective color scheme (system).</p>
+<source-code language="scss">@include flecss_theme--light
+@include flecss_theme--dark
+</source-code>
+<h4>Example</h4>
+<source-code language="scss">#animation { 
+    animation-name: wave;
+    animation-duration: 2s;
+    
+    @include flecss_theme--dark {
+        animation-duration: 3s;
+    }
+}
+</source-code>
+
+<h3><code>fn</code> <span>Color</span></h3>
+<p>Read a previously defined color.</p>
+<source-code language="scss">flecss-color($name, $shade: [&quot;light&quot;]|&quot;dark&quot;)
+</source-code>
+
+<h3><code>fn</code> <span>Fontsize</span></h3>
+<p>Get a font size computed through the flecss typical spacing by spacing order (e.g. <code>xl</code>).</p>
+<source-code language="scss">flecss-fontsize($dimension: &quot;xxs&quot;|&quot;xs&quot;|&quot;s&quot;|[&quot;m&quot;]|&quot;l&quot;|&quot;xl&quot;|&quot;xxl&quot;)
+</source-code>
+<p>The size of a fontsize unit (e.g. <code>--s</code>) scales progressively aroud the medium fontsize unit <code>--m</code> (≡ <code>--fontsize</code>). The behaviour is analogous to those of space through the space modifier.</p>
+<table>
+    <tr>
+        <td><code>--space</code></td>
+        <td class="t_r"><code>&gt;</code> Breakpoint <code>L</code>: <code>--flecss__fontsize--l</code> (≡ <code>16px</code>)</td>
+    <tr>
+    <tr>
+        <td></td>
+        <td class="t_r"><code>&lt;</code> Breakpoint <code>M</code>: <code>--flecss__fontsize--m</code> (≡ <code>15px</code>)</td>
+    <tr>
+    <tr>
+        <td></td>
+        <td class="t_r"><code>&lt;</code> Breakpoint <code>S</code>: <code>--flecss__fontsize--s</code> (≡ <code>14px</code>)</td>
+    <tr>
+    <tr>
+        <td><code>--fontsize-factor</code></td>
+        <td class="t_r"><code>1.25</code></td>
+    <tr>
+</table>
+<h4>Example</h4>
+<source-code language="scss">b {
+    font-size: flecss-fontsize(&quot;l&quot;);
+}
+</source-code>
+
+<h3><code>fn</code> <span>Space</span></h3>
+<p>Get a flecss space as computed through the space modifier by spacing order (e.g. <code>xs</code>).</p>
+<source-code language="scss">flecss-space($order: &quot;xxs&quot;|&quot;xs&quot;|&quot;s&quot;|[&quot;m&quot;]|&quot;l&quot;|&quot;xl&quot;|&quot;xxl&quot;)
+</source-code>
+<h4>Example</h4>
+<source-code language="scss">b {
+    transform: translateY(flecss-space(&quot;xl));
+}
+</source-code>
+</section>
+                <footer class="footer card card--transparent">
+                    <p class="m_t--m m_b--s">
+                        <small><sup>1</sup> As of 100+ analyzed web application designs.</small><br>
+                        <small><sup>2</sup> As of distribution bootstrap.css available June, 2024.</small>
+                    </p>
+                    <div class="footer-nav">
+                        <nav>
+                            <ul>
+                                <li><a href="https://github.com/t-ski/flecss" target="_blank">GitHub</a></li>
+                                <li><a href="https://www.npmjs.com/package/flecss" target="_blank">NPM</a></li>
+                                <li class="viewport_large">
+                                    <p>
+                                        This site uses flecss.
+                                    </p>
+                                </li>
+                            </ul>
+                        </nav>
+                        <span>
+                            &copy;
+                            <span id="year"></span>
+                            <script>
+                                document.querySelector("#year").textContent = new Date().getFullYear();
+                            </script>
+                            Thassilo Martin Schiepanski
+                        </span>
+                    </div>
+                </footer>
+            </div>
+        </main>
+    </body>
+</html>

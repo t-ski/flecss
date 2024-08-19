@@ -10,11 +10,7 @@
 
 **flecss** (pron. ‘_flex_’): Simple and minimalist CSS framework utilising the power of flexbox.
 
-> 📦 flecss ships with a total of &#8232;`74kB`, compared to Bootstrap with `248kB` <sup>1</sup>.
-
 ### 📖 &hairsp; [Read the Docs](http://t-ski.github.io/flecss)
-
-<sub><sup>1</sup> As of distribution `bootstrap.css` available June, 2024.</sub>  
 
 ##
 

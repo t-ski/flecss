@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+      --fg-0: #C295FC;
+      --fg-1: #CFC0EB;
+    }
+  </style>
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="501.476" y1="-20.433" x2="501.476" y2="129.567" id="gradient-2" gradientTransform="matrix(0.413127, 0.422153, -2.000001, 1.999999, 51.960864, -170.833817)">
+      <stop offset="0" style="stop-color: var(--fg-0);"/>
+      <stop offset="1" style="stop-color: var(--fg-1);"/>
+    </linearGradient>
+  </defs>
+  <path d="M 0 0 L 183.049 0 L 183.049 300 L 0 300 L 0 0 Z M 200.167 0 L 300 0 L 300 300 L 200.167 300 L 200.167 0 Z" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-2');"/>
+</svg>

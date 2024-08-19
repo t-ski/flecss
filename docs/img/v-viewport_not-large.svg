@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+      --fg-0: #C295FC;
+      --fg-1: #CFC0EB;
+    }
+    .bg { fill: #E9E8FA; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #333152; }
+    }
+  </style>
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="90.16" y1="-65.861" x2="90.16" y2="84.139" id="gradient-3" gradientTransform="matrix(0.662474, 0.80219, -1.999999, 2.000007, 108.549396, 59.396968)">
+      <stop offset="0" style="stop-color: var(--fg-1);"/>
+      <stop offset="1" style="stop-color: var(--fg-0);"/>
+    </linearGradient>
+  </defs>
+  <rect class="bg" width="300" height="161.528" style="stroke-linecap: square; stroke-width: 50px;" y="138.473"/>
+  <rect class="bg" width="85.578" height="121.356" style="stroke-linecap: square; stroke-width: 50px;" />
+  <rect class="bg" width="197.304" height="121.356" style="stroke-linecap: square; stroke-width: 50px;" x="102.696" y="-0.001"/>
+  <path d="M 119.696 16.999 L 201.696 16.999 L 201.696 104.354 L 119.696 104.354 L 119.696 16.999 Z M 17 16.999 L 68.578 16.999 L 68.578 60.499 L 17 60.499 L 17 16.999 Z" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-3');"/>
+</svg>

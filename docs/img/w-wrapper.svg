@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+      --fg-0: #C295FC;
+      --fg-1: #CFC0EB;
+      --fg-2: #BDF5FC;
+      --fg-3: #A8F7DE;
+    }
+  </style>
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="150.113" y1="17.118" x2="150.113" y2="282.882" id="gradient-4" gradientTransform="matrix(0.314466, 0.794188, -1.235793, 1.128821, 273.520546, -155.659184)">
+      <stop offset="0" style="stop-color: var(--fg-2)"/>
+      <stop offset="1" style="stop-color: var(--fg-3);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="149.92" y1="0" x2="149.92" y2="300" id="gradient-1" gradientTransform="matrix(0.994752, 0.587571, -1, 1, 150.947582, -88.088169)">
+      <stop offset="0" style="stop-color: var(--fg-0)"/>
+      <stop offset="1" style="stop-color: var(--fg-1);"/>
+    </linearGradient>
+  </defs>
+  <rect width="192.285" height="300" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-1');" x="53.858"/>
+  <path d="M 53.858 258.728 L 246.143 258.728 L 246.143 299.901 L 53.858 299.901 L 53.858 258.728 Z M 53.858 0 L 246.143 -0.403 L 246.143 40.77 L 53.858 41.173 L 53.858 0 Z" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-4');"/>
+</svg>

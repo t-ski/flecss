@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+      --fg-0: #C295FC;
+      --fg-1: #CFC0EB;
+      --fg-2: #BDF5FC;
+      --fg-3: #A8F7DE;
+    }
+  </style>
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="75" y1="0" x2="75" y2="150" id="gradient-2" gradientTransform="matrix(2.785551, 1.840044, -2.000001, 2, 91.083673, -138.003286)">
+      <stop offset="0" style="stop-color: var(--fg-0);"/>
+      <stop offset="1" style="stop-color: var(--fg-1);"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="150" y2="41.387" id="gradient-4" gradientTransform="matrix(0.714908, 0.699219, -7.248652, 7.248651, 192.763962, -104.882629)">
+      <stop offset="0" style="stop-color: var(--fg-2);"/>
+      <stop offset="1" style="stop-color: var(--fg-3);"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="241.495" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-2');" y="58.505"/>
+  <rect width="300" height="41.387" style="stroke-linecap: square; stroke-width: 50px; fill: url('#gradient-4');"/>
+</svg>

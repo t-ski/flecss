@@ -28,7 +28,7 @@
   },
   "scripts": {
     "prepare": "npx husky install",
-    "build": "node --no-deprecation ./build.js ./src/flecss/flecss.scss ./dist/flecss.css --standalone",
+    "build": "node --no-deprecation ./scripts/build.js ./src/flecss/flecss.scss ./dist/flecss.css --standalone",
     "build:develop": "npm run build -- -D",
     "test:browser": "node ./test/browser/_test.node.js",
     "test:browser:view": "open ./test/browser/test.html",
@@ -36,9 +36,11 @@
     "test": "npm run test:browser && npm run test:lib",
     "release:minor": "npm run test && npx release --minor",
     "release:patch": "npm run test && npx release --patch",
-    "docs:flecss": "./bin.sh ./docs/scss/app.scss ./docs/public/app.css",
+    "docs:render": "node ./scripts/docs.js",
+    "docs:flecss": "./bin.sh ./docs/raw/scss/app.scss ./docs/app.css",
     "docs:flecss:watch": "npm run docs:flecss -- --watch",
-    "docs:preview": "open ./docs/public/index.html"
+    "docs:build": "npm run docs:render && npm run docs:flecss",
+    "docs:preview": "open ./docs/index.html"
   },
   "dependencies": {
     "clean-css": "^5.3.3",
@@ -47,6 +49,7 @@
   "devDependencies": {
     "@t-ski/gh-npm-release": "github:t-ski/gh-npm-release",
     "husky": "^9.0.11",
+    "markdown-it": "^14.1.0",
     "puppeteer": "^22.11.0"
   }
 }

@@ -1,5 +1,5 @@
 <a href="https://github.com/t-ski/flecss">
-  <img src="./docs/public/img/flecss-logo.svg" width="175">
+  <img src="./docs/img/flecss-logo.svg" width="175">
 </a><br><br>
 
 <a href="https://github.com/t-ski/flecss/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/t-ski/flecss/test.yml?label=test&logo=github" alt="GitHub Test"></a>

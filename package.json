@@ -1,6 +1,6 @@
 {
   "name": "flecss",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "author": "Thassilo Martin Schiepanski",
   "description": "Modern and simple CSS framework utilising the power of flexbox.",
   "license": "Apache-2.0",

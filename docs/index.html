@@ -101,9 +101,9 @@
                         <strong>flecss</strong> is a minimalist and straightforward (S)CSS framework.
                     </p>
                     <p class="text--l">
-                        flecss is both a CSS library, and a related SCSS build interface.
-                        It is less granular than Bootstrap or Tailwind. Instead, it provides only highly resuable styles found in the majority of <nobr></nobr>web-based designs<sup>1</sup>.</nobr><br class="viewport_large">
-                        Anything else is left to individual stylesheets.
+                        flecss is both a CSS library, and a related SCSS build interface, less granular frameworks like Bootstrap or Tailwind.
+                        Instead, flecss merely provides highly resuable styles common across <nobr></nobr>web-based designs<sup>1</sup>.</nobr>
+                        A novel all-in-one class name syntax provides a handy usage interface. Anything else is left to individual stylesheets.
                     </p>
                     <blockquote>
                         📦 &hairsp; flecss ships with a total of <code>103kB</code>, compared to Bootstrap with <nobr><code>248kB</code><sup>2</sup>.</nobr>
@@ -116,7 +116,17 @@
 <blockquote>
 <p>ℹ️   Flecss applies a few CSS resets (see <a href="https://github.com/t-ski/flecss/blob/main/src/core/_reset.scss" target="_blank">_reset.scss</a>).</p>
 </blockquote>
-<p>As usual for a CSS library, styles can be assigned through inbuilt classes. flecss classes introduce a handy all-in-one syntax. A class fundamentally consists of a style identifier <code>&lt;identifier&gt;</code>. An identifier – which is either fully qualified or a related shorthand – depicts the class' purpose (e.g. padding). Without further information, the class fulfills the most generic style (e.g. padding to all sides). Optionally, a specifier <code>_&lt;specifier&gt;</code>, and a space modifier <code>--&lt;modifier&gt;</code> can additionally be declared – in that order. A specifier can be used to specify a certain styling target (e.g. padding only to the top). A (space) modifier – if applicable – changes the effective space property that is related to the style (e.g. the padding size). Valid class names would thus comply with one of the following formats: <code>.&lt;identifier&gt;</code>, <code>.&lt;identifier&gt;_&lt;specifier&gt;</code>, <code>.&lt;identifier&gt;--&lt;modifier&gt;</code> or <code>.&lt;identifier&gt;_&lt;specifier&gt;--&lt;modifier&gt;</code>. The following format is particularly invalid <code>.&lt;identifier&gt;--&lt;modifier&gt;_&lt;specifier&gt;</code>.</p>
+<p>As usual for a CSS library, styles can be assigned through inbuilt classes. flecss classes introduce a handy all-in-one syntax. A class fundamentally consists of a style identifier <code>&lt;identifier&gt;</code>. An identifier – which is either fully qualified name, or a respective shorthand – depicts the class' purpose (e.g. padding). An identifier-only class usage fulfills the most generic style of a purpose (e.g. padding to all sides). Optionally, a specifier <code>_&lt;specifier&gt;</code>, and a space modifier <code>--&lt;modifier&gt;</code> may be declared in addition – in that order. A specifier defines a certain styling target (e.g. top to only pad at the top). A (space) modifier – if applicable – changes the effective space property that is related to the style (e.g. the padding size). Valid class names would thus comply with one of the following formats:</p>
+<ul>
+<li><code>.&lt;identifier&gt;</code></li>
+<li><code>.&lt;identifier&gt;_&lt;specifier&gt;</code></li>
+<li><code>.&lt;identifier&gt;--&lt;modifier&gt;</code></li>
+<li><code>.&lt;identifier&gt;_&lt;specifier&gt;--&lt;modifier&gt;</code></li>
+</ul>
+<p>The following format is particularly invalid:</p>
+<ul>
+<li><code>.&lt;identifier&gt;--&lt;modifier&gt;_&lt;specifier&gt;</code>.</li>
+</ul>
 <h4>Example</h4>
 <source-code language="html">&lt;section class=&quot;section&quot;&gt;
     &lt;div class=&quot;wrapper--xl&quot;&gt;
@@ -245,7 +255,7 @@ flecss.buildCSS(&quot;./app.scss&quot;);  // target path: app.css
         <tr>
             <td><code>_left</code></td>
             <td>
-                Two-fold layout growing flexible to the left. On small viewports, the 
+                Two-fold layout growing flexible to the left.
             </td>
         </tr>
         <tr>
@@ -636,7 +646,7 @@ flecss.buildCSS(&quot;./app.scss&quot;);  // target path: app.css
 </source-code>
 </section>
 <section class="card"><h2>Space Modifier</h2>
-<p>The space modifier is quite a new idea in flecss. It allows to alternate the space for class styles built around a space property. For instance, the padding class obviously has a space property to define the padding. The wrapper class, on the other hand, has an inherent padding at the vertical sides.</p>
+<p>The space modifier is quite a new idea in flecss. It allows to alternate the space for class styles built around a space property. The padding class, for instance, obviously bases on a space property. The wrapper class, on the other hand, also comes with a padding at the vertical sides.</p>
 <div class="synopsis">
     <table class="synopsis-syntax">
         <tr>
@@ -688,10 +698,10 @@ flecss.buildCSS(&quot;./app.scss&quot;);  // target path: app.css
 </source-code>
 </section>
 <section class="card"><h2>SCSS Utilities</h2>
-<p>The flecss build interface exposes a set of helpful utilities – mixins (<code>mx</code>, <code>flecss_&lt;*&gt;</code>) and functions (<code>flecss-&lt;*&gt;</code>). Those  can be used from within custom, non-standalone flecss transpiled SCSS.</p>
+<p>The flecss SCSS build interface exposes a set of helpful utilities: Mixins (<code>mx</code>, <code>flecss_&lt;*&gt;</code>) for complex style manipulation, and functions (<code>flecss-&lt;*&gt;</code>) to compute flecss values. The utilities are accessible from custom, non-standalone flecss transpiled SCSS without further ado.</p>
 
 <h3><code>mx</code> <span>Breakpoint</span></h3>
-<p>The breakpoint mixin wraps styles to be only applied below a respective breakpoint (revisit <a href="#breakpoints">Breakpoints</a>). By explicitly passing truthy argument, the upper boundary behaviour can be inverted. This is, the mixin wraps styles to be only displayed above a respective breakpoint.</p>
+<p>The breakpoint mixin wraps styles that are ought to only applied below a respective breakpoint (revisit <a href="#breakpoints">Breakpoints</a>). By explicitly passing a truthy argument, the upper boundary behaviour can be inverted. This is, the mixin instead wraps styles to only apply above the respective breakpoint.</p>
 <source-code language="scss">@include flecss_breakpoint--s($invert: false)
 @include flecss_breakpoint--m($invert: false)
 @include flecss_breakpoint--l($invert: false)
@@ -712,7 +722,7 @@ flecss.buildCSS(&quot;./app.scss&quot;);  // target path: app.css
 <hr>
 
 <h3><code>mx</code> <span>Class</span></h3>
-<p>The class mixin provides extensibility of a flecss class from a custom class. This way, redundant class statements and inherent verbosity can be avoided. The classifier argument is a full class name string as it would be assigned to elements.</p>
+<p>The class mixin provides extensibility capabilities of an inbuilt flecss class from within a custom class. This way, redundant class statements and inherent markup verbosity can be avoided. The inheritance classifier argument is supposed to be a flecss class name as it would be used within markup.</p>
 <source-code language="scss">@include flecss_class($classifier)
 </source-code>
 <h4>Example</h4>
@@ -725,7 +735,7 @@ flecss.buildCSS(&quot;./app.scss&quot;);  // target path: app.css
 <hr>
 
 <h3><code>mx</code> <span>Color</span></h3>
-<p>The color mixin defines a reusable color including a slightly lighter and a slightly darker shade (10% difference). It can be accessed through the function (<a href="#fn-color"><code>fn</code> Color</a>). Optionally, a color to use for dark themes can be given in addition.</p>
+<p>The color mixin defines a reusable color including a slightly lighter and a slightly darker shade (±10%). It can be accessed through the function (<a href="#fn-color"><code>fn</code> Color</a>). Optionally, a different representative color for use in dark themes may be specified.</p>
 <source-code language="scss">@include flecss_color($name, $color, $darktheme-color: null)
 </source-code>
 <h4>Example</h4>
@@ -738,7 +748,7 @@ strong {
 <hr>
 
 <h3><code>mx</code> <span>Font</span></h3>
-<p>The font mixin defines a font family from a font file path on disc.</p>
+<p>The font mixin loads a font family from a given font file path or URL.</p>
 <source-code language="scss">@include flecss_font($name, $path, $weight: 400)
 </source-code>
 <h4>Example</h4>
@@ -770,13 +780,13 @@ html {
 <hr>
 
 <h3><code>fn</code> <span>Color</span></h3>
-<p>Read a previously defined color.</p>
+<p>Read a previously defined color by name and optionally specify the shade.</p>
 <source-code language="scss">flecss-color($name, $shade: [&quot;light&quot;]|&quot;dark&quot;)
 </source-code>
 <hr>
 
 <h3><code>fn</code> <span>Fontsize</span></h3>
-<p>Get a font size computed through the flecss typical spacing by spacing order (e.g. <code>xl</code>).</p>
+<p>Get a flecss font size computed through the flecss typical spacing order system (e.g. <code>xl</code>).</p>
 <source-code language="scss">flecss-fontsize($dimension: &quot;xxs&quot;|&quot;xs&quot;|&quot;s&quot;|[&quot;m&quot;]|&quot;l&quot;|&quot;xl&quot;|&quot;xxl&quot;)
 </source-code>
 <p>The size of a fontsize unit scales progressively aroud the viewport core fontsize unit <code>--m</code> (≡ <code>--fontsize</code>). The behaviour is analogous to those of space through the space modifier.</p>
@@ -804,17 +814,17 @@ html {
 }
 </source-code>
 <blockquote>
-<p>Limited line length optimises legibility. For that reason, text container elements (i.e. paragraphs and blockquotes) are furthermore limited in width.</p>
+<p>Limited line length optimises legibility. For that reason, flecss inherently limits text container (i.e. paragraphs and blockquotes) width unless overriden.</p>
 </blockquote>
 <hr>
 
 <h3><code>fn</code> <span>Space</span></h3>
-<p>Get a flecss space as computed through the space modifier by spacing order (e.g. <code>xs</code>). The second argument set truthy is for negation of the respective space value.</p>
+<p>Get a flecss spacing value as applied through the area space modifier. The space is computed based on the given spacing order (e.g. <code>xs</code>). A truthy optional second argument is for negation of the respective space value.</p>
 <source-code language="scss">flecss-space($order: &quot;m&quot;, $negate: false)
 </source-code>
 <h4>Example</h4>
 <source-code language="scss">b {
-    transform: translateY(flecss-space(&quot;xl));
+    transform: translateY(flecss-space(&quot;xl&quot;));
 }
 </source-code>
 </section>

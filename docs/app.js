@@ -57,7 +57,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         ? document.querySelector(document.location.hash)
         : null;
         anchor && anchor.scrollIntoView();
-        
-        document.documentElement.classList.add("r");
     }, 0);
+    setTimeout(() => {
+        document.documentElement.classList.add("r");
+    }, 400);
 });

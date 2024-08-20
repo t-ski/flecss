@@ -162,6 +162,14 @@ hr {
     visibility: hidden;
 }
 
+ul, ol {
+    padding-left: 1em;
+}
+
+ul li::marker {
+    font-size: 0.8em;
+}
+
 source-code {
     --color-bg--start: #{flecss-color("bg-primary-translucent")};
     --color-bg--end: #{flecss-color("bg-primary-translucent", "light")};

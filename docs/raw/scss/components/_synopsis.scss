@@ -2,7 +2,7 @@
     width: 100%;
 
     &-syntax {
-        margin-top: flecss-space("s");
+        @include flecss_class("m_t--s");
 
         td:first-of-type {
             @include flecss_class("p_r--m");
@@ -15,11 +15,10 @@
         }
     }
     &-figures {
-        @include flecss_class("m_t--s");
+        @include flecss_class("m_v--s");
         @include flecss_class("flex_3--l");
 
         align-items: flex-end;
-        margin-top: flecss-space("s");
 
         div {
             display: flex;

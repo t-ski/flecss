@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.00,maximum-scale=2.00,minimum-scale=1.00">
         <title>flecss – CSS Framework</title>
+        <link rel="icon" href="./img/flecss-logo.svg" type="image/svg+xml">
         <link rel="stylesheet" href="./app.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@t-ski/html-sourcecode-element/dist/HTMLSourceCodeElement.opaque.glitch.js"></script>
@@ -115,7 +116,7 @@
 <blockquote>
 <p>ℹ️   Flecss applies a few CSS resets (see <a href="https://github.com/t-ski/flecss/blob/main/src/core/_reset.scss" target="_blank">_reset.scss</a>).</p>
 </blockquote>
-<p>As usual for a CSS library, styles can be assigned through inbuilt classes. flecss class names introduces a handy all-in-one anatomy. A class does fundamentally consist of a style identifier <code>&lt;identifier&gt;</code>. An identifier – which is either fully qualified or a related shorthand – depicts the class' purpose (e.g. padding). Without any further information, the class fulfills the most generic style (e.g. padding to all sides). Optionally, a specifier <code>_&lt;specifier&gt;</code>, and a space modifier <code>--&lt;modifier&gt;</code> can additionally be declared – in that order. A specifier can be used to specify a certain styling target (e.g. padding only to the top). A (space) modifier – if applicable – changes the effective space property that is related to the style (e.g. the padding size). Valid class names would thus comply with one of the following formats: <code>.&lt;identifier&gt;</code>, <code>.&lt;identifier&gt;_&lt;specifier&gt;</code>, <code>.&lt;identifier&gt;--&lt;modifier&gt;</code> or <code>.&lt;identifier&gt;_&lt;specifier&gt;--&lt;modifier&gt;</code>. The following format is particularly invalid <code>.&lt;identifier&gt;--&lt;modifier&gt;_&lt;specifier&gt;</code>.</p>
+<p>As usual for a CSS library, styles can be assigned through inbuilt classes. flecss classes introduce a handy all-in-one syntax. A class fundamentally consists of a style identifier <code>&lt;identifier&gt;</code>. An identifier – which is either fully qualified or a related shorthand – depicts the class' purpose (e.g. padding). Without further information, the class fulfills the most generic style (e.g. padding to all sides). Optionally, a specifier <code>_&lt;specifier&gt;</code>, and a space modifier <code>--&lt;modifier&gt;</code> can additionally be declared – in that order. A specifier can be used to specify a certain styling target (e.g. padding only to the top). A (space) modifier – if applicable – changes the effective space property that is related to the style (e.g. the padding size). Valid class names would thus comply with one of the following formats: <code>.&lt;identifier&gt;</code>, <code>.&lt;identifier&gt;_&lt;specifier&gt;</code>, <code>.&lt;identifier&gt;--&lt;modifier&gt;</code> or <code>.&lt;identifier&gt;_&lt;specifier&gt;--&lt;modifier&gt;</code>. The following format is particularly invalid <code>.&lt;identifier&gt;--&lt;modifier&gt;_&lt;specifier&gt;</code>.</p>
 <h4>Example</h4>
 <source-code language="html">&lt;section class=&quot;section&quot;&gt;
     &lt;div class=&quot;wrapper--xl&quot;&gt;

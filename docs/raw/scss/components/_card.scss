@@ -1,5 +1,5 @@
 .card {
-    @include flecss_class("p--l");
+    @include flecss_class("p--m");
 
     position: relative;
     width: 100%;
@@ -10,14 +10,8 @@
 
         background-color: transparent;
     }
-    &--dense {
-        h3 {
-            margin-top: flecss-space("l");
-        }
-    }
 
     p, blockquote {
         position: relative;
-        color: flecss-color("fg-gray");
     }
 }

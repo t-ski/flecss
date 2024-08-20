@@ -28,7 +28,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @mixin heading-fontsize($level: 1) {
-    font-size: flecss-fontsize(7 - $level);
+    $factor: calc(1 + (6 - $level) * var(--flecss__headingsize-factor));
+
+    font-size: flecss-fontsize($factor);
+
+    @include flecss_breakpoint--m {
+        font-size: flecss-fontsize($factor, calc(0.9 * var(--flecss__fontsize)));
+    }
+    @include flecss_breakpoint--s {
+        font-size: flecss-fontsize($factor, calc(0.8 * var(--flecss__fontsize)));
+    }
 }
 
 h1 {
@@ -43,6 +52,9 @@ h3 {
 h4 {
     @include heading-fontsize(4);
 }
-h5, h6 {
+h5 {
     @include heading-fontsize(5);
+}
+h6 {
+    @include heading-fontsize(6);
 }

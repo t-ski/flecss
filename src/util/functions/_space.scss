@@ -9,21 +9,6 @@ $space-dimensions: (
     "extra-extra-large": 3, "xxl": 3
 );
 
-:root {
-    --flecss__space--l: 1.75rem;
-    --flecss__space--m: 1.55rem;
-    --flecss__space--s: 1.35rem;
-    --flecss__space: var(--flecss__space--l);
-    --flecss__space-factor: 1.75;
-
-    @include flecss_breakpoint--m {
-        --flecss__space: var(--flecss__space--m);
-    }
-    @include flecss_breakpoint--s {
-        --flecss__space: var(--flecss__space--s);
-    }
-}
-
 @function flecss-space($dimension: "m", $negative: false) {
     $power: null;
     @if map-has-key($space-dimensions, $dimension) {

@@ -29,3 +29,7 @@ body {
         flex: auto !important;
     }
 }
+
+p, blockquote {
+    max-width: var(--flecss__max-textwidth);
+}

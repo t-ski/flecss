@@ -8,24 +8,9 @@ $fontsize-dimensions: (
     "extra-extra-large": 1.5, "xxl": 1.5
 );
 
-:root {
-    --flecss__fontsize--l: 16px;
-    --flecss__fontsize--m: 15px;
-    --flecss__fontsize--s: 14px;
-    --flecss__fontsize: var(--flecss__fontsize--l);
-    --flecss__fontsize-factor: 1.25;
-    
-    @include flecss_breakpoint--m {
-        --flecss__fontsize: var(--flecss__fontsize--m);
-    }
-    @include flecss_breakpoint--s {
-        --flecss__fontsize: var(--flecss__fontsize--s);
-    }
-}
-
-@function flecss-fontsize($dimension: "m") {
+@function flecss-fontsize($dimension: "m", $base-size: var(--flecss__fontsize)) {
     @if map-has-key($fontsize-dimensions, $dimension) {
         $dimension: map-get($fontsize-dimensions, $dimension);
     }
-    @return calc(1rem * pow(var(--flecss__fontsize-factor), $dimension));
+    @return calc($base-size * pow(var(--flecss__fontsize-factor), $dimension));
 }

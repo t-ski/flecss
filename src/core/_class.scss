@@ -1,29 +1,17 @@
-@mixin class($class, $classShorthand: $class) {
-    .#{$class}, .#{$classShorthand} {
+@mixin class($class, $class-shorthand: $class) {
+    .#{$class}, .#{$class-shorthand} {
         @content;
     }
 }
 
-@mixin class-shared($class, $classShorthand: $class) {
-    @at-root {
-        .#{$class}, .#{$classShorthand},
-        [class^="#{$class}_"], [class^="#{$classShorthand}_"],
-        [class*=" #{$class}_"], [class*=" #{$classShorthand}_"],
-        [class^="#{$class}--"], [class^="#{$classShorthand}--"],
-        [class*=" #{$class}--"], [class*=" #{$classShorthand}--"] {
-            @content;
-        }
-    }
-}
-
-@mixin class-specifier($specifier, $specifierShorthand: $specifier) {
-    &_#{$specifier}, &_#{$specifierShorthand} {
+@mixin class-specifier($specifier, $specifier-shorthand: $specifier) {
+    &_#{$specifier}, &_#{$specifier-shorthand} {
         @content;
     }
 }
 
-@mixin class-modifier($var, $value, $modifier, $modifierShorthand: $modifier) {
-    &--#{$modifier}, &--#{$modifierShorthand} {
+@mixin class-modifier($var, $value, $modifier, $modifier-shorthand: $modifier) {
+    &--#{$modifier}, &--#{$modifier-shorthand} {
         #{$var}: #{$value};
         
         @content;

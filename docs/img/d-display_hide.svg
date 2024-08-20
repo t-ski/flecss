@@ -2,8 +2,8 @@
 <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
   <style>
     :root {
-      --fg-0: #C295FC;
-      --fg-1: #CFC0EB;
+      --fg-0: #FFA3D1;
+      --fg-1: #C88BD9;
     }
     .bg { fill: #E9E8FA; }
     @media (prefers-color-scheme: dark) {

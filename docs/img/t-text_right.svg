@@ -2,8 +2,8 @@
 <svg viewBox="0 0 300 277" xmlns="http://www.w3.org/2000/svg">
   <style>
     :root {
-      --fg-0: #C295FC;
-      --fg-1: #CFC0EB;
+      --fg-0: #FFA3D1;
+      --fg-1: #C88BD9;
       --fg-2: #BDF5FC;
       --fg-3: #A8F7DE;
     }

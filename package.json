@@ -9,7 +9,8 @@
     "css",
     "scss",
     "framework",
-    "flex"
+    "flex",
+    "minimalist"
   ],
   "files": [
     "./dist/",

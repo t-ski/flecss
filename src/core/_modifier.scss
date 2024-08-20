@@ -1,34 +1,34 @@
-@mixin space-class-modifier($var, $spaceDimension, $spaceDimensionShorthand: $spaceDimension) {
-    @include class-modifier($var, flecss_space($spaceDimension), $spaceDimension, $spaceDimensionShorthand) {
+@mixin modifier__space-class-modifier($var, $space-dimension, $space-dimension-shorthand: $space-dimension) {
+    @include class-modifier($var, flecss-space($space-dimension), $space-dimension, $space-dimension-shorthand) {
         @content;
     }
 }
 
 @mixin space-modifier($var, $default-order: "m") {
     #{$var}: flecss_space($default-order);
-
-    @include space-class-modifier($var, "zero") {
+    
+    @include modifier__space-class-modifier($var, "zero") {
         @content;
     }
-    @include space-class-modifier($var, "extra-extra-small", "xxs") {
+    @include modifier__space-class-modifier($var, "extra-extra-small", "xxs") {
         @content;
     }
-    @include space-class-modifier($var, "extra-small", "xs") {
+    @include modifier__space-class-modifier($var, "extra-small", "xs") {
         @content;
     }
-    @include space-class-modifier($var, "small", "s") {
+    @include modifier__space-class-modifier($var, "small", "s") {
         @content;
     }
-    @include space-class-modifier($var, "medium", "m") {
+    @include modifier__space-class-modifier($var, "medium", "m") {
         @content;
     }
-    @include space-class-modifier($var, "large", "l") {
+    @include modifier__space-class-modifier($var, "large", "l") {
         @content;
     }
-    @include space-class-modifier($var, "extra-large", "xl") {
+    @include modifier__space-class-modifier($var, "extra-large", "xl") {
         @content;
     }
-    @include space-class-modifier($var, "extra-extra-large", "xxl") {
+    @include modifier__space-class-modifier($var, "extra-extra-large", "xxl") {
         @content;
     }
 }

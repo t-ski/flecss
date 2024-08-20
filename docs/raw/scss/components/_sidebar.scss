@@ -1,18 +1,19 @@
 .sidebar {
     --logo-margin-top: 0;
     --logo-margin-bottom: #{flecss-space("xs")};
-    --logo-width: 11.25rem;
+    --logo-width: 10.75rem;
+    --min-width: 13.5rem;
 
-    width: 15rem;
-    
+    width: var(--min-width);
+
     @include flecss_breakpoint--s {
         width: 100%;
     }
-    @include flecss_breakpoint--s(true) {
+    @include flecss_breakpoint--s(true) {        
         &.collapse {
             --logo-margin-top: #{calc(1.25 * flecss-space("m", true))};
             --logo-margin-bottom: 0;
-            --logo-width: 6rem;
+            --logo-width: 6.25rem;
             
             &.scroll .sidebar-fixed {
                 overflow-y: scroll;
@@ -22,21 +23,21 @@
     
     &-fixed {
         @include flecss_class("p--l");
-        
+        @include flecss_class("p_r--xl");
+
         position: fixed;
-        padding-top: flecss-space("xl");
-        padding-right:  flecss-space("l");
-        min-width: 20rem;
+        min-width: var(--min-width);
         height: 100vh;
-        font-size: flecss-fontsize("l");
         overflow: hidden;
 
         @include flecss_breakpoint--s {
             position: relative;
+            align-items: center;
             padding-bottom: 0;
+            padding-right: flecss-space("l");
             width: 100%;
             height: fit-content;
-            font-size: flecss-fontsize("l");
+            justify-content: center;
         }
     }
     &-logo {
@@ -46,6 +47,8 @@
 
         img {
             width: var(--logo-width);
+            pointer-events: none;
+            user-select: none;
         }
     }
     &-toc {
@@ -56,14 +59,18 @@
             counter-reset: item;
             display: flex;
             flex-direction: column;
-            gap: 0.1em;
+            gap: 0.15em;
 
             @include flecss_breakpoint--s {
-                gap: 0.5em;
+                gap: 0.55em;
             }
         }
         ol {
-            padding-left: flecss-space("m");
+            padding-left: flecss-space("s");
+
+            @include flecss_breakpoint--s {
+                margin-top: flecss-space("xs");
+            }
         }
         li {
             display: block;
@@ -83,13 +90,12 @@
             }
             
             &:not(:last-child) > ol {
-                margin-bottom: 0.125em;
+                margin-bottom: 0.25em;
             }
             
             a {
                 color: inherit;
-
-                @include font-title;
+                font-weight: 600;
             }
             code {
                 margin-right: 0.25em;

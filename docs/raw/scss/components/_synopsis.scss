@@ -2,6 +2,8 @@
     width: 100%;
 
     &-syntax {
+        margin-top: flecss-space("s");
+
         td:first-of-type {
             @include flecss_class("p_r--m");
             
@@ -9,26 +11,31 @@
             width: 0;
         }
         td:last-of-type p {
-            color: flecss-color("fg");
             font-weight: 500;
         }
     }
     &-figures {
-        align-items: flex-end;
+        @include flecss_class("m_t--s");
+        @include flecss_class("flex_3--l");
 
-        &:not(:first-child) {
-            margin-top: flecss-space("xs");
-        }
+        align-items: flex-end;
+        margin-top: flecss-space("s");
 
         div {
-            gap: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: flecss-space("s");
+
+            @include flecss_breakpoint--s {
+                align-items: center;
+            }
         }
         span {
             white-space: nowrap;
         }
         img {
-            max-height: 30vh;
-            height: auto;
+            width: auto;
+            max-height: 20vh;
             pointer-events: none;
             user-select: none;
         }

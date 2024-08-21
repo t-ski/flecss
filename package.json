@@ -2,14 +2,14 @@
   "name": "flecss",
   "version": "0.11.0",
   "author": "Thassilo Martin Schiepanski",
-  "description": "Modern and simple CSS framework utilising the power of flexbox.",
+  "description": "flecss is a minimalist and straightforward (S)CSS framework. ",
   "license": "Apache-2.0",
-  "homepage": "https://github.com/t-ski/flecss#readme",
+  "homepage": "http://t-ski.github.io/flecss",
   "keywords": [
     "css",
     "scss",
     "framework",
-    "flex",
+    "flexbox",
     "minimalist"
   ],
   "files": [

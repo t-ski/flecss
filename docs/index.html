@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.00,maximum-scale=2.00,minimum-scale=1.00">
-        <title>flecss – CSS Framework</title>
+        <meta name="description" content="flecss is both a CSS library, and a related SCSS build interface. Less granular than Bootstrap or Tailwind, it merely exposes highly resuable styles common for web-based designs. All-flexbox layouting, paired with a novel all-in-one class syntax enable simple and intuitive usage.">
+        <title>flecss – (S)CSS Framework</title>
         <link rel="icon" href="./img/flecss-logo.svg" type="image/svg+xml">
         <link rel="stylesheet" href="./app.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -101,22 +102,20 @@
                         <strong>flecss</strong> is a minimalist and straightforward (S)CSS framework.
                     </p>
                     <p class="text--l">
-                        flecss is both a CSS library, and a related SCSS build interface, less granular frameworks like Bootstrap or Tailwind.
-                        Instead, flecss merely provides highly resuable styles common across <nobr></nobr>web-based designs<sup>1</sup>.</nobr>
-                        A novel all-in-one class name syntax provides a handy usage interface. Anything else is left to individual stylesheets.
+                        flecss is both a CSS library, and a related SCSS build interface.<br class="viewport_l">
+                        Less granular than Bootstrap or Tailwind, it merely exposes highly resuable styles common for <nobr></nobr>web-based designs<sup>1</sup>.</nobr>
+                        All-flexbox layouting, paired with a novel all-in-one class syntax enable simple and intuitive usage.
+                        Anything else is left to individual stylesheets.
                     </p>
                     <blockquote>
-                        📦 &hairsp; flecss ships with a total of <code>103kB</code>, compared to Bootstrap with <nobr><code>248kB</code><sup>2</sup>.</nobr>
+                        📦 &hairsp; flecss ships with a total of <code>75kB</code>, compared to Bootstrap with <nobr><code>248kB</code><sup>2</sup>.</nobr>
                     </blockquote>
                 </header>
                 <section class="card"><h2>Integration</h2>
 <source-code language="html">&lt;link rel=&quot;stylesheet&quot;
  href=&quot;https://cdn.jsdelivr.net/npm/flecss/dist/flecss.css&quot;&gt;
 </source-code>
-<blockquote>
-<p>ℹ️   Flecss applies a few CSS resets (see <a href="https://github.com/t-ski/flecss/blob/main/src/core/_reset.scss" target="_blank">_reset.scss</a>).</p>
-</blockquote>
-<p>As usual for a CSS library, styles can be assigned through inbuilt classes. flecss classes introduce a handy all-in-one syntax. A class fundamentally consists of a style identifier <code>&lt;identifier&gt;</code>. An identifier – which is either fully qualified name, or a respective shorthand – depicts the class' purpose (e.g. padding). An identifier-only class usage fulfills the most generic style of a purpose (e.g. padding to all sides). Optionally, a specifier <code>_&lt;specifier&gt;</code>, and a space modifier <code>--&lt;modifier&gt;</code> may be declared in addition – in that order. A specifier defines a certain styling target (e.g. top to only pad at the top). A (space) modifier – if applicable – changes the effective space property that is related to the style (e.g. the padding size). Valid class names would thus comply with one of the following formats:</p>
+<p>As usual for a CSS library, styles can be assigned through inbuilt classes. flecss classes introduce a handy all-in-one syntax. A class fundamentally consists of a style identifier <code>&lt;identifier&gt;</code>. An identifier – which is either fully a qualified name, or a respective shorthand – depicts the class' purpose (e.g. padding). An identifier-only class usage fulfills the most generic style of a purpose (e.g. padding to all sides). Optionally, a specifier <code>_&lt;specifier&gt;</code>, and a space modifier <code>--&lt;modifier&gt;</code> may be declared in addition – in that order. A specifier defines a certain styling target (e.g. top to only pad at the top). A (space) modifier – if applicable – changes the effective space property that is related to the style (e.g. the padding size). Valid class names would thus comply with one of the following formats:</p>
 <ul>
 <li><code>.&lt;identifier&gt;</code></li>
 <li><code>.&lt;identifier&gt;_&lt;specifier&gt;</code></li>
@@ -127,6 +126,29 @@
 <ul>
 <li><code>.&lt;identifier&gt;--&lt;modifier&gt;_&lt;specifier&gt;</code>.</li>
 </ul>
+<table>
+    <tr>
+        <td><code>flecss.css</code></td>
+        <td>
+            <p>All of flecss: classes are accessible both through fully qualified, or shorthand names.</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>flecss.min.css</code></td>
+        <td>
+            <p>Classes are accessible only through fully qualified names. Modifiers all short (e.g. <code>xl</code>)</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>flecss.min.shorthand.css</code></td>
+        <td>
+            <p>Classes are accessible only through shorthand names.</p>
+        </td>
+    </tr>
+</table>
+<blockquote>
+<p>ℹ️   flecss applies a few CSS resets (see <a href="https://github.com/t-ski/flecss/blob/main/src/core/foundation/_reset.scss" target="_blank">_reset.scss</a>).</p>
+</blockquote>
 <h4>Example</h4>
 <source-code language="html">&lt;section class=&quot;section&quot;&gt;
     &lt;div class=&quot;wrapper--xl&quot;&gt;
@@ -143,23 +165,27 @@
 <p>ℹ️   The flecss build interface bases on the <a href="https://github.com/sass/dart-sass" target="_blank">sass</a> transpiler, as well as the <a href="https://github.com/clean-css/clean-css" target="_blank">clean-css</a> optimiser.</p>
 </blockquote>
 <h4><span>CLI</span> <b class="badge">Recommended</b></h4>
-<source-code language="console">npx flecss &lt;path:source&gt; &lt;path:target&gt; [--&lt;flag|-&lt;flag:shorthand&gt;]*
+<source-code language="console">npx flecss &lt;path:source&gt; &lt;path:target&gt; [--&lt;arg&gt;|-&lt;arg:shorthand&gt; *?]*
 </source-code>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Flag</th>
+<th style="text-align:left">Argument</th>
 <th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left"><code>--standalone</code> <code>-S</code></td>
-<td style="text-align:left">Build without including flecss.</td>
+<td style="text-align:left"><code>flag</code> Build without including flecss.</td>
 </tr>
 <tr>
 <td style="text-align:left"><code>--watch</code> <code>-W</code></td>
-<td style="text-align:left">Watch file changes for incremental builds.</td>
+<td style="text-align:left"><code>flag</code> Watch file changes for incremental builds.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>--library</code> <code>-L</code></td>
+<td style="text-align:left"><code>option</code> Specify the flecss library to compile with (see above, default is <code>flecss.css</code>).</td>
 </tr>
 </tbody>
 </table>
@@ -172,7 +198,7 @@
     isStandalone?: boolean;
 }
 </source-code>
-<source-code language="ts">function buildCSS(sourcePath: string, targetPath?: string, options?: IBuildOptions &amp; {
+<source-code language="ts">function build(sourcePath: string, targetPath?: string, options?: IBuildOptions &amp; {
     modTimeTolerance?: number;
 }): Promise&lt;{
     executionTimeMs: number;
@@ -181,7 +207,7 @@
     targetSizeByte: number;
 }&gt;;
 </source-code>
-<source-code language="ts">function transpile(sourcePath: string, targetPath: string, options?: IBuildOptions): {
+<source-code language="ts">function transpile(source: string, options?: IBuildOptions): {
     css: string;
     loadedUrls: string[];
 }
@@ -189,7 +215,7 @@
 <h4>Example</h4>
 <source-code language="js">const flecss = require(&quot;flecss&quot;);
 
-flecss.buildCSS(&quot;./app.scss&quot;);  // target path: app.css
+flecss.build(&quot;./app.scss&quot;);  // target path: app.css
 </source-code>
 </section>
 <section class="card"><h2>Classes</h2>
@@ -505,7 +531,7 @@ flecss.buildCSS(&quot;./app.scss&quot;);  // target path: app.css
 <hr>
 
 <h3><code>.t</code> <code>.text</code></h3>
-<p>The text class allows to set text alignment. It is particularly with text based content that requires deviant text alignment..</p>
+<p>The text class allows to set text alignment. It is particularly with text based content that requires deviant text alignment.</p>
 <div class="synopsis">
     <table class="synopsis-syntax">
         <tr>
@@ -619,23 +645,43 @@ flecss.buildCSS(&quot;./app.scss&quot;);  // target path: app.css
 <table>
     <tr>
         <td>Breakpoint <code>XL</code></td>
-        <td><pre><code>1⅓</code></pre> × <code>--wrapper-width</code> = <code>~1890px</code></td>
+        <td>
+            <p>
+                <pre><code>1⅓</code></pre> × <code>--wrapper-width</code> = <code>~1890px</code>
+            </p>
+        </td>
     </tr>
     <tr>
         <td>Breakpoint <code>L</code></td>
-        <td><pre><code> 1</code></pre> × <code>--wrapper-width</code> = <code>1420px</code></td>
+        <td>
+            <p>
+                <pre><code> 1</code></pre> × <code>--wrapper-width</code> = <code>1420px</code>
+            </p>
+        </td>
     </tr>
     <tr>
         <td>Breakpoint <code>M</code></td>
-        <td><pre><code> ⅔</code></pre> × <code>--wrapper-width</code> = <code>~945px</code></td>
+        <td>
+            <p>
+                <pre><code> ⅔</code></pre> × <code>--wrapper-width</code> = <code>~945px</code>
+            </p>
+        </td>
     </tr>
     <tr>
         <td>Breakpoint <code>S</code></td>
-        <td><pre><code> ½</code></pre> × <code>--wrapper-width</code> = <code>710px</code></td>
+        <td>
+            <p>
+                <pre><code> ½</code></pre> × <code>--wrapper-width</code> = <code>710px</code>
+            </p>
+        </td>
     </tr>
     <tr>
         <td>Breakpoint <code>XS</code></td>
-        <td><pre><code> ⅓</code></pre> × <code>--wrapper-width</code> = <code>~470px</code></td>
+        <td>
+            <p>
+                <pre><code> ⅓</code></pre> × <code>--wrapper-width</code> = <code>~470px</code>
+            </p>
+        </td>
     </tr>
 </table>
 <blockquote>
@@ -672,7 +718,7 @@ flecss.buildCSS(&quot;./app.scss&quot;);  // target path: app.css
         </tr>
     </table>
 </div>
-<p>The size of a space unit (e.g. <code>xs</code>) scales progressively aroud the viewport core space unit (<code>--flecss__space--&lt;s|m|l&gt;</code>). It is scaled by a constant factor <code>--flecss__space-factor</code> by the power of the unit (…, <code>s</code>: <code>-1</code>, <code>m</code> = <code>0</code>, <code>l</code> = <code>1</code>, <code>xl</code> = <code>2</code>, …). For instance on large viewports, <code>xl</code> corresponds to <code>--flecss__space--l * --flecss__space-factor^2</code> – i.e. <code>~5.35rem</code> by default.</p>
+<p>The size of a space unit (e.g. <code>xs</code>) scales progressively aroud the viewport lib space unit (<code>--flecss__space--&lt;s|m|l&gt;</code>). It is scaled by a constant factor <code>--flecss__space-factor</code> by the power of the unit (…, <code>s</code>: = -1, <code>m</code> = 0, <code>l</code> = 1, <code>xl</code> = 2, …). For instance on large viewports, <code>xl</code> corresponds to <code>--flecss__space--l * --flecss__space-factor^2</code> – i.e. <code>~5.35rem</code> by default.</p>
 <table>
     <tr>
         <td><code>--space-factor</code></td>
@@ -698,7 +744,7 @@ flecss.buildCSS(&quot;./app.scss&quot;);  // target path: app.css
 </source-code>
 </section>
 <section class="card"><h2>SCSS Utilities</h2>
-<p>The flecss SCSS build interface exposes a set of helpful utilities: Mixins (<code>mx</code>, <code>flecss_&lt;*&gt;</code>) for complex style manipulation, and functions (<code>flecss-&lt;*&gt;</code>) to compute flecss values. The utilities are accessible from custom, non-standalone flecss transpiled SCSS without further ado.</p>
+<p>The flecss SCSS build interface exposes a set of helpful utilities: Mixins (<code>mx</code>, <code>flecss_&lt;*&gt;</code>) for complex style manipulation, and functions (<code>fx</code>, <code>flecss-&lt;*&gt;</code>) to compute flecss values. The utilities are accessible from custom, non-standalone flecss transpiled SCSS without further ado.</p>
 
 <h3><code>mx</code> <span>Breakpoint</span></h3>
 <p>The breakpoint mixin wraps styles that are ought to only applied below a respective breakpoint (revisit <a href="#breakpoints">Breakpoints</a>). By explicitly passing a truthy argument, the upper boundary behaviour can be inverted. This is, the mixin instead wraps styles to only apply above the respective breakpoint.</p>
@@ -789,7 +835,7 @@ html {
 <p>Get a flecss font size computed through the flecss typical spacing order system (e.g. <code>xl</code>).</p>
 <source-code language="scss">flecss-fontsize($dimension: &quot;xxs&quot;|&quot;xs&quot;|&quot;s&quot;|[&quot;m&quot;]|&quot;l&quot;|&quot;xl&quot;|&quot;xxl&quot;)
 </source-code>
-<p>The size of a fontsize unit scales progressively aroud the viewport core fontsize unit <code>--m</code> (≡ <code>--fontsize</code>). The behaviour is analogous to those of space through the space modifier.</p>
+<p>The size of a fontsize unit scales progressively aroud the viewport lib fontsize unit <code>--m</code> (≡ <code>--fontsize</code>). The behaviour is analogous to those of space through the space modifier.</p>
 <table>
     <tr>
         <td><code>--fontsize-factor</code></td>

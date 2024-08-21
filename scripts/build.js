@@ -1,15 +1,18 @@
 const fs = require("fs");
+const path = require("path");
 
 const _util = require("./_util");
 
 const API = require("../lib/api");
 
 
-async function buildCSS(sourcePath, targetPath) {
-    await API.buildCSS(sourcePath, targetPath, {
+async function buildCSS(source, targetPath) {
+    const result = await API.transpile(source, {
         isDevelopment: process.argv.slice(2).includes("-D"),
         isStandalone: true
     });
+    fs.writeFileSync(targetPath, result.css);
+    return Math.round(result.css.length / 1024);
 }
 
 function buildSCSS(sourcePath, targetPath) {
@@ -30,13 +33,23 @@ function buildSCSS(sourcePath, targetPath) {
 
 _util.logCaption("Build");
 (async () => {
-    _util.logStepDescription("Write core CSS (flecss.css)");
-    await buildCSS(
-        _util.resolvePath("./src/core/core.scss"),
-        _util.resolvePath("./dist/flecss.css")
-    );
-    
-    _util.logStepDescription("Write utils SCSS (flecss.scss)");
+    fs.mkdirSync(_util.resolvePath(path.join("./dist/")), {
+        recursive: true
+    });
+
+    const buildLib = async (sourceName, targetName, description) => {
+        _util.logStepDescription(`Write lib CSS${description ? ` (${description})` : ""}`);
+        _util.logStepDescription(`→ ${targetName}.scss (${await buildCSS(
+            _util.resolvePath(path.join("./src/lib/", `${sourceName}.scss`)),
+            _util.resolvePath(path.join("./dist/", `${targetName}.css`)),
+        )}kB)`);
+    };
+
+    await buildLib("lib", "flecss");
+    await buildLib("lib.min", "flecss.min", "fullnames only");
+    await buildLib("lib.min.shorthand", "flecss.min.shorthand", "shorthands only");
+
+    _util.logStepDescription("Write utilities SCSS (flecss.scss)");
     buildSCSS(
         _util.resolvePath("./src/util/util.scss"),
         _util.resolvePath("./dist/flecss.util.scss")

@@ -2,11 +2,18 @@
 <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
   <style>
     :root {
-      --fg-0: #FFA3D1;
-      --fg-1: #C88BD9;
-      --fg-2: #BDF5FC;
-      --fg-3: #A8F7DE;
+      --fg-0: #747DFF80;
+      --fg-1: #A3A9FF80;
+      --fg-2: #99FFFAB0;
+      --fg-3: #6BFFF7B0;
     }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fg-0: #646BAD80;
+        --fg-1: #898EC080;
+        --fg-2: #41C2B6A0;
+        --fg-3: #6ED1C9A0;
+      }
   </style>
   <defs>
     <linearGradient gradientUnits="userSpaceOnUse" x1="150" y1="0" x2="150" y2="41.387" id="gradient-4" gradientTransform="matrix(0.714908, 0.699219, -7.248652, 7.248651, 192.764282, -104.882339)">

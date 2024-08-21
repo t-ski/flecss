@@ -2,7 +2,7 @@
     --logo-margin-top: 0;
     --logo-margin-bottom: #{flecss-space("xs")};
     --logo-width: 11.5rem;
-    --min-width: 13.5rem;
+    --min-width: 14.75rem;
 
     width: var(--min-width);
 
@@ -23,9 +23,9 @@
     
     &-fixed {
         @include flecss_class("p--l");
-        @include flecss_class("p_r--xl");
 
         position: fixed;
+        padding-right: calc(1.25 * flecss-space("xl"));
         min-width: var(--min-width);
         height: 100vh;
         overflow: hidden;

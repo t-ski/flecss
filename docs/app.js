@@ -60,5 +60,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     }, 0);
     setTimeout(() => {
         document.documentElement.classList.add("r");
-    }, 400);
+    }, 600);
 });

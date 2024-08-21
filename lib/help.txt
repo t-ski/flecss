@@ -1,7 +1,10 @@
-Usage: npx flecss <path:source> <path:target> [--<flag:key>|-<flag:shorthand>]*
+Usage: npx flecss <path:source> <path:target> [--<arg>|-<arg:shorthand> *?]*
 
 Flags:
 --standalone, -S        Build without including flecss.
 --watch, -W             Watch file changes for incremental builds.
 
-https://github.com/t-ski/flecss
+Options:
+--library, -L           Specify the flecss library to compile with (see above, default is `flecss.css`)
+
+https://t-ski.github.io/flecss

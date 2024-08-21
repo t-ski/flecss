@@ -111,7 +111,7 @@ renderedHTML = replaceTemplate(
 	renderedHTML,
 	"size",
 	`${
-		Math.round(fs.statSync(_util.resolvePath("./dist/flecss.css")).size / 1024)
+		Math.round(fs.statSync(_util.resolvePath("./dist/flecss.min.css")).size / 1024)
 	}kB`
 );
 

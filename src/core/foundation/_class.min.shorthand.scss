@@ -1,0 +1,29 @@
+// only shorthands
+
+@mixin class($class, $class-shorthand: $class) {
+    .#{$class-shorthand} {
+        @content;
+    }
+}
+
+@mixin class-specifier($specifier, $specifier-shorthand: $specifier) {
+    &_#{$specifier-shorthand} {
+        @content;
+    }
+}
+
+@mixin class-modifier($var, $value, $modifier, $modifier-shorthand: $modifier) {
+   &--#{$modifier-shorthand} {
+        #{$var}: #{$value};
+        
+        @content;
+    }
+    
+    @content;
+}
+
+@mixin class-connect($name, $shorthand: $name) {
+    & + .#{$shorthand} {
+        @content;
+    }
+}

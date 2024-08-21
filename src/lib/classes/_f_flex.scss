@@ -25,17 +25,17 @@
                 
                 @if $n > 4 {
                     @include flecss_breakpoint--m {
-                        width: flex-child-width(4);
+                        width: flex__child-width(4);
                     }
                 }
                 @if $n > 2 {
                     @include flecss_breakpoint--s {
-                        width: flex-child-width(2);
+                        width: flex__child-width(2);
                     }
                 }
                 @if $n > 1 {
                     @include flecss_breakpoint--xs {
-                        width: flex-child-width(1);
+                        width: flex__child-width(1);
                     }
                 }
             }

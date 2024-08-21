@@ -1,16 +1,3 @@
-@import "../util/util.scss";
+@import "./min";
 
-@import "./reset";
-@import "./elements";
-@import "./typography";
-@import "./class";
-@import "./modifier";
-
-@import "./classes/d_display";
-@import "./classes/f_flex";
-@import "./classes/m_margin";
-@import "./classes/p_padding";
-@import "./classes/s_section";
-@import "./classes/t_text";
-@import "./classes/w_wrapper";
-@import "./classes/v_viewport";
+@import "./foundation/class";

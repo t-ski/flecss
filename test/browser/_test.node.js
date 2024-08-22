@@ -6,7 +6,7 @@ const puppeteer = require("puppeteer");
 const flecss = require("../../lib/api");
 
 
-const TRANSPILED = flecss.transpile(path.join(__dirname, "./test.scss"), {
+const TRANSPILED = flecss.transpileFile(path.join(__dirname, "./test.scss"), {
     isDevelopment: true
 });
 fs.writeFileSync(path.join(__dirname, "./test.css"), TRANSPILED.css);

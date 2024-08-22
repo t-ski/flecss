@@ -1,12 +1,12 @@
 @function flex__child-width($m) {
-    @return calc((100% / #{$m}) - (var(--flecss__flex-gap) * (#{$m} - 1) / #{$m}));
+    @return calc((100% / (#{$m} + 0.001)) - (var(--flecss__flex-gap) * (#{$m} - 1) / #{$m}));
 }
+
 
 @mixin flex__shared {    
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-direction: row;
     align-items: flex-start;
     gap: var(--flecss__flex-gap);
     width: 100%;
@@ -19,7 +19,7 @@
     @include class-specifier($n) {
         @include space-modifier(--flecss__flex-gap, "l") {    
             @include flex__shared;
-
+            
             & > * {
                 width: flex__child-width($n);
                 
@@ -44,9 +44,12 @@
 }
 
 @include class("flex", "f") {
-    @include space-modifier(--flecss__flex-gap, "xl");
+    @include space-modifier(--flecss__flex-gap, "xl") {
+        @include flex__shared;
 
-    @include flex__shared;
+        align-items: center;
+        width: fit-content;
+    }
     
     @include flex__partition(1);
     @include flex__partition(2);
@@ -57,7 +60,7 @@
     @include class-specifier("left", "l") {
         @include space-modifier(--flecss__flex-gap, "xl") {
             @include flex__shared;
-
+            
             & > *:first-child {
                 flex: 1 0 0;
                 max-width: 100%;

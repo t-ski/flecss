@@ -176,15 +176,15 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><code>--standalone</code> <code>-S</code></td>
+<td style="text-align:left"><nobr><code>--standalone</code> <code>-S</code></nobr></td>
 <td style="text-align:left"><code>flag</code> Build without including flecss.</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>--watch</code> <code>-W</code></td>
+<td style="text-align:left"><nobr><code>--watch</code> <code>-W</code></nobr></td>
 <td style="text-align:left"><code>flag</code> Watch file changes for incremental builds.</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>--library</code> <code>-L</code></td>
+<td style="text-align:left"><nobr><code>--library</code> <code>-L</code></nobr></td>
 <td style="text-align:left"><code>option</code> Specify the flecss library to compile with (see above, default is <code>flecss.css</code>).</td>
 </tr>
 </tbody>
@@ -193,29 +193,34 @@
 <source-code language="console">npx flecss ./scss ./public/app.css --watch
 </source-code>
 <h4>API</h4>
-<source-code language="ts">interface IBuildOptions {
-    isDevelopment?: boolean;
-    isStandalone?: boolean;
+<source-code language="ts">interface ITranspilerOptions {
+    isDevelopment?: boolean;    // do not optimise output
+    isStandalone?: boolean;     // do not integrate flecss core
+    library?: &quot;flecss&quot;|&quot;flecss.min&quot;|&quot;flecss.min.shorthand&quot;,
+    loadPaths?: string[];
 }
-</source-code>
-<source-code language="ts">function build(sourcePath: string, targetPath?: string, options?: IBuildOptions &amp; {
-    modTimeTolerance?: number;
-}): Promise&lt;{
-    executionTimeMs: number;
-    sourcePath: string;
-    targetPath: string;
-    targetSizeByte: number;
-}&gt;;
-</source-code>
-<source-code language="ts">function transpile(source: string, options?: IBuildOptions): {
+
+interface ITranspilerOutput {
     css: string;
     loadedUrls: string[];
 }
 </source-code>
+<source-code language="ts">// Comprehensive
+function build(sourcePath: string, targetPath?: string, options?: ITranspilerOptions): Promise&lt;{
+    executionTimeMs: number;
+    transpilerOutput: ITranspilerOutput|ITranspilerOutput[];
+}&gt;;
+
+// Atomic
+function transpileSCSS(sourceSCSS: string, options?: ITranspilerOptions): ITranspilerOutput;
+function transpileFile(sourcePath: string, options?: ITranspilerOptions): ITranspilerOutput;
+</source-code>
 <h4>Example</h4>
 <source-code language="js">const flecss = require(&quot;flecss&quot;);
 
-flecss.build(&quot;./app.scss&quot;);  // target path: app.css
+flecss.build(&quot;./app.scss&quot;, {
+    library: &quot;flecss.min&quot;
+});  // target path: app.css
 </source-code>
 </section>
 <section class="card"><h2>Classes</h2>
@@ -416,7 +421,7 @@ flecss.build(&quot;./app.scss&quot;);  // target path: app.css
 <hr>
 
 <h3><code>.p</code> <code>.padding</code></h3>
-<p>The padding class simply helps with inducing a margin. It works analogous to the margin class.</p>
+<p>The padding class simply helps with inducing a padding. It works analogous to the margin class.</p>
 <div class="synopsis">
     <table class="synopsis-syntax">
         <tr>
@@ -504,7 +509,7 @@ flecss.build(&quot;./app.scss&quot;);  // target path: app.css
 <hr>
 
 <h3><code>.s</code> <code>.section</code> <span>+</span> <code>.w</code> <code>.wrapper</code></h3>
-<p>The section and wrapper class are vital to vertical layouting. In fact, each class represents a nestable container. A section stretches across the full width, with a small affixed vertical content padding as a safety area. The wrapper has a limited width and is centered within a section, with an extra large affixed horizontal content padding to separate stacked content. Used in combination, the section-wrapper layouting classes provide a simple yet powerful styling capabilities.</p>
+<p>The section and wrapper classes are vital to vertical layouting. In fact, each class represents a nestable container. A section stretches across the full width, with a small affixed horizontal content padding as a safety area. The wrapper has a limited width and is centered within a section, with an extra large affixed vertical content padding to separate stacked content in a linear vertical layout. Used in combination, the section-wrapper layouting classes provide simple yet powerful styling capabilities.</p>
 <div class="synopsis">
     <div class="synopsis-figures">
         <div>
@@ -718,7 +723,7 @@ flecss.build(&quot;./app.scss&quot;);  // target path: app.css
         </tr>
     </table>
 </div>
-<p>The size of a space unit (e.g. <code>xs</code>) scales progressively aroud the viewport lib space unit (<code>--flecss__space--&lt;s|m|l&gt;</code>). It is scaled by a constant factor <code>--flecss__space-factor</code> by the power of the unit (…, <code>s</code>: = -1, <code>m</code> = 0, <code>l</code> = 1, <code>xl</code> = 2, …). For instance on large viewports, <code>xl</code> corresponds to <code>--flecss__space--l * --flecss__space-factor^2</code> – i.e. <code>~5.35rem</code> by default.</p>
+<p>The size of a space unit (e.g. <code>xs</code>) scales progressively aroud the viewport core space unit (<code>--flecss__space--&lt;s|m|l&gt;</code>). It is scaled by a constant factor <code>--flecss__space-factor</code> by the power of the unit (…, <code>s</code>: = -1, <code>m</code> = 0, <code>l</code> = 1, <code>xl</code> = 2, …). For instance on large viewports, <code>xl</code> corresponds to <code>--flecss__space--l * --flecss__space-factor^2</code> – i.e. <code>~5.35rem</code> by default.</p>
 <table>
     <tr>
         <td><code>--space-factor</code></td>

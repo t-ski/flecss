@@ -5,8 +5,8 @@ const flecss = require("../../lib/api");
 
 
 const TEST_SCSS_PATH = join(__dirname, "./_test.scss");
-const TRANSPILED = flecss.transpile(TEST_SCSS_PATH);
-const TRANSPILED_STANDALONE = flecss.transpile(TEST_SCSS_PATH, {
+const TRANSPILED = flecss.transpileFile(TEST_SCSS_PATH);
+const TRANSPILED_STANDALONE = flecss.transpileFile(TEST_SCSS_PATH, {
     isStandalone: true
 });
 

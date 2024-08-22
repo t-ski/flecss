@@ -1,4 +1,4 @@
-<a href="https://github.com/t-ski/flecss">
+<a href="http://t-ski.github.io/flecss" target="_blank">
   <img src="./docs/img/flecss-logo.svg" width="165">
 </a><br><br>
 

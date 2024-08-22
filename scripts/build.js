@@ -7,7 +7,7 @@ const API = require("../lib/api");
 
 
 async function buildCSS(source, targetPath) {
-    const result = await API.transpile(source, {
+    const result = await API.transpileFile(source, {
         isDevelopment: process.argv.slice(2).includes("-D"),
         isStandalone: true
     });
@@ -16,7 +16,7 @@ async function buildCSS(source, targetPath) {
 }
 
 function buildSCSS(sourcePath, targetPath) {
-    const concatenatedSCSS = API.transpile(sourcePath, {
+    const concatenatedSCSS = API.transpileFile(sourcePath, {
         isStandalone: true
     }).loadedUrls
     .map((loadedUrl) => {

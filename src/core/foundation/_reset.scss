@@ -6,10 +6,52 @@ html {
     padding: 0;
     height: 100%;
     font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 body {
     margin: 0;
     min-height: 100%;
+}
+
+body, header, main, footer {
+    display: flex;
+    width: 100%;
+}
+
+body,
+main,
+aside,
+main header, main footer,
+main section, main div,
+aside section, aside div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: fit-content;
+}
+
+main,
+aside,
+main header, main footer,
+main section, main div,
+aside section, aside div {
+    gap: flecss-space("m");
+}
+
+body {
+    & > main,
+    & > div:first-of-type {
+        flex: 1 0 auto;
+    }
+    & > main ~ div {
+        flex: auto !important;
+    }
+}
+
+main {
+    p, blockquote {
+        max-width: var(--flecss__max-textwidth);
+    }
 }
 
 h1, h2, h3, h4, h5, h6,

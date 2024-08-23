@@ -13,29 +13,25 @@ body {
     min-height: 100%;
 }
 
-body, header, main, footer {
-    display: flex;
+body,
+header, main, footer {
     width: 100%;
 }
 
 body,
-main,
-aside,
-main header, main footer,
-main section, main div,
-aside section, aside div {
+main, header, footer,
+aside, section, div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     height: fit-content;
 }
 
-main,
-aside,
-main header, main footer,
-main section, main div,
-aside section, aside div {
-    gap: flecss-space("m");
+main {
+    main, header, footer,
+    aside, section, div {
+        gap: flecss-space("m");
+    }
 }
 
 body {

@@ -108,7 +108,7 @@
                         Anything else is left to individual stylesheets.
                     </p>
                     <blockquote>
-                        📦 &hairsp; flecss ships with a total of <code>75kB</code>, compared to Bootstrap with <nobr><code>248kB</code><sup>2</sup>.</nobr>
+                        📦 &hairsp; flecss ships with a total of <code>77kB</code>, compared to Bootstrap with <nobr><code>248kB</code><sup>2</sup>.</nobr>
                     </blockquote>
                 </header>
                 <section class="card"><h2>Integration</h2>
@@ -189,7 +189,7 @@
 </tr>
 <tr>
 <td style="text-align:left"><code>--super-depth</code></td>
-<td style="text-align:left"><code>option</code> Specify the level of parent directory to watch from (default <code>0</code>, i.e. from source directory).</td>
+<td style="text-align:left"><code>option</code> Specify the parent directory level to watch from (default <code>0</code>, i.e. from source directory).</td>
 </tr>
 </tbody>
 </table>
@@ -290,13 +290,25 @@ flecss.build(&quot;./app.scss&quot;, {
             </td>
         </tr>
         <tr>
-            <td><code>_left</code></td>
+            <td><code>_h</code> <code>_horizontal</code></td>
+            <td>
+                Horizontal, center-aligned row of items.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_v</code> <code>_vertical</code></td>
+            <td>
+                Vertical, left-aligned row of items.
+            </td>
+        </tr>
+        <tr>
+            <td><code>_l</code> <code>_left</code></td>
             <td>
                 Two-fold layout growing flexible to the left.
             </td>
         </tr>
         <tr>
-            <td><code>_right</code></td>
+            <td><code>_r</code> <code>_right</code></td>
             <td>
                 Two-fold layout growing flexible to the right.
             </td>
@@ -748,6 +760,9 @@ flecss.build(&quot;./app.scss&quot;, {
         <td><code>--flecss__space--s</code> (≡ <code>1.55rem</code>)</td>
     </tr>
 </table>
+<blockquote>
+<p>Neutral space can be applied through the modifier <code>zero</code>.</p>
+</blockquote>
 <h4>Example</h4>
 <source-code language="html">&lt;p class=&quot;p_t--large p_b--s&quot;&gt;
     We love flecss!

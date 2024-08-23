@@ -3,7 +3,7 @@
 }
 
 
-@mixin flex__shared {    
+@mixin flex__shared {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -44,12 +44,7 @@
 }
 
 @include class("flex", "f") {
-    @include space-modifier(--flecss__flex-gap, "xl") {
-        @include flex__shared;
-
-        align-items: center;
-        width: fit-content;
-    }
+    display:  flex;
     
     @include flex__partition(1);
     @include flex__partition(2);
@@ -57,6 +52,26 @@
     @include flex__partition(4);
     @include flex__partition(5);
     
+    @include class-specifier("horizontal", "h") {
+        @include space-modifier(--flecss__flex-gap) {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            gap: var(--flecss__flex-gap);
+            width: fit-content;
+        }
+    }
+    @include class-specifier("vertical", "v") {
+        @include space-modifier(--flecss__flex-gap) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--flecss__flex-gap);
+            width: 100%;
+        }
+    }
+
     @include class-specifier("left", "l") {
         @include space-modifier(--flecss__flex-gap, "xl") {
             @include flex__shared;

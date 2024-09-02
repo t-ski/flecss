@@ -1,5 +1,5 @@
 @function flex__child-width($m) {
-    @return calc((100% / (#{$m} + 0.001)) - (var(--flecss__flex-gap) * (#{$m} - 1) / #{$m}));
+    @return calc((100% / (#{$m} + 0.001)) - (var(--flecss__flex-parent-gap) * (#{$m} - 1) / #{$m}));
 }
 
 
@@ -14,22 +14,23 @@
             width: 100%;
             height: fit-content;
 
+            --flecss__flex-parent-gap: var(--flecss__flex-gap);
             & > * {
-                width: flex__child-width($n);
-                
+                width: flex__child-width($n) !important;
+
                 @if $n > 4 {
                     @include flecss_breakpoint--m {
-                        width: flex__child-width(4);
+                        width: flex__child-width(4) !important;
                     }
                 }
                 @if $n > 2 {
                     @include flecss_breakpoint--s {
-                        width: flex__child-width(2);
+                        width: flex__child-width(2) !important;
                     }
                 }
                 @if $n > 1 {
                     @include flecss_breakpoint--xs {
-                        width: flex__child-width(1);
+                        width: flex__child-width(1) !important;
                     }
                 }
             }

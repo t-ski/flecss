@@ -1,16 +1,24 @@
 @mixin flecss_color($name, $color, $darktheme-color: null) {
     :root {
-        --flecss_color--#{$name}: #{$color};
-        --flecss_color--#{$name}--light: #{lighten($color, 10%)};
-        --flecss_color--#{$name}--dark: #{darken($color, 10%)};
+        --flecss_color--#{$name}--normal--light: #{$color};
+        --flecss_color--#{$name}--up--light: #{lighten($color, 10%)};
+        --flecss_color--#{$name}--down--light: #{darken($color, 10%)};
+        
+        --flecss_color--#{$name}--normal: var(--flecss_color--#{$name}--normal--light);
+        --flecss_color--#{$name}--up: var(--flecss_color--#{$name}--up--light);
+        --flecss_color--#{$name}--down: var(--flecss_color--#{$name}--down--light);
     }
     
     @if $darktheme-color {
-        @include flecss_theme--dark {
-            :root {
-                --flecss_color--#{$name}: #{$darktheme-color};
-                --flecss_color--#{$name}--light: #{darken($darktheme-color, 10%)};
-                --flecss_color--#{$name}--dark: #{lighten($darktheme-color, 10%)};
+        :root {
+            --flecss_color--#{$name}--normal--dark: #{$darktheme-color};
+            --flecss_color--#{$name}--up--dark: #{darken($darktheme-color, 5%)};
+            --flecss_color--#{$name}--down--dark: #{lighten($darktheme-color, 5%)};
+
+            @include flecss_theme--dark {
+                --flecss_color--#{$name}--normal: var(--flecss_color--#{$name}--normal--dark);
+                --flecss_color--#{$name}--up: var(--flecss_color--#{$name}--up--dark);
+                --flecss_color--#{$name}--down: var(--flecss_color--#{$name}--down--dark);
             }
         }
     }

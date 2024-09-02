@@ -15,8 +15,8 @@
         <svg id="wave" viewBox="0 0 1440 250" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <linearGradient id="gradient" x1="0" x2="0" y1="1" y2="0">
-                    <stop stop-color="var(--flecss_color--bg-primary-translucent)" offset="0%"></stop>
-                    <stop stop-color="var(--flecss_color--bg-secondary-translucent)" offset="100%"></stop>
+                    <stop stop-color="var(--flecss_color--bg-primary-translucent--normal)" offset="0%"></stop>
+                    <stop stop-color="var(--flecss_color--bg-secondary-translucent--normal)" offset="100%"></stop>
                 </linearGradient>
             </defs>
             <path style="opacity:1" fill="url(#gradient)" d="M0,150L80,125C160,100,320,50,480,58.3C640,67,800,133,960,141.7C1120,150,1280,100,1440,79.2C1600,58,1760,67,1920,79.2C2080,92,2240,108,2400,104.2C2560,100,2720,75,2880,87.5C3040,100,3200,150,3360,145.8C3520,142,3680,83,3840,58.3C4000,33,4160,42,4320,62.5C4480,83,4640,117,4800,129.2C4960,142,5120,133,5280,133.3C5440,133,5600,142,5760,137.5C5920,133,6080,117,6240,108.3C6400,100,6560,100,6720,91.7C6880,83,7040,67,7200,75C7360,83,7520,117,7680,116.7C7840,117,8000,83,8160,66.7C8320,50,8480,50,8640,41.7C8800,33,8960,17,9120,33.3C9280,50,9440,100,9600,120.8C9760,142,9920,133,10080,141.7C10240,150,10400,175,10560,179.2C10720,183,10880,167,11040,166.7C11200,167,11360,183,11440,191.7L11520,200L11520,250L11440,250C11360,250,11200,250,11040,250C10880,250,10720,250,10560,250C10400,250,10240,250,10080,250C9920,250,9760,250,9600,250C9440,250,9280,250,9120,250C8960,250,8800,250,8640,250C8480,250,8320,250,8160,250C8000,250,7840,250,7680,250C7520,250,7360,250,7200,250C7040,250,6880,250,6720,250C6560,250,6400,250,6240,250C6080,250,5920,250,5760,250C5600,250,5440,250,5280,250C5120,250,4960,250,4800,250C4640,250,4480,250,4320,250C4160,250,4000,250,3840,250C3680,250,3520,250,3360,250C3200,250,3040,250,2880,250C2720,250,2560,250,2400,250C2240,250,2080,250,1920,250C1760,250,1600,250,1440,250C1280,250,1120,250,960,250C800,250,640,250,480,250C320,250,160,250,80,250L0,250Z"></path>
@@ -108,7 +108,7 @@
                         Anything else is left to individual stylesheets.
                     </p>
                     <blockquote>
-                        📦 &hairsp; flecss ships with a total of <code>77kB</code>, compared to Bootstrap with <nobr><code>248kB</code><sup>2</sup>.</nobr>
+                        📦 &hairsp; flecss ships with a total of <code>76kB</code>, compared to Bootstrap with <nobr><code>248kB</code><sup>2</sup>.</nobr>
                     </blockquote>
                 </header>
                 <section class="card"><h2>Integration</h2>
@@ -814,7 +814,7 @@ flecss.build(&quot;./app.scss&quot;, {
 <source-code language="scss">@include flecss_color(&quot;primary&quot;, #F08080, #541818);
     
 strong {
-    color: flecss-color(&quot;primary&quot;, &quot;dark&quot;);
+    color: flecss-color(&quot;primary&quot;, &quot;down&quot;);
 }
 </source-code>
 <hr>
@@ -852,8 +852,8 @@ html {
 <hr>
 
 <h3><code>fn</code> <span>Color</span></h3>
-<p>Read a previously defined color by name and optionally specify the shade.</p>
-<source-code language="scss">flecss-color($name, $shade: [&quot;light&quot;]|&quot;dark&quot;)
+<p>Read a previously defined color by name. Optionally, a lighter (&quot;up&quot;) or a darker ()&quot;down&quot;) shade may be specified. Also, a specific theme's color may be used for all themes.</p>
+<source-code language="scss">flecss-color($name, $shade: [&quot;normal&quot;]|&quot;up&quot;|&quot;dark&quot;, $theme: &quot;light&quot;|&quot;dark&quot;)
 </source-code>
 <hr>
 

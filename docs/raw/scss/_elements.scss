@@ -1,9 +1,9 @@
 ::-moz-selection, ::selection {
-    background-color: flecss-color("bg-primary-translucent", "dark");
+    background-color: flecss-color("bg-primary-translucent", "down");
     color: flecss-color("bg");
 
     @include flecss_theme--dark {
-        background-color: flecss-color("bg-secondary-translucent", "dark");
+        background-color: flecss-color("bg-secondary-translucent", "down");
         color: flecss-color("fg");
     }
 } 
@@ -123,7 +123,7 @@ blockquote, table, source-code {
 
 blockquote, table {
     background: flecss-color("bg-secondary-translucent");
-    background: linear-gradient(45deg, flecss-color("bg-secondary-translucent") 0%, flecss-color("bg-secondary-translucent", "light") 100%);
+    background: linear-gradient(45deg, flecss-color("bg-secondary-translucent") 0%, flecss-color("bg-secondary-translucent", "up") 100%);
     backdrop-filter: blur(0.5rem);
 }
 
@@ -175,7 +175,7 @@ ul li::marker {
 
 source-code {
     --color-bg--start: #{flecss-color("bg-primary-translucent")};
-    --color-bg--end: #{flecss-color("bg-primary-translucent", "light")};
+    --color-bg--end: #{flecss-color("bg-primary-translucent", "up")};
     --color-bg--translucent: #{flecss-color("bg-primary-translucent")};
     --color-fg--line-number: #{flecss-color("fg-gray")};
     --color-accent: #{flecss-color("bg-secondary-translucent")};

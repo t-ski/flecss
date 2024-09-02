@@ -1,11 +1,17 @@
-@function flecss-color($name, $shade: null) {
-    $shadeInfix: "";
+@function flecss-color($name, $shade: null, $theme: null) {
+    $shadeInfix: "--normal";
     @if $shade {
-        @if $shade != "light" and $shade != "dark" {
-            @error "Invalid color shade #{$shade} (expects null for normal, 'light' or 'dark')";
+        @if $shade != "up" and $shade != "down" {
+            @error "Invalid color shade #{$shade} (expects null or 'normal', 'up' or 'down')";
         }
-
-        $shadeInfix: "--#{$shade}"
+        $shadeInfix: "--#{$shade}";
     }
-    @return var(--flecss_color--#{$name}#{$shadeInfix});
+    $themeInfix: "";
+    @if $theme {
+        @if $theme != "light" and $theme != "dark" {
+            @error "Invalid color theme #{$theme} (expects null, 'light' or 'dark')";
+        }
+        $themeInfix: "--#{$theme}";
+    }
+    @return var(--flecss_color--#{$name}#{$shadeInfix}#{$themeInfix});
 }

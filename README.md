@@ -1,17 +1,13 @@
-<a href="http://t-ski.github.io/flecss" target="_blank">
-  <img src="./docs/img/flecss-logo.svg" width="165">
-</a><br><br>
-
 <a href="https://github.com/t-ski/flecss/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/t-ski/flecss/test.yml?label=test&logo=github" alt="GitHub Test"></a>
 &hairsp;
 <a href="https://www.npmjs.com/package/flecss"><img src="https://img.shields.io/npm/v/flecss?logo=npm" alt="NPM"></a>
 &hairsp;
 <a href="https://sass-lang.com/"><img src="https://img.shields.io/badge/SCSS-%20?label=CSS&labelColor=blue&color=orchid" alt="CSS/SCSS"></a>
 
-**flecss** (pron. ‘_fless_’) is a minimalist and straightforward (S)CSS framework. 
+**flecss** is a minimalist and straightforward (S)CSS framework. 
 
 ### 📖 &hairsp; [Documentation](http://t-ski.github.io/flecss)
-  
+
 ### 🚀 &hairsp; Quickstart
   
 ``` html

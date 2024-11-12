@@ -8,7 +8,7 @@ $fontsize-dimensions: (
     "extra-extra-large": 1.5, "xxl": 1.5
 );
 
-@function flecss-fontsize($dimension: "m", $base-size: var(--flecss__fontsize)) {
+@function fontsize($dimension: "m", $base-size: var(--flecss__fontsize)) {
     @if map-has-key($fontsize-dimensions, $dimension) {
         $dimension: map-get($fontsize-dimensions, $dimension);
     }

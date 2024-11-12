@@ -1,0 +1,10 @@
+Usage: npx flecss <path:source> <path:target> [--<arg>|-<arg:shorthand> *?]*
+
+Flags:
+--print-stacktrace      Print stack trace of errors.
+--watch, -W             Watch file changes for incremental builds.
+
+Options:
+--library, -L           Specify the flecss library to compile with (see above, default is 'flecss')
+
+https://t-ski.github.io/flecss

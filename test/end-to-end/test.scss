@@ -1,0 +1,16 @@
+.test--extend-pv {
+    @include flecss.class("p_v");
+}
+.test--extend-pvl {
+    @include flecss.class("p_v--l");
+}
+
+@include flecss.flecss_color("test", #FF0000);
+
+.test--color {
+    color: flecss.get-color("test");
+}
+
+.test--flecss__space-p-xl {
+    padding-top: flecss.get-space("xl");
+}

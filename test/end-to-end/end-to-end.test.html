@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>flecss | Test</title>
+        <script src="./browser.end-to-end.test.js"></script>
+        <link rel="stylesheet" href="./browser.style.css">
+        <link rel="stylesheet" href="./test.css">
+        <template id="error">
+            <span class="error"></span>
+        </template>
+        <template id="title">
+            <h4 class="title"></h4>
+        </template>
+        <template id="result">
+            <div class="result">
+                <span class="result-property"></span>
+                <span class="result-expected"></span>
+                <span class="result-actual"></span>
+                <span class="result-child"></span>
+            </div>
+        </template>
+    </head>
+    <body>
+        <script>
+            const ZERO_PX = "0px";
+            const S_PX = "18px";
+            const M_PX = "31.5px";
+            const L_PX = "55.125px";
+            const XL_PX = "96.4688px";
+        </script>
+
+        <div class="total">
+            <div>
+                <span class="total-success"></span> / <span class="total-failure"></span> successful
+            </div>
+        </div>
+        <main>
+
+            <section>
+                <h3>Display</h3>
+
+                <div test="disable">
+                    <div class="display_disable">Lorem Ipsum</div>
+                </div>
+                <script>
+                    test("pointer-events", "none");
+                    test("opacity", "0.25");
+                </script>
+                
+                <div test="hide">
+                    <div class="d_hide">Lorem Ipsum</div>
+                </div>
+                <script>
+                    test("visibility", "hidden");
+                </script>
+                
+                <div test="collapse">
+                    <div class="d_collapse">Lorem Ipsum</div>
+                </div>
+                <script>
+                    test("display", "none");
+                </script>
+            </section>
+
+            <section>
+                <h3>Flex</h3>
+
+                <div test="1">
+                    <div class="flex_1--m">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <script>
+                    test("display", "flex");
+                    test("flex-direction", "row");
+                    test("align-items", "flex-start");
+                    test("gap", M_PX);
+                    flexW = Math.round(document.querySelector("section").clientWidth * 0.9);
+                    test("width", {
+                        fn: (actual) => parseInt(actual),
+                        expected: flexW,
+                        eval: (actual, expected) => actual > expected
+                    }, 0);
+                </script>
+
+                <div test="2">
+                    <div class="flex_2--l">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <script>
+                    test("display", "flex");
+                    test("gap", L_PX);
+                    flexW = document.querySelector("section").clientWidth * 0.4;
+                    test("width", {
+                        fn: (actual) => parseInt(actual),
+                        expected: flexW,
+                        eval: (actual, expected) => actual > expected
+                    }, 0);
+                    test("width", {
+                        fn: (actual) => parseInt(actual),
+                        expected: flexW,
+                        eval: (actual, expected) => actual > expected
+                    }, 1);
+                </script>
+
+                <div test="3">
+                    <div class="flex_3">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <script>
+                    flexW = document.querySelector("section").clientWidth * 0.25;
+                    test("gap", L_PX);
+                    test("width", {
+                        fn: (actual) => parseInt(actual),
+                        expected: flexW,
+                        eval: (actual, expected) => actual > expected
+                    }, 0);
+                    test("width", {
+                        fn: (actual) => parseInt(actual),
+                        expected: flexW,
+                        eval: (actual, expected) => actual > expected
+                    }, 2);
+                </script>
+
+                <div test="gap extra large">
+                    <div class="flex_2--xl">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <script>
+                    test("gap", XL_PX);
+                </script>
+            </section>
+
+            <section>
+                <h3>Margin</h3>
+
+                <div test="default">
+                    <div class="m"></div>
+                </div>
+                <script>
+                    test("margin", M_PX);
+                </script>
+                
+                <div test="horizontal">
+                    <div class="margin_horizontal"></div>
+                </div>
+                <script>
+                    test("margin-left", M_PX);
+                    test("margin-right", M_PX);
+                    test("margin-top", ZERO_PX);
+                </script>
+                
+                <div test="horizontal">
+                    <div class="m_vertical"></div>
+                </div>
+                <script>
+                    test("margin-top", M_PX);
+                    test("margin-bottom", M_PX);
+                    test("margin-left", ZERO_PX);
+                </script>
+                
+                <div test="top">
+                    <div class="m_t"></div>
+                </div>
+                <script>
+                    test("margin-top", M_PX);
+                    test("margin-left", ZERO_PX);
+                </script>
+                
+                <div test="left">
+                    <div class="m_l"></div>
+                </div>
+                <script>
+                    test("margin-left", M_PX);
+                    test("margin-top", ZERO_PX);
+                </script>
+
+                <div test="default large">
+                    <div class="m m--l"></div>
+                </div>
+                <script>
+                    test("margin", L_PX);
+                </script>
+            </section>
+
+            <section>
+                <h3>Padding</h3>
+
+                <div test="default">
+                    <div class="p"></div>
+                </div>
+                <script>
+                    test("padding", M_PX);
+                </script>
+                
+                <div test="horizontal">
+                    <div class="padding_horizontal"></div>
+                </div>
+                <script>
+                    test("padding-left", M_PX);
+                    test("padding-right", M_PX);
+                    test("padding-top", ZERO_PX);
+                </script>
+                
+                <div test="horizontal">
+                    <div class="p_vertical"></div>
+                </div>
+                <script>
+                    test("padding-top", M_PX);
+                    test("padding-bottom", M_PX);
+                    test("padding-left", ZERO_PX);
+                </script>
+                
+                <div test="top">
+                    <div class="p_t"></div>
+                </div>
+                <script>
+                    test("padding-top", M_PX);
+                    test("padding-left", ZERO_PX);
+                </script>
+                
+                <div test="left">
+                    <div class="p_l"></div>
+                </div>
+                <script>
+                    test("padding-left", M_PX);
+                    test("padding-top", ZERO_PX);
+                </script>
+
+                <div test="top small">
+                    <div class="p_t--s"></div>
+                </div>
+                <script>
+                    test("padding-top", S_PX);
+                    test("padding-bottom", ZERO_PX);
+                </script>
+            </section>
+
+            <section>
+                <h3>Section + Wrapper</h3>
+
+                <div test="section wrapper">
+                    <div class="section">
+                        <div class="w"></div>
+                    </div>
+                </div>
+                <style>
+                    :root { --flecss__wrapper-width: 400px; }
+                </style>
+                <script>
+                    test("padding", [ ZERO_PX, S_PX ].join(" "));
+                    test("padding-top", ZERO_PX);
+                    sectionW = Math.round(document.querySelector("section").clientWidth * 0.9);
+                    test("width", {
+                        fn: (actual) => parseInt(actual),
+                        expected: sectionW,
+                        eval: (actual, expected) => actual > expected
+                    });
+                    test("width", "400px", 0);
+                    test("padding", [ XL_PX, ZERO_PX ].join(" "), 0);
+                    test("padding-left", ZERO_PX, 0);
+                </script>
+            </section>
+
+            <section>
+                <h3>Text</h3>
+
+                <div test="left">
+                    <p class="text_left">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod…
+                    </p>
+                </div>
+                <script>
+                    test("text-align", "left");
+                </script>
+
+                <div test="right">
+                    <p class="t_right">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod…
+                    </p>
+                </div>
+                <script>
+                    test("text-align", "right");
+                </script>
+
+                <div test="center">
+                    <p class="t_center">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod…
+                    </p>
+                </div>
+                <script>
+                    test("text-align", "center");
+                </script>
+
+                <div test="justify">
+                    <p class="t_justify">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod…
+                    </p>
+                </div>
+                <script>
+                    test("text-align", "justify");
+                </script>
+            </section>
+            
+            <section>
+                <h3>Viewport</h3>
+
+                <div test="large">
+                    <div class="viewport_large"></div>
+                </div>
+                <script>
+                    test("display", "flex");
+                </script>
+
+                <div test="not large">
+                    <div class="v_not-l"></div>
+                </div>
+                <script>
+                    test("display", "none");
+                </script>
+            </section>
+            
+            <section>
+                <h3>Util: mx class</h3>
+
+                <div test=".p_v">
+                    <div class="test--extend-pv"></div>
+                </div>
+                <script>
+                    test("padding-top", M_PX);
+                    test("padding-bottom", M_PX);
+                    test("padding-left", "0px");
+                    test("padding-right", "0px");
+                </script>
+
+                <div test=".p_v--l">
+                    <div class="test--extend-pvl"></div>
+                </div>
+                <script>
+                    test("padding-top", L_PX);
+                    test("padding-bottom", L_PX);
+                    test("padding-left", "0px");
+                    test("padding-right", "0px");
+                </script>
+            </section>
+            
+            <section>
+                <h3>Util: mx flecss_color</h3>
+
+                <div test="color">
+                    <div class="test--color"></div>
+                </div>
+                <script>
+                    test("color", "rgb(255, 0, 0)");
+                </script>
+            </section>
+            
+            <section>
+                <h3>Util: fn space</h3>
+
+                <div test="'xl'">
+                    <div class="test--flecss__space-p-xl"></div>
+                </div>
+                <script>
+                    test("padding-top", XL_PX);
+                    test("padding-bottom", "0px");
+                </script>
+            </section>
+
+            <section>
+                <h3>Default: Headings</h3>
+                <script>
+                    const getFontsize = level => {
+                        const compStyle = getComputedStyle(document.documentElement);
+                        return `${Math.round(
+                            parseInt(compStyle.getPropertyValue("--flecss__fontsize"))
+                            * compStyle.getPropertyValue("--flecss__fontsize-factor")**level
+                            * 10000
+                        ) / 10000}px`;
+                    };
+                </script>
+
+                <div test="h1">
+                    <h1>Lorem Ipsum</h1>
+                </div>
+                <script>
+                    test("font-size", getFontsize(6));
+                </script>
+
+                <div test="h3">
+                    <h3>Lorem Ipsum</h3>
+                </div>
+                <script>
+                    test("font-size", getFontsize(4));
+                </script>
+
+                <div test="h5">
+                    <h5>Lorem Ipsum</h5>
+                </div>
+                <script>
+                    test("font-size", getFontsize(2));
+                </script>
+            </section>
+
+        </main>
+    </body>
+</html>

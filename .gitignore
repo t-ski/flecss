@@ -3,4 +3,6 @@ dist/
 
 .DS_Store
 
-test/browser/test.css
+src/core/_class.scss
+test/end-to-end/test.css
+test/cli/test.css

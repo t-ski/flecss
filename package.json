@@ -14,7 +14,8 @@
   ],
   "files": [
     "./dist/",
-    "./lib/"
+    "./lib/",
+    "./cli.help.txt"
   ],
   "repository": {
     "type": "git",
@@ -25,30 +26,26 @@
   },
   "main": "./lib/api.js",
   "bin": {
-    "flecss": "lib/cli.js"
+    "flecss": "./lib/cli.js"
   },
   "scripts": {
-    "prepare": "npx husky install",
-    "build": "node --no-deprecation ./scripts/build.js ./src/flecss/flecss.scss ./dist/flecss.css --standalone",
-    "build:develop": "npm run build -- -D",
-    "test:browser": "node ./test/browser/_test.node.js",
-    "test:browser:view": "open ./test/browser/test.html",
-    "test:lib": "node ./test/lib/test.js",
-    "test": "npm run test:browser && npm run test:lib",
-    "release:minor": "npm run test && npx release --minor",
-    "release:patch": "npm run test && npx release --patch",
-    "docs:render": "node ./scripts/docs.js",
-    "docs:flecss": "./bin.sh ./docs/raw/scss/app.scss ./docs/app.css",
-    "docs:flecss:watch": "npm run docs:flecss -- --watch",
-    "docs:build": "npm run docs:render && npm run docs:flecss",
-    "docs:preview": "open ./docs/index.html"
+    "prepare": "npx husky",
+    "build": "node ./scripts/build.js",
+    "test:unit": "node ./test/unit/unit.test.js",
+    "test:end-to-end": "node ./test/end-to-end/app.end-to-end.test.js",
+    "test:end-to-end:view": "npm run test:end-to-end ; open ./test/end-to-end/end-to-end.test.html",
+    "test:cli": "./flecss.sh ./test/cli/_test.scss ./test/cli/test.css --trace-warnings --print-stacktrace",
+    "test:cli:standalone": "npm run test:cli -- -L standalone",
+    "test:cli:watch": "npm run test:cli -- --watch",
+    "test": "npm run test:unit && npm run test:end-to-end",
+    "release:minor": "npm run test && npx rjs-release . --github"
   },
   "dependencies": {
     "clean-css": "^5.3.3",
     "sass": "^1.72.0"
   },
   "devDependencies": {
-    "@t-ski/gh-npm-release": "github:t-ski/gh-npm-release",
+    "@rapidjs.org/releasing": "^0.x",
     "husky": "^9.0.11",
     "markdown-it": "^14.1.0",
     "puppeteer": "^22.11.0"

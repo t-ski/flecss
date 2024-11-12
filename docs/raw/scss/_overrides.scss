@@ -1,8 +1,0 @@
-:root {
-    --flecss__wrapper-width: 1040px;
-    --flecss__fontsize--l: 17px;
-    
-    @include flecss_breakpoint--xl(true) {
-        --flecss__wrapper-width: 1420px;
-    }
-}

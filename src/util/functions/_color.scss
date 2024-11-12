@@ -1,4 +1,4 @@
-@function flecss-color($name, $shade: null, $theme: null) {
+@function color($name, $shade: null, $theme: null) {
     $shadeInfix: "--normal";
     @if $shade {
         @if $shade != "normal" and $shade != "up" and $shade != "down" {

@@ -1,0 +1,17 @@
+@use "../../core/class" as *;
+@use "../../core/modifier" as *;
+
+
+@include class("wrapper", "w") {
+    @include space-modifier(--flecss__wrapper-padding, "xl") {
+        margin: 0 auto;
+        padding-top: var(--flecss__wrapper-padding);
+        padding-bottom: var(--flecss__wrapper-padding);
+        width: 100%;
+        max-width: var(--flecss__wrapper-width);
+    }
+    
+    @include class-connect("wrapper", "w") {
+        padding-top: 0;
+    }
+}

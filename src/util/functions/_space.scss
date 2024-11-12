@@ -9,7 +9,7 @@ $space-dimensions: (
     "extra-extra-large": 3, "xxl": 3
 );
 
-@function flecss-space($dimension: "m", $negative: false) {
+@function space($dimension: "m", $negative: false) {
     $power: null;
     @if map-has-key($space-dimensions, $dimension) {
         $power: map-get($space-dimensions, $dimension);
@@ -17,7 +17,7 @@ $space-dimensions: (
     @if not $power {
         @return 0;
     }
-
+    
     $factor: 1;
     @if $negative {
         $factor: -1;

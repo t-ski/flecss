@@ -1,3 +1,6 @@
+@use "flecss";
+
+
 .test--extend-pv {
     @include flecss.class("p_v");
 }

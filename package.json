@@ -40,7 +40,7 @@
     "test:cli:standalone": "npm run test:cli -- -L standalone",
     "test:cli:watch": "npm run test:cli -- --watch",
     "test": "npm run test:unit && npm run test:end-to-end",
-    "release:minor": "npm run test && npx rjs-release . --github"
+    "release": "npm run test && npx rjs-release . --github"
   },
   "dependencies": {
     "clean-css": "^5.3.3",

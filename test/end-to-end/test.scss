@@ -5,7 +5,7 @@
     @include flecss.class("p_v--l");
 }
 
-@include flecss.flecss_color("test", #FF0000);
+@include flecss.color("test", #FF0000);
 
 .test--color {
     color: flecss.get-color("test");

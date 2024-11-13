@@ -53,9 +53,13 @@ main > section > h4 {
     color: var(--color-failure);
 }
 .total.failure > div {
+    flex-direction: row;
     animation: blink;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+}
+.total > div {
+    display: block;
 }
 .result {
     display: flex;

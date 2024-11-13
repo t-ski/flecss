@@ -1,9 +1,10 @@
-@use "../../core/class" as *;
-@use "../../core/modifier" as *;
+@use "../core/class" as *;
+@use "../core/modifier" as *;
+@use "../util/functions/fontsize";
 
 
 @mixin text__fontsize-class-modifier($space-dimension, $space-dimension-shorthand: $space-dimension) {
-    @include class-modifier(--flecss__text-fontsize, fontsize($space-dimension), $space-dimension, $space-dimension-shorthand) {
+    @include class-modifier(--flecss__text-fontsize, fontsize.fontsize($space-dimension), $space-dimension, $space-dimension-shorthand) {
         font-size: var(--flecss__text-fontsize);
         
         @content;

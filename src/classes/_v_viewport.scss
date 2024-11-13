@@ -1,5 +1,5 @@
-@use "../../core/class" as *;
-@use "../../util/mixins/breakpoint";
+@use "../core/class" as *;
+@use "../util/mixins/breakpoint";
 
 
 @mixin viewport_collapse {

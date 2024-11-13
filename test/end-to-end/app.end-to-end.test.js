@@ -16,7 +16,7 @@ fs.writeFileSync(
     flecss
         .createTranspiler()
         .fromFile(TEST_SCSS_PATH, {
-            isDevelopment: true
+            development: true
         }).css
 );
 

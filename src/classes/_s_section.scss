@@ -1,9 +1,9 @@
-@use "../../core/class" as *;
-@use "../../core/modifier" as *;
+@use "../core/class" as *;
+@use "../core/modifier" as *;
 
 
 @include class("section", "s") {
-    @include space-modifier(--flecss__section-padding, "s") {
+    @include space-modifier(--flecss__section-padding, "m") {
         padding-left: var(--flecss__section-padding);
         padding-right: var(--flecss__section-padding);
         width: 100%;

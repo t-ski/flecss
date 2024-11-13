@@ -25,10 +25,10 @@
     <body>
         <script>
             const ZERO_PX = "0px";
-            const S_PX = "18px";
-            const M_PX = "31.5px";
-            const L_PX = "55.125px";
-            const XL_PX = "96.4688px";
+            const S_PX = "14.875px";
+            const M_PX = "29.75px";
+            const L_PX = "59.5px";
+            const XL_PX = "119px";
         </script>
 
         <div class="total">
@@ -262,7 +262,7 @@
                     :root { --flecss__wrapper-width: 400px; }
                 </style>
                 <script>
-                    test("padding", [ ZERO_PX, S_PX ].join(" "));
+                    test("padding", [ ZERO_PX, M_PX ].join(" "));
                     test("padding-top", ZERO_PX);
                     sectionW = Math.round(document.querySelector("section").clientWidth * 0.9);
                     test("width", {
@@ -384,11 +384,11 @@
             <section>
                 <h3>Default: Headings</h3>
                 <script>
-                    const getFontsize = level => {
+                    const getHeadingSize = level => {
                         const compStyle = getComputedStyle(document.documentElement);
                         return `${Math.round(
-                            parseInt(compStyle.getPropertyValue("--flecss__fontsize"))
-                            * compStyle.getPropertyValue("--flecss__fontsize-factor")**level
+                            parseFloat(compStyle.getPropertyValue("--flecss__fontsize"))
+                            * parseFloat(compStyle.getPropertyValue("--flecss__fontsize-factor"))**(1 + (6 - level) * parseFloat(compStyle.getPropertyValue("--flecss__headingsize-factor")))
                             * 10000
                         ) / 10000}px`;
                     };
@@ -398,21 +398,21 @@
                     <h1>Lorem Ipsum</h1>
                 </div>
                 <script>
-                    test("font-size", getFontsize(6));
+                    test("font-size", getHeadingSize(1));
                 </script>
 
                 <div test="h3">
                     <h3>Lorem Ipsum</h3>
                 </div>
                 <script>
-                    test("font-size", getFontsize(4));
+                    test("font-size", getHeadingSize(3));
                 </script>
 
                 <div test="h5">
                     <h5>Lorem Ipsum</h5>
                 </div>
                 <script>
-                    test("font-size", getFontsize(2));
+                    test("font-size", getHeadingSize(5));
                 </script>
             </section>
 

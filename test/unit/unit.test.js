@@ -8,10 +8,10 @@ const SCSS_FILE_PATH = join(__dirname, "./_test.scss");
 
 
 const transpiled = flecss
-    .createTranspiler()
-    .fromFile(SCSS_FILE_PATH, {
-        isDevelopment: true
-    });
+    .createTranspiler({
+        development: true
+    })
+    .fromFile(SCSS_FILE_PATH);
 
 deepEqual(transpiled.loadedUrls.length, 26);
 deepEqual(transpiled.css.length > 100, true);
@@ -19,10 +19,10 @@ deepEqual(/a\s*\{\s*color:\s*red\s*[;}]/.test(transpiled.css), true);
 deepEqual(/a\s*\{\s*color:\s*green\s*[;}]/.test(transpiled.css), true);
 
 const transpiledStandalone = flecss
-    .createTranspiler()
-    .fromFile(SCSS_FILE_PATH, {
+    .createTranspiler({
         library: "standalone"
-    });
+    })
+    .fromFile(SCSS_FILE_PATH);
 
 deepEqual(transpiledStandalone.loadedUrls.length, 1);
 deepEqual(transpiledStandalone.css.length < 100, true);

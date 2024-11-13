@@ -1,9 +1,9 @@
-@mixin flecss_theme--light {
+@mixin theme--light {
     @media (prefers-color-scheme: light) {
         @content;
     }
 }
-@mixin flecss_theme--dark {
+@mixin theme--dark {
     @media (prefers-color-scheme: dark) {
         @content;
     }

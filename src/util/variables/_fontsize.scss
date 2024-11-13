@@ -2,15 +2,16 @@
 
 
 :root {
-    --flecss__fontsize--l: 18px;
-    --flecss__fontsize--m: var(--flecss__fontsize--l);
-    --flecss__fontsize--s: 16px;
+    --flecss__fontsize--s: 15px;
+    --flecss__fontsize--m: 16px;
+    --flecss__fontsize--l: 17px;
     --flecss__fontsize: var(--flecss__fontsize--l);
     --flecss__fontsize-factor: 1.25;
-    --flecss__headingsize-factor: 1;
+    --flecss__headingsize-factor: 0.775;
     
     @include breakpoint.breakpoint--m {
         --flecss__fontsize: var(--flecss__fontsize--m);
+        --flecss__fontsize-factor: 1.175;
     }
     @include breakpoint.breakpoint--s {
         --flecss__fontsize: var(--flecss__fontsize--s);

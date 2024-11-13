@@ -1,6 +1,6 @@
-@use "../../core/class" as *;
-@use "../../core/modifier" as *;
-@use "../../util/mixins/breakpoint";
+@use "../core/class" as *;
+@use "../core/modifier" as *;
+@use "../util/mixins/breakpoint";
 
 
 @function flex__child-width($m) {

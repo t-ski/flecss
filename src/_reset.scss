@@ -102,15 +102,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @mixin heading-fontsize($level: 1) {
     $factor: calc(1 + (6 - $level) * var(--flecss__headingsize-factor));
-
+    
     font-size: fontsize.fontsize($factor);
-
-    @include breakpoint.breakpoint--m {
-        font-size: fontsize.fontsize($factor, calc(0.9 * var(--flecss__fontsize)));
-    }
-    @include breakpoint.breakpoint--s {
-        font-size: fontsize.fontsize($factor, calc(0.8 * var(--flecss__fontsize)));
-    }
 }
 
 h1 {

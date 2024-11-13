@@ -1,4 +1,4 @@
-@mixin flecss_font($name, $path, $weight: 400) {
+@mixin font($name, $path, $weight: 400) {
     @font-face {
         font-family: "#{$name}";
         font-weight: #{$weight};

@@ -13,6 +13,7 @@
     "minimalist"
   ],
   "files": [
+    "./src/",
     "./dist/",
     "./lib/",
     "./cli.help.txt"
@@ -31,7 +32,7 @@
   "scripts": {
     "prepare": "npx husky",
     "report-meta": "node ./scripts/report-meta.js",
-    "build": "node ./scripts/build.js && npm run report-meta",
+    "build": "node ./scripts/build.js",
     "test:unit": "node ./test/unit/unit.test.js",
     "test:end-to-end": "node ./test/end-to-end/app.end-to-end.test.js",
     "test:end-to-end:view": "npm run test:end-to-end ; open ./test/end-to-end/end-to-end.test.html",

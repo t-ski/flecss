@@ -6,7 +6,7 @@
 
 **flecss** is a minimalist and straightforward (S)CSS framework. 
 
-### 📖 &hairsp; [Documentation](http://t-ski.github.io/flecss)
+### 📖 &hairsp; [Documentation](https://github.com/flecss/documentation?tab=readme-ov-file#documentation)
 
 ### 🚀 &hairsp; Quickstart
   

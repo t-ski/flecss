@@ -4,7 +4,7 @@
   "author": "Thassilo Martin Schiepanski",
   "description": "flecss is a minimalist and straightforward (S)CSS framework. ",
   "license": "Apache-2.0",
-  "homepage": "http://t-ski.github.io/flecss",
+  "homepage": "https://github.com/flecss/flecss",
   "keywords": [
     "css",
     "scss",
@@ -20,10 +20,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/t-ski/flecss.git"
+    "url": "git+https://github.com/flecss/flecss.git"
   },
   "bugs": {
-    "url": "https://github.com/t-ski/flecss/issues"
+    "url": "https://github.com/flecss/flecss/issues"
   },
   "main": "./lib/api.js",
   "bin": {

@@ -10,14 +10,12 @@ fs.mkdirSync(DIST_PATH, {
 });
 
 
-const transpiler = api.createTranspiler();
-
 function buildLibrary(libraryName) {
     const distPath = path.join(DIST_PATH, `${libraryName}.css`);
     
-    fs.writeFileSync(distPath, transpiler.fromString("", {
+    fs.writeFileSync(distPath, api.createTranspiler({
         library: libraryName
-    }).css);
+    }).fromString("").css);
     
     console.log(`\x1b[2m→ \x1b[22m\x1b[33mBuilt '${libraryName}' to ${distPath}\x1b[0m`);
 }

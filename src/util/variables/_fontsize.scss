@@ -8,7 +8,7 @@
     --flecss__fontsize: var(--flecss__fontsize--l);
     --flecss__fontsize-factor: 1.25;
     --flecss__headingsize-factor: 1;
-
+    
     @include breakpoint.breakpoint--m {
         --flecss__fontsize: var(--flecss__fontsize--m);
     }

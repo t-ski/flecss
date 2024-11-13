@@ -30,7 +30,8 @@
   },
   "scripts": {
     "prepare": "npx husky",
-    "build": "node ./scripts/build.js",
+    "report-meta": "node ./scripts/report-meta.js",
+    "build": "node ./scripts/build.js && npm run report-meta",
     "test:unit": "node ./test/unit/unit.test.js",
     "test:end-to-end": "node ./test/end-to-end/app.end-to-end.test.js",
     "test:end-to-end:view": "npm run test:end-to-end ; open ./test/end-to-end/end-to-end.test.html",

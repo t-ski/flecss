@@ -43,9 +43,9 @@ puppeteer.launch({ headless: "shell" })
         const wasSuccessful = message.text() == 0;
         
         wasSuccessful
-        && console.log("\x1b[32mVirtual browser test succeeded.\x1b[0m");
+        && console.log("\x1b[32mEnd-to-end (virtual browser) tests succeeded.\x1b[0m");
         !wasSuccessful
-        && console.log("\x1b[31mVirtual browser test failed.\x1b[0m");
+        && console.log("\x1b[31mEnd-to-end (virtual browser) tests failed.\x1b[0m");
         !wasSuccessful && console.log(`\x1b[2mCheck failures in browser:\n\x1b[34m${testPagePath}\x1b[0m`)
 
         process.exit(+!wasSuccessful);

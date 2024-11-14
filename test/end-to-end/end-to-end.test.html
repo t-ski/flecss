@@ -258,9 +258,6 @@
                         <div class="w"></div>
                     </div>
                 </div>
-                <style>
-                    :root { --flecss__wrapper-width: 400px; }
-                </style>
                 <script>
                     test("padding", [ ZERO_PX, M_PX ].join(" "));
                     test("padding-top", ZERO_PX);
@@ -270,7 +267,7 @@
                         expected: sectionW,
                         eval: (actual, expected) => actual > expected
                     });
-                    test("width", "400px", 0);
+                    test("width", "772.5px", 0);
                     test("padding", [ XL_PX, ZERO_PX ].join(" "), 0);
                     test("padding-left", ZERO_PX, 0);
                 </script>
@@ -387,8 +384,8 @@
                     const getHeadingSize = level => {
                         const compStyle = getComputedStyle(document.documentElement);
                         return `${Math.round(
-                            parseFloat(compStyle.getPropertyValue("--flecss__fontsize"))
-                            * parseFloat(compStyle.getPropertyValue("--flecss__fontsize-factor"))**(1 + (6 - level) * parseFloat(compStyle.getPropertyValue("--flecss__headingsize-factor")))
+                            17
+                            * parseFloat(1.25)**(1 + (6 - level) * 0.775)
                             * 10000
                         ) / 10000}px`;
                     };

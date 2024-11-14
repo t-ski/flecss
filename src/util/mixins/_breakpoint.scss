@@ -1,13 +1,5 @@
-$wrapper-width: 1420;
-$breakpoint-xs: calc((1/3) * $wrapper-width);
-$breakpoint-s: calc((1/2) * $wrapper-width);
-$breakpoint-m: calc((2/3) * $wrapper-width);
-$breakpoint-l: calc(1 * $wrapper-width);
-$breakpoint-xl: calc((1 + (1/3)) * $wrapper-width);
+@use "../variables/constraints" as vars;
 
-:root {
-    --flecss__wrapper-width: #{$wrapper-width}px;
-}
 
 @mixin breakpoint($px, $min: false) {
     $boundary: "max";
@@ -15,33 +7,33 @@ $breakpoint-xl: calc((1 + (1/3)) * $wrapper-width);
         $boundary: "min";
         $px: $px - 1;
     }
-    @media (#{$boundary}-width: #{$px}px) {
+    @media (#{$boundary}-width: #{$px}) {
         @content;
     }
 }
 
 @mixin breakpoint--xs($min: false) {
-    @include breakpoint($breakpoint-xs, $min) {
+    @include breakpoint(vars.$breakpoint-xs, $min) {
         @content;
     }
 }
 @mixin breakpoint--s($min: false) {
-    @include breakpoint($breakpoint-s, $min) {
+    @include breakpoint(vars.$breakpoint-s, $min) {
         @content;
     }
 }
 @mixin breakpoint--m($min: false) {
-    @include breakpoint($breakpoint-m, $min) {
+    @include breakpoint(vars.$breakpoint-m, $min) {
         @content;
     }
 }
 @mixin breakpoint--l($min: false) {
-    @include breakpoint($breakpoint-l, $min) {
+    @include breakpoint(vars.$breakpoint-l, $min) {
         @content;
     }
 }
 @mixin breakpoint--xl($min: false) {
-    @include breakpoint($breakpoint-xl, $min) {
+    @include breakpoint(vars.$breakpoint-xl, $min) {
         @content;
     }
 }

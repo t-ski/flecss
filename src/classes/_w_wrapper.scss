@@ -1,3 +1,4 @@
+@use "../util/variables/constraints" as vars;
 @use "../core/class" as *;
 @use "../core/modifier" as *;
 
@@ -8,7 +9,7 @@
         padding-top: var(--flecss__wrapper-padding);
         padding-bottom: var(--flecss__wrapper-padding);
         width: 100%;
-        max-width: var(--flecss__wrapper-width);
+        max-width: vars.$max-wrapper-width;
     }
     
     @include class-connect("wrapper", "w") {

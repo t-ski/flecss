@@ -4,7 +4,7 @@
 
 
 @function flex__child-width($m) {
-    @return calc((100% / (#{$m} + 0.001)) - (var(--flecss__flex-parent-gap) * (#{$m} - 1) / #{$m}));
+    @return calc((100% / (#{$m} + 0.001)) - (var(--flex-parent-gap) * (#{$m} - 1) / #{$m}));
 }
 
 
@@ -19,7 +19,7 @@
             width: 100%;
             height: fit-content;
             
-            --flecss__flex-parent-gap: var(--flecss__flex-gap);
+            --flex-parent-gap: var(--flecss__flex-gap);
             & > * {
                 width: flex__child-width($n) !important;
 

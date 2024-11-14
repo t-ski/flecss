@@ -1,3 +1,5 @@
+@use "./util/variables/constraints" as vars-constraints;
+@use "./util/variables/fontsize" as vars-fontsize;
 @use "./util/mixins/breakpoint";
 @use "./util/functions/space";
 @use "./util/functions/fontsize";
@@ -11,7 +13,7 @@ html {
     padding: 0;
     height: 100%;
     font-family: sans-serif;
-    font-size: var(--flecss__fontsize);
+    font-size: vars-fontsize.$fontsize;
     font-weight: 400;
     text-rendering: optimizeLegibility;
     scroll-behavior: smooth;
@@ -55,7 +57,7 @@ body {
 
 main {
     p, blockquote {
-        max-width: var(--flecss__max-textwidth);
+        max-width: vars-constraints.$max-textwidth;
     }
 }
 
@@ -101,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @mixin heading-fontsize($level: 1) {
-    $factor: calc(1 + (6 - $level) * var(--flecss__headingsize-factor));
+    $factor: calc(1 + (6 - $level) * vars-fontsize.$headingsize-factor);
     
     font-size: fontsize.fontsize($factor);
 }

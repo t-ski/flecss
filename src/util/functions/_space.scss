@@ -1,3 +1,6 @@
+@use "../variables/space" as vars;
+
+
 $space-dimensions: (
     "zero": null,
     "extra-extra-small": -3, "xxs": -3,
@@ -17,11 +20,11 @@ $space-dimensions: (
     @if not $power {
         @return 0;
     }
-    
+
     $factor: 1;
     @if $negative {
         $factor: -1;
     }
-
-    @return calc($factor * var(--flecss__space) * pow(var(--flecss__space-factor), $power));
+    
+    @return calc($factor * vars.$space * pow(vars.$space-factor, $power));
 }

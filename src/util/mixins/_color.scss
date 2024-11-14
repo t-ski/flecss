@@ -1,27 +1,38 @@
+@use "../../_util";
+
 @use "./theme";
 
 
-@mixin color($name, $color, $darktheme-color: null) {
+@mixin color-property-variable($name, $color) {
+    @include util.property-variable("color--#{$name}", #{$color});
+}
+
+@function get-color-property-var($name) {
+    @return var(--flecss__color--#{$name});
+}
+
+
+@mixin color($name, $color, $darktheme-color: null) {    
     :root {
-        --flecss_color--#{$name}--normal--light: #{$color};
-        --flecss_color--#{$name}--up--light: #{lighten($color, 10%)};
-        --flecss_color--#{$name}--down--light: #{darken($color, 10%)};
-        
-        --flecss_color--#{$name}--normal: var(--flecss_color--#{$name}--normal--light);
-        --flecss_color--#{$name}--up: var(--flecss_color--#{$name}--up--light);
-        --flecss_color--#{$name}--down: var(--flecss_color--#{$name}--down--light);
+        @include color-property-variable("#{$name}--normal--light", $color);
+        @include color-property-variable("#{$name}--up--light", lighten($color, 10%));
+        @include color-property-variable("#{$name}--down--light", darken($color, 5%));
+
+        @include color-property-variable("#{$name}--normal", get-color-property-var("#{$name}--normal--light"));
+        @include color-property-variable("#{$name}--up", get-color-property-var("#{$name}--up--light"));
+        @include color-property-variable("#{$name}--down", get-color-property-var("#{$name}--down--light"));
     }
     
     @if $darktheme-color {
         :root {
-            --flecss_color--#{$name}--normal--dark: #{$darktheme-color};
-            --flecss_color--#{$name}--up--dark: #{darken($darktheme-color, 5%)};
-            --flecss_color--#{$name}--down--dark: #{lighten($darktheme-color, 5%)};
-            
+            @include color-property-variable("#{$name}--normal--dark", $darktheme-color);
+            @include color-property-variable("#{$name}--up--dark", lighten($darktheme-color, 5%));
+            @include color-property-variable("#{$name}--down--dark", darken($darktheme-color, 10%));
+
             @include theme.theme--dark {
-                --flecss_color--#{$name}--normal: var(--flecss_color--#{$name}--normal--dark);
-                --flecss_color--#{$name}--up: var(--flecss_color--#{$name}--up--dark);
-                --flecss_color--#{$name}--down: var(--flecss_color--#{$name}--down--dark);
+                @include color-property-variable("#{$name}--normal", get-color-property-var("#{$name}--normal--dark"));
+                @include color-property-variable("#{$name}--up", get-color-property-var("#{$name}--up--dark"));
+                @include color-property-variable("#{$name}--down", get-color-property-var("#{$name}--down--dark"));
             }
         }
     }

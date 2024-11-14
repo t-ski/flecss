@@ -1,4 +1,4 @@
-@use "./_util";
+@use "./../_util";
 
 @use "../util/mixins/breakpoint";
 
@@ -15,10 +15,10 @@ $space-factor: 2;
     
     @include breakpoint.breakpoint--m {
         @include util.property-variable("space", $space--m);
-        @include util.property-variable("space-factor", 0.75 * $space-factor);
+        @include util.property-variable("space-factor", 0.9 * $space-factor);
     }
     @include breakpoint.breakpoint--s {
         @include util.property-variable("space", $space--s);
-        @include util.property-variable("space-factor", 0.7 * $space-factor);
+        @include util.property-variable("space-factor", 0.8 * $space-factor);
     }
 }

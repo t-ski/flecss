@@ -1,3 +1,5 @@
+@use "../_util";
+
 @use "./util/functions/space";
 @use "../core/class" as *;
 
@@ -9,8 +11,8 @@
 }
 
 @mixin space-modifier($var, $default-order: "m") {
-    #{$var}: space.space($default-order);
-    
+    @include util.property-variable($var, space.space($default-order));
+
     @include modifier__space-class-modifier($var, "zero") {
         @content;
     }

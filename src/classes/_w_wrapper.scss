@@ -1,13 +1,15 @@
+@use "../_util";
+
 @use "../variables/constraints" as vars;
 @use "../core/class" as *;
 @use "../core/modifier" as *;
 
 
 @include class("wrapper", "w") {
-    @include space-modifier(--flecss__wrapper-padding, "xl") {
+    @include space-modifier("wrapper-padding", "xl") {
         margin: 0 auto;
-        padding-top: var(--flecss__wrapper-padding);
-        padding-bottom: var(--flecss__wrapper-padding);
+        padding-top: util.get-property-variable("wrapper-padding");
+        padding-bottom: util.get-property-variable("wrapper-padding");
         width: 100%;
         max-width: vars.$max-wrapper-width;
     }

@@ -62,6 +62,15 @@ main > section > h4 {
 .total > div {
     display: block;
 }
+.info {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 2rem;
+    color: palevioletred;
+    font-size: 0.8em;
+    z-index: 100;
+}
 .result {
     display: flex;
     flex-direction: row;

@@ -1,3 +1,6 @@
+@use "../_util";
+
+
 @mixin class($class, $class-shorthand: $class) {
     .#{$class}, .#{$class-shorthand} {
         @content;
@@ -12,7 +15,7 @@
 
 @mixin class-modifier($var, $value, $modifier, $modifier-shorthand: $modifier) {
     &--#{$modifier}, &--#{$modifier-shorthand} {
-        #{$var}: #{$value};
+        @include util.property-variable($var, $value);
         
         @content;
     }

@@ -4,10 +4,6 @@
 @forward "./mixins/font";
 @forward "./mixins/theme";
 
-@forward "./variables/constraints";
-@forward "./variables/space";
-@forward "./variables/fontsize";
-
 @forward "./functions/color" as get-*;
 @forward "./functions/fontsize" as get-*;
 @forward "./functions/space" as get-*;

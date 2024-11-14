@@ -1,4 +1,4 @@
-@use "../variables/space" as vars;
+@use "../../variables/_util";
 
 
 $space-dimensions: (
@@ -20,11 +20,11 @@ $space-dimensions: (
     @if not $power {
         @return 0;
     }
-
+    
     $factor: 1;
     @if $negative {
         $factor: -1;
     }
     
-    @return calc($factor * vars.$space * pow(vars.$space-factor, $power));
+    @return calc($factor * util.get-property-variable("space") * pow(util.get-property-variable("space-factor"), $power));
 }

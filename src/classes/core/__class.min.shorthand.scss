@@ -1,22 +1,24 @@
-@use "../_util";
+// only shorthands
+
+@use "../../_util";
 
 
 @mixin class($class, $class-shorthand: $class) {
-    .#{$class}, .#{$class-shorthand} {
+    .#{$class-shorthand} {
         @content;
     }
 }
 
 @mixin class-specifier($specifier, $specifier-shorthand: $specifier) {
-    &_#{$specifier}, &_#{$specifier-shorthand} {
+    &_#{$specifier-shorthand} {
         @content;
     }
 }
 
 @mixin class-modifier($var, $value, $modifier, $modifier-shorthand: $modifier) {
-    &--#{$modifier}, &--#{$modifier-shorthand} {
+   &--#{$modifier-shorthand} {
         @include util.property-variable($var, $value);
-        
+                
         @content;
     }
     
@@ -24,7 +26,7 @@
 }
 
 @mixin class-connect($name, $shorthand: $name) {
-    & + .#{$name}, & + .#{$shorthand} {
+    & + .#{$shorthand} {
         @content;
     }
 }

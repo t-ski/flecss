@@ -1,4 +1,4 @@
-@use "../../variables/constraints" as vars;
+@use "flecss:vars" as vars;
 
 
 @mixin breakpoint($px, $min: false) {

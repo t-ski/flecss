@@ -1,6 +1,7 @@
+@use "flecss:vars" as vars;
+
 @use "./variables/../_util";
 
-@use "./variables/constraints" as vars;
 @use "./util/mixins/breakpoint";
 @use "./util/functions/space";
 @use "./util/functions/fontsize";

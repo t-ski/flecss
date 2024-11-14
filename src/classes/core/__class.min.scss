@@ -1,16 +1,16 @@
-// only shorthands
+// only fullnames
 
-@use "../_util";
+@use "../../_util";
 
 
 @mixin class($class, $class-shorthand: $class) {
-    .#{$class-shorthand} {
+    .#{$class} {
         @content;
     }
 }
 
 @mixin class-specifier($specifier, $specifier-shorthand: $specifier) {
-    &_#{$specifier-shorthand} {
+    &_#{$specifier} {
         @content;
     }
 }
@@ -26,7 +26,7 @@
 }
 
 @mixin class-connect($name, $shorthand: $name) {
-    & + .#{$shorthand} {
+    & + .#{$name} {
         @content;
     }
 }

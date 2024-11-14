@@ -1,7 +1,7 @@
 @use "../_util";
 
-@use "../core/class" as *;
-@use "../core/modifier" as *;
+@use "./core/class" as *;
+@use "./core/modifier" as *;
 
 
 @include class("margin", "m") {

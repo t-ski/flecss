@@ -1,8 +1,9 @@
+@use "flecss:vars" as vars;
+
 @use "../_util";
 
-@use "../variables/constraints" as vars;
-@use "../core/class" as *;
-@use "../core/modifier" as *;
+@use "./core/class" as *;
+@use "./core/modifier" as *;
 
 
 @include class("wrapper", "w") {

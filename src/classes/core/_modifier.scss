@@ -1,7 +1,7 @@
-@use "../_util";
+@use "../../_util";
 
-@use "./util/functions/space";
-@use "../core/class" as *;
+@use "../../util/functions/space";
+@use "./class" as *;
 
 
 @mixin modifier__space-class-modifier($var, $space-dimension, $space-dimension-shorthand: $space-dimension) {

@@ -22,13 +22,13 @@
         @include color-property-variable("#{$name}--up", get-color-property-var("#{$name}--up--light"));
         @include color-property-variable("#{$name}--down", get-color-property-var("#{$name}--down--light"));
     }
-    
+
     @if $darktheme-color {
         :root {
             @include color-property-variable("#{$name}--normal--dark", $darktheme-color);
             @include color-property-variable("#{$name}--up--dark", lighten($darktheme-color, 5%));
             @include color-property-variable("#{$name}--down--dark", darken($darktheme-color, 10%));
-
+            
             @include theme.theme--dark {
                 @include color-property-variable("#{$name}--normal", get-color-property-var("#{$name}--normal--dark"));
                 @include color-property-variable("#{$name}--up", get-color-property-var("#{$name}--up--dark"));

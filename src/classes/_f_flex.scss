@@ -71,7 +71,7 @@
             gap: util.get-property-variable("flex-gap");
         }
     }
-
+    
     @include class-specifier("left", "l") {
         @include space-modifier("flex-gap", "xl") {
             @include breakpoint.breakpoint--s {                

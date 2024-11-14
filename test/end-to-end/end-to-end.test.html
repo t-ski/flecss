@@ -36,6 +36,11 @@
                 <span class="total-success"></span> / <span class="total-failure"></span> successful
             </div>
         </div>
+        
+        <p class="info">
+            virtual viewport width: 1440px
+        </p>
+        
         <main>
 
             <section>
@@ -258,9 +263,6 @@
                         <div class="w"></div>
                     </div>
                 </div>
-                <style>
-                    :root { --flecss__wrapper-width: 400px; }
-                </style>
                 <script>
                     test("padding", [ ZERO_PX, M_PX ].join(" "));
                     test("padding-top", ZERO_PX);
@@ -270,7 +272,7 @@
                         expected: sectionW,
                         eval: (actual, expected) => actual > expected
                     });
-                    test("width", "400px", 0);
+                    test("width", "772.5px", 0);
                     test("padding", [ XL_PX, ZERO_PX ].join(" "), 0);
                     test("padding-left", ZERO_PX, 0);
                 </script>
@@ -313,6 +315,52 @@
                 </div>
                 <script>
                     test("text-align", "justify");
+                </script>
+
+                <script>
+                    const getFontSize = dimension => {
+                        const compStyle = getComputedStyle(document.documentElement);
+                        return `${Math.round(
+                            17 * parseFloat(1.25)**dimension
+                            * 10000
+                        ) / 10000}px`;
+                    };
+                </script>
+                
+                <div test="size xxs">
+                    <p class="t--xxs">
+                        Lorem ipsum dolor sit amet…
+                    </p>
+                </div>
+                <script>
+                    test("font-size", getFontSize(-1.5));
+                </script>
+                
+                <div test="size s">
+                    <p class="t--s">
+                        Lorem ipsum dolor sit amet…
+                    </p>
+                </div>
+                <script>
+                    test("font-size", getFontSize(-0.5));
+                </script>
+                
+                <div test="size m">
+                    <p class="t--m">
+                        Lorem ipsum dolor sit amet…
+                    </p>
+                </div>
+                <script>
+                    test("font-size", getFontSize(0));
+                </script>
+                
+                <div test="size xl">
+                    <p class="t--xl">
+                        Lorem ipsum dolor sit amet…
+                    </p>
+                </div>
+                <script>
+                    test("font-size", getFontSize(1.0));
                 </script>
             </section>
             
@@ -387,32 +435,52 @@
                     const getHeadingSize = level => {
                         const compStyle = getComputedStyle(document.documentElement);
                         return `${Math.round(
-                            parseFloat(compStyle.getPropertyValue("--flecss__fontsize"))
-                            * parseFloat(compStyle.getPropertyValue("--flecss__fontsize-factor"))**(1 + (6 - level) * parseFloat(compStyle.getPropertyValue("--flecss__headingsize-factor")))
+                            17 * parseFloat(1.25)**(6 - level)
                             * 10000
                         ) / 10000}px`;
                     };
                 </script>
-
-                <div test="h1">
+                
+                <div test="H1">
                     <h1>Lorem Ipsum</h1>
                 </div>
                 <script>
                     test("font-size", getHeadingSize(1));
                 </script>
 
-                <div test="h3">
+                <div test="H2">
+                    <h2>Lorem Ipsum</h2>
+                </div>
+                <script>
+                    test("font-size", getHeadingSize(2));
+                </script>
+
+                <div test="H3">
                     <h3>Lorem Ipsum</h3>
                 </div>
                 <script>
                     test("font-size", getHeadingSize(3));
                 </script>
-
-                <div test="h5">
+                
+                <div test="H4">
+                    <h4>Lorem Ipsum</h4>
+                </div>
+                <script>
+                    test("font-size", getHeadingSize(4));
+                </script>
+                
+                <div test="H5">
                     <h5>Lorem Ipsum</h5>
                 </div>
                 <script>
                     test("font-size", getHeadingSize(5));
+                </script>
+                
+                <div test="H6">
+                    <h6>Lorem Ipsum</h6>
+                </div>
+                <script>
+                    test("font-size", getHeadingSize(6));
                 </script>
             </section>
 

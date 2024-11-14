@@ -1,11 +1,13 @@
+@use "../_util";
+
 @use "../core/class" as *;
 @use "../core/modifier" as *;
 
 
 @include class("section", "s") {
-    @include space-modifier(--flecss__section-padding, "m") {
-        padding-left: var(--flecss__section-padding);
-        padding-right: var(--flecss__section-padding);
+    @include space-modifier("section-padding", "m") {
+        padding-left: util.get-property-variable("section-padding");
+        padding-right: util.get-property-variable("section-padding");
         width: 100%;
     }
 }

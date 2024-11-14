@@ -1,3 +1,6 @@
+@use "../../variables/../_util";
+
+
 $fontsize-dimensions: (
     "extra-extra-small": -1.5, "xxs": -1.5,
     "extra-small": -1, "xs": -1,
@@ -8,9 +11,9 @@ $fontsize-dimensions: (
     "extra-extra-large": 1.5, "xxl": 1.5
 );
 
-@function fontsize($dimension: "m", $base-size: var(--flecss__fontsize)) {
+@function fontsize($dimension: "m", $factor: util.get-property-variable("fontsize-factor"), $base-size: util.get-property-variable("fontsize")) {
     @if map-has-key($fontsize-dimensions, $dimension) {
         $dimension: map-get($fontsize-dimensions, $dimension);
     }
-    @return calc($base-size * pow(var(--flecss__fontsize-factor), $dimension));
+    @return calc($base-size * pow($factor, $dimension));
 }

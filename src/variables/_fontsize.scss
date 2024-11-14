@@ -1,0 +1,25 @@
+@use "./../_util";
+
+@use "./util/mixins/breakpoint";
+
+
+$fontsize--s: 15px;
+$fontsize--m: 16px;
+$fontsize--l: 17px;
+
+$fontsize-factor: 1.25;
+$headingsize-factor: $fontsize-factor;
+
+:root {
+    @include util.property-variable("fontsize", $fontsize--l);
+    @include util.property-variable("fontsize-factor", $fontsize-factor);
+    @include util.property-variable("headingsize-factor", $headingsize-factor);
+    
+    @include breakpoint.breakpoint--m {
+        @include util.property-variable("fontsize", $fontsize--m);
+        @include util.property-variable("headingsize-factor", max(1.05, 0.95 * $headingsize-factor));
+    }
+    @include breakpoint.breakpoint--s {
+        @include util.property-variable("fontsize", $fontsize--s);
+    }
+}

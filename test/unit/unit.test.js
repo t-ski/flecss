@@ -10,10 +10,10 @@ const transpiled = flecss
     })
     .fromFile(join(__dirname, "./flecss/_test.scss"));
 
-deepEqual(transpiled.loadedUrls.length, 27);
+deepEqual(transpiled.loadedUrls.length, 29);
 deepEqual(transpiled.css.length > 100, true);
 deepEqual(/a\s*\{\s*color:\s*red\s*[;}]/.test(transpiled.css), true);
-deepEqual(/a\s*\{\s*color:\s*var\(--flecss_color--lime--normal\)\s*[;}]/.test(transpiled.css), true);
+deepEqual(/a\s*\{\s*color:\s*var\(--flecss__color--lime--normal\)\s*[;}]/.test(transpiled.css), true);
 
 const transpiledStandalone = flecss
     .createTranspiler({

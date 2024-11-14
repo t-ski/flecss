@@ -1,3 +1,6 @@
+@use "../../_util";
+
+
 @function color($name, $shade: null, $theme: null) {
     $shadeInfix: "--normal";
     @if $shade {
@@ -13,5 +16,5 @@
         }
         $themeInfix: "--#{$theme}";
     }
-    @return var(--flecss_color--#{$name}#{$shadeInfix}#{$themeInfix});
+    @return util.get-property-variable("color--#{$name}#{$shadeInfix}#{$themeInfix}");
 }
